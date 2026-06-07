@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texas Sun Power | Premium Residential Solar</title>
+    
+    <!-- Core Engine Scripts -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2026/06/03/15/20260603151140-RD2RSVKU.js" defer></script>
+
+    <style>
+        /* Modern Corporate Color Theme Scheme */
+        :root {
+            --bg-midnight: #0a111a;
+            --card-white: #ffffff;
+            --text-dark: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #64748b;
+            --safety-orange: #ff5a00;
+            --safety-orange-hover: #e04f00;
+            --border-color: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-midnight);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar Structure */
+        header {
+            background-color: rgba(10, 17, 26, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--safety-orange);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-light);
+        }
+
+        .nav-cta {
+            background-color: var(--safety-orange);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--safety-orange-hover);
+        }
+
+        /* Multi-Page Visibility Logic */
+        .page-section {
+            display: none;
+            padding: 140px 20px 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        .page-section.active-page {
+            display: block;
+        }
+
+        /* Layout Framework Templates */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* 1. HOME PAGE STYLING */
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .orange-btn {
+            background-color: var(--safety-orange);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .orange-btn:hover {
+            background-color: var(--safety-orange-hover);
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .features-section {
+            margin-top: 80px;
+        }
+
+        /* Stark White Content Cards */
+        .white-card {
+            background-color: var(--card-white);
+            color: var(--text-dark);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .white-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--bg-midnight);
+        }
+
+        .white-card p {
+            color: var(--text-muted);
+        }
+
+        /* 2. GET ESTIMATE PAGE STYLING */
+        .form-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        /* 3. PREVIOUS WORKS GRID STYLING */
+        .case-card {
+            background-color: var(--card-white);
+            color: var(--text-dark);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .case-img {
+            width: 100%;
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .case-info {
+            padding: 25px;
+        }
+
+        .case-tag {
+            color: var(--safety-orange);
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .metrics-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .metric-item span {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--bg-midnight);
+        }
+
+        .metric-item label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* 4. CONTACT PAGE STYLING */
+        .contact-details h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-item label {
+            display: block;
+            color: var(--safety-orange);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .contact-item p {
+            font-size: 1.2rem;
+        }
+
+        .map-box {
+            width: 100%;
+            height: 400px;
+            background-color: #1e293b;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Mobile Responsiveness Framework */
+        @media (max-width: 968px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                gap: 15px;
+            }
+            .nav-cta {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Shared Header Infrastructure Element Layout -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">☀️ Texas Sun <span>Power</span></div>
+            <nav>
+                <ul>
+                    <li><a onclick="switchPage('home')" id="nav-home" class="active">Home</a></li>
+                    <li><a onclick="switchPage('previous-works')" id="nav-previous-works">Previous Works</a></li>
+                    <li><a onclick="switchPage('contact')" id="nav-contact">Contact</a></li>
+                    <li><a onclick="switchPage('get-estimate')" id="nav-get-estimate" class="nav-cta">Check Roof Eligibility Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE 1: HOME SALES ENGINE INTERFACE -->
+    <section id="home" class="page-section active-page">
+        <div class="grid-2">
+            <div>
+                <h1 class="hero-title">Wipe Out Your Texas Electric Bill with Premium Home Solar.</h1>
+                <p class="hero-subtitle">Reduce rising energy overhead costs, lock in your static clean rate, and declare true power infrastructure independence from the vulnerable Texas grid. Our tier-1 residential system installations deliver peak maximum efficiency.</p>
+                <button class="orange-btn" onclick="switchPage('get-estimate')">Check Roof Eligibility Now</button>
+            </div>
+            <div class="hero-image-container">
+                <!-- Premium High-Res Unsplash Solar System Asset -->
+                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80" alt="Texas Residential Solar Array Setup">
+            </div>
+        </div>
+
+        <div class="features-section">
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 10px;">Grid-Resilient Architecture Engineering</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 40px;">Engineered specifically to withstand intense Texas heat conditions and unpredictable utility grid blackouts.</p>
+            
+            <div class="grid-3">
+                <div class="white-card">
+                    <h3>Grid Failure Protection</h3>
+                    <p>Integrate battery backup systems smoothly to automatically isolate and maintain complete home runtime operation during rolling grid blackouts.</p>
+                </div>
+                <div class="white-card">
+                    <h3>Smart Home Optimization</h3>
+                    <p>Track real-time collection metrics directly from your phone app to seamlessly distribute power allocation to high-draw AC components.</p>
+                </div>
+                <div class="white-card">
+                    <h3>Lifetime System Warranty</h3>
+                    <p>Every installation is heavily backed by a comprehensive multi-decade manufacturing and performance structural field hardware warranty matrix.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 2: MINIMALIST GET ESTIMATE LEAD CAPTURE ENTRY FORM CONTAINER -->
+    <section id="get-estimate" class="page-section">
+        <div class="form-wrapper">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Get Your Custom Solar Savings Estimate</h2>
+                <p style="color: var(--text-muted);">Fill out your information below to analyze your roof's exact solar harvest capabilities.</p>
+            </div>
+            
+            <div class="white-card">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="clientName" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="clientPhone" placeholder="(512) 555-0199" required>
+                </div>
+                <div class="form-group">
+                    <label>Property Street Address</label>
+                    <input type="text" id="clientAddress" placeholder="123 Solar Lane, Austin, TX" required>
+                </div>
+                <div class="form-group">
+                    <label>Average Monthly Electric Bill Size ($)</label>
+                    <select id="billSize">
+                        <option value="$100-$200">$100 - $200 / mo</option>
+                        <option value="$201-$350">$201 - $350 / mo</option>
+                        <option value="$351-$500">$351 - $500 / mo</option>
+                        <option value="$501+">$501+ / mo</option>
+                    </select>
+                </div>
+                <button class="orange-btn" style="width: 100%; margin-top: 10px;" onclick="submitLeadForm()">Request Engineered Proposal</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 3: CASE STUDIES PERFORMANCE GALLERY GRID BLOCK INTERFACE -->
+    <section id="previous-works" class="page-section">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Our Recent Success Stories</h2>
+            <p style="color: var(--text-muted);">Real verification data from validated operational residential arrays across the state of Texas.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="case-card">
+                <div class="case-img" style="background-image: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="case-info">
+                    <span class="case-tag">Austin, TX</span>
+                    <h3 style="margin: 5px 0 10px 0; font-size: 1.3rem;">The Miller Residence</h3>
+                    <p>Complete offset integration array mapping clean lines directly over secondary roof hips.</p>
+                    <div class="metrics-bar">
+                        <div class="metric-item"><span>10.2 kW</span><label>SYSTEM SIZE</label></div>
+                        <div class="metric-item"><span>98%</span><label>BILL COVERAGE</label></div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-img" style="background-image: url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="case-info">
+                    <span class="case-tag">Dallas, TX</span>
+                    <h3 style="margin: 5px 0 10px 0; font-size: 1.3rem;">Dallas Modern Home</h3>
+                    <p>High-capacity solar system paired with dual wall batteries for complete blackout autonomy.</p>
+                    <div class="metrics-bar">
+                        <div class="metric-item"><span>12.5 kW</span><label>SYSTEM SIZE</label></div>
+                        <div class="metric-item"><span>Grid Ind.</span><label>STATUS</label></div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-img" style="background-image: url('https://images.unsplash.com/photo-1542332606-b4d29f8e9ae7?auto=format&fit=crop&w=500&q=80');"></div>
+                <div class="case-info">
+                    <span class="case-tag">Houston, TX</span>
+                    <h3 style="margin: 5px 0 10px 0; font-size: 1.3rem;">Houston Suburban Setup</h3>
+                    <p>West-facing array configured specifically to catch premium late-afternoon peak grid generation.</p>
+                    <div class="metrics-bar">
+                        <div class="metric-item"><span>8.4 kW</span><label>SYSTEM SIZE</label></div>
+                        <div class="metric-item"><span>$3,150</span><label>ANNUAL SAVINGS</label></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 4: CORPORATE INFORMATION OFFICE DETAILS SECTION MAP CONTAINER -->
+    <section id="contact" class="page-section">
+        <div class="grid-2">
+            <div class="contact-details">
+                <h2>Connect with Texas Sun Power</h2>
+                <p style="color: var(--text-muted); margin-bottom: 40px;">Speak directly with a licensed solar engineer. Our corporate consulting offices operate Monday through Friday, 8 AM - 6 PM.</p>
+                
+                <div class="contact-item">
+                    <label>Corporate Headquaters Phone</label>
+                    <p>1-800-TX-SOLAR</p>
+                </div>
+                <div class="contact-item">
+                    <label>Engineering Support Mailbox</label>
+                    <p>support@texassunpower.com</p>
+                </div>
+                <div class="contact-item">
+                    <label>Main Distribution Hub Address</label>
+                    <p>123 Corporate Parkway, Suite 400<br>Austin, TX 78701</p>
+                </div>
+            </div>
+            <div>
+                <!-- Mock Map Box Wireframe Container Component Structure -->
+                <div class="map-box">
+                    <div style="text-align: center; padding: 20px;">
+                        <span style="font-size: 3rem; display:block; margin-bottom: 10px;">📍</span>
+                        <h4 style="color: white; margin-bottom: 5px;">Interactive Field Map Area</h4>
+                        <p style="font-size: 0.85rem;">Austin Headquarters Geographic Coordinates Bridge Linked</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internal Routing Architecture Mechanics Logic -->
+    <script>
+        // SPA Page State Manager Function
+        function switchPage(pageId) {
+            // Unmount active display views
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active-page');
+            });
+            document.querySelectorAll('nav a').forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+
+            // Mount requested targets
+            document.getElementById(pageId).classList.add('active-page');
+            const targetNav = document.getElementById(`nav-${pageId}`);
+            if(targetNav) targetNav.classList.add('active');
+
+            // Instantly snap scroll viewport cleanly to top
+            window.scrollTo(0, 0);
+        }
+
+        // Botpress Automation Mechanics Layer Integration
+        window.botpress.on('webchat:initialized', () => {
+            // Force clean instances instantly across client routing loads
+            window.botpress.execute('clearConversation');
+            localStorage.removeItem('bp-webchat-user');
+            sessionStorage.clear();
+
+            // Native configuration flags to force strip widget system watermarks
+            window.botpress.execute('setConfigurations', {
+                hideWidgetBranding: true,
+                showPoweredBy: false
+            });
+
+            // Auto-trigger widget wrapper open drawer mechanism state after 3 seconds
+            setTimeout(() => {
+                window.botpress.open();
+            }, 3000);
+        });
+
+        // Make.com Form Gateway Router Dispatched Webhook Call Trigger Function
+        function submitLeadForm() {
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const address = document.getElementById('clientAddress').value;
+            const bill = document.getElementById('billSize').value;
+
+            if(!name || !phone || !address) {
+                alert("Please fill out the solar assessment matrix parameters completely.");
+                return;
+            }
+
+            const cleanPayload = {
+                origin_event: "texas_sun_power_form",
+                client_name: name,
+                client_phone: phone,
+                property_address: address,
+                monthly_utility_overhead: bill,
+                timestamp_epoch: new Date().getTime()
+            };
+
+            // Replace text target inside quotes with your active Make.com webhook string token gateway
+            fetch('https://hook.make.com/YOUR_ACTUAL_MAKE_WEBHOOK_ID', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(cleanPayload)
+            })
+            .then(res => {
+                alert("Data packaged! Lead dispatched into the automated Make.com processing matrix pipeline successfully.");
+                
+                // Alert engine context inside open Botpress thread box
+                window.botpress.sendMessage(`System Alert: Form submitted by ${name}. Address: ${address}. Monthly bill: ${bill}.`);
+            })
+            .catch(err => console.error("Data tracking pipeline crash caught:", err));
+        }
+    </script>
+
+</body>
+</html>
