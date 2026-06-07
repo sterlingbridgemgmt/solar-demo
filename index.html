@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Texas Sun Power | Clean Energy Infrastructure</title>
     
-    <!-- Premium Fonts & Icons -->
+    <!-- Premium Google Font & Icon Assets -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -105,14 +105,13 @@
 
         .nav-btn:hover {
             background-color: var(--brand-orange-hover);
-            transform: translateY(-1px);
         }
 
-        /* --- MAIN VIEWPORT ARCHITECTURE --- */
+        /* --- PAGE SECTIONS --- */
         .page-section {
             display: none;
-            padding: 120px 40px 80px 40px;
-            max-width: 1450px;
+            padding: 140px 40px 80px 40px;
+            max-width: 1400px;
             margin: 0 auto;
             animation: viewFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
@@ -126,26 +125,22 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- 1:1 READDY BANNER RATIO GRID --- */
+        /* --- RE-ENGINEERED HERO BLOCK --- */
         .hero-banner {
             position: relative;
-            background: linear-gradient(rgba(11,15,23,0.4) 0%, rgba(11,15,23,0.95) 100%), 
+            background: linear-gradient(rgba(11,15,23,0.3) 0%, rgba(11,15,23,0.98) 100%), 
                         url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            border-radius: 16px;
-            padding: 100px 60px;
+            border-radius: 24px;
+            padding: 120px 80px;
             border: 1px solid rgba(255,255,255,0.05);
-            margin-bottom: 60px;
-            min-height: 680px;
+            margin-bottom: 80px;
+            min-height: 640px;
             display: flex;
             align-items: center;
         }
 
-        .hero-layout {
-            display: grid;
-            grid-template-columns: 1.25fr 0.75fr;
-            gap: 60px;
-            width: 100%;
-            align-items: center;
+        .hero-content {
+            max-width: 850px;
         }
 
         .pill-tag {
@@ -163,11 +158,11 @@
         }
 
         .main-headline {
-            font-size: 4rem;
-            line-height: 1.1;
+            font-size: 4.5rem;
+            line-height: 1.05;
             font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 25px;
+            letter-spacing: -2.5px;
+            margin-bottom: 30px;
         }
 
         .main-headline span {
@@ -176,9 +171,9 @@
 
         .hero-paragraph {
             color: #cbd5e1;
-            font-size: 1.15rem;
-            max-width: 650px;
-            margin-bottom: 40px;
+            font-size: 1.25rem;
+            max-width: 720px;
+            margin-bottom: 45px;
         }
 
         .action-row {
@@ -190,7 +185,7 @@
         .btn-solid {
             background-color: var(--brand-orange);
             color: white;
-            padding: 16px 32px;
+            padding: 18px 36px;
             border: none;
             border-radius: 8px;
             font-size: 1rem;
@@ -207,7 +202,7 @@
         .btn-outline {
             background: transparent;
             color: white;
-            padding: 16px 32px;
+            padding: 18px 36px;
             border: 1px solid rgba(255,255,255,0.2);
             border-radius: 8px;
             font-size: 1rem;
@@ -223,89 +218,39 @@
 
         .metric-banner {
             display: flex;
-            gap: 50px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
+            gap: 60px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 40px;
         }
 
         .stat-node h3 {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: white;
         }
 
         .stat-node p {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             font-weight: 500;
         }
 
-        /* --- QUICK QUESTION SIDEBAR CONTAINER --- */
-        .quick-box {
-            background: rgba(20, 27, 39, 0.9);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px;
-            padding: 24px;
-            backdrop-filter: blur(15px);
-        }
-
-        .quick-box h4 {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-            font-weight: 700;
-        }
-
-        .option-trigger {
-            width: 100%;
-            background: white;
-            color: var(--text-dark);
-            border: none;
-            padding: 14px 18px;
-            border-radius: 8px;
-            text-align: left;
-            font-size: 0.88rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition-fluid);
-        }
-
-        .option-trigger:last-child {
-            margin-bottom: 0;
-        }
-
-        .option-trigger:hover {
-            transform: translateX(4px);
-            background: #f1f5f9;
-        }
-
-        .option-trigger i {
-            color: var(--brand-orange);
-            font-size: 0.85rem;
-        }
-
-        /* --- CONTENT MODULES HEADER SETUP --- */
+        /* --- GRID SYSTEMS FOR LAYOUT BLOCKS --- */
         .section-header {
             text-align: center;
             margin-bottom: 60px;
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
+            letter-spacing: -1.5px;
+            margin-bottom: 12px;
         }
 
         .section-header p {
             color: var(--text-muted);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
 
         .benefit-grid {
@@ -317,141 +262,66 @@
 
         .benefit-card {
             background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.03);
-            border-radius: 16px;
-            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.02);
+            border-radius: 20px;
+            padding: 45px;
         }
 
         .b-icon {
-            width: 50px;
-            height: 50px;
+            width: 54px;
+            height: 54px;
             background: rgba(255,90,0,0.1);
-            border-radius: 10px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--brand-orange);
-            font-size: 1.3rem;
-            margin-bottom: 25px;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
         }
 
         .benefit-card h3 {
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             margin-bottom: 15px;
             font-weight: 700;
         }
 
         .benefit-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.98rem;
         }
 
-        /* --- TIMELINE METHODOLOGY --- */
-        .step-timeline {
+        /* --- PREVIOUS WORK & CONTEXT LAYOUTS --- */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-bottom: 100px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
         }
 
-        .step-node {
-            background: rgba(255,255,255,0.01);
-            border: 1px dashed rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 30px;
-            position: relative;
+        .work-item {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.02);
         }
 
-        .step-num {
-            position: absolute;
-            top: -20px;
-            left: 30px;
-            width: 40px;
-            height: 40px;
-            background: var(--brand-orange);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1rem;
+        .work-photo {
+            width: 100%;
+            height: 340px;
+            background-size: cover;
+            background-position: center;
         }
 
-        .step-node h4 {
-            font-size: 1.15rem;
-            margin: 15px 0 10px 0;
-            font-weight: 700;
-        }
-
-        .step-node p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* --- SOCIAL PROOF RACK --- */
-        .review-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .review-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 16px;
+        .work-details {
             padding: 35px;
         }
 
-        .star-rack {
-            color: #fbbf24;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-
-        .review-card p {
-            color: #cbd5e1;
-            font-size: 0.95rem;
-            font-style: italic;
-            margin-bottom: 25px;
-        }
-
-        .user-meta {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .user-avatar {
-            width: 40px;
-            height: 40px;
-            background: #334155;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .user-info h5 {
-            font-size: 0.95rem;
-            font-weight: 700;
-        }
-
-        .user-info label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        /* --- MANUAL INPUT PLATFORM MATRIX --- */
         .form-panel {
             max-width: 650px;
             margin: 0 auto;
             background: var(--bg-card);
             border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 20px;
+            border-radius: 24px;
             padding: 50px;
         }
 
@@ -477,35 +347,7 @@
             font-size: 1rem;
         }
 
-        .input-block input:focus, .input-block select:focus {
-            outline: none;
-            border-color: var(--brand-orange);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-
-        .work-item {
-            background: var(--bg-card);
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .work-photo {
-            width: 100%;
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .work-details {
-            padding: 30px;
-        }
-
-        /* --- SMOOTH RADIAL CONTOUR CHAT APPLICATION MODULE --- */
+        /* --- PREMIUM CHAT INTERFACE WITH EMBEDDED CONTEXT --- */
         #chat-dock {
             position: fixed;
             bottom: 30px;
@@ -518,16 +360,16 @@
 
         .chat-pill-launcher {
             background-color: var(--brand-orange);
-            padding: 14px 24px;
+            padding: 14px 26px;
             border-radius: 100px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             color: white;
             font-weight: 700;
             font-size: 0.95rem;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255,90,0,0.3);
+            box-shadow: 0 10px 35px rgba(255,90,0,0.3);
             transition: var(--transition-fluid);
         }
 
@@ -542,12 +384,12 @@
         }
 
         .chat-card {
-            width: 390px;
-            height: 540px;
-            background-color: #121824;
+            width: 420px;
+            height: 600px;
+            background-color: #111622;
             border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px; /* Refined Modern Smooth Contours */
-            box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+            border-radius: 24px;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.5);
             display: none;
             flex-direction: column;
             overflow: hidden;
@@ -556,13 +398,13 @@
         }
 
         @keyframes cardSlideUp {
-            from { opacity: 0; transform: translateY(15px) scale(0.98); }
+            from { opacity: 0; transform: translateY(20px) scale(0.97); }
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .chat-top-bar {
-            background-color: #1a2332;
-            padding: 20px;
+            background-color: #18202f;
+            padding: 20px 24px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             display: flex;
             justify-content: space-between;
@@ -576,8 +418,8 @@
         }
 
         .bot-logo-container {
-            width: 36px;
-            height: 36px;
+            width: 38px;
+            height: 38px;
             background: rgba(255,255,255,0.05);
             border-radius: 50%;
             display: flex;
@@ -608,30 +450,30 @@
             background: none;
             border: none;
             color: var(--text-muted);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             cursor: pointer;
         }
 
         .scroll-space {
             flex: 1;
-            padding: 20px;
+            padding: 24px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            background-color: #0d121c;
+            gap: 16px;
+            background-color: #0c101a;
         }
 
         .bubble {
-            max-width: 82%;
-            padding: 12px 16px;
-            border-radius: 14px;
-            font-size: 0.9rem;
-            line-height: 1.4;
+            max-width: 85%;
+            padding: 14px 18px;
+            border-radius: 16px;
+            font-size: 0.92rem;
+            line-height: 1.45;
         }
 
         .b-system {
-            background-color: #1a2332;
+            background-color: #18202f;
             color: var(--text-light);
             align-self: flex-start;
             border-top-left-radius: 4px;
@@ -644,22 +486,51 @@
             border-top-right-radius: 4px;
         }
 
+        /* --- MCQ STRUCTURAL INTERACTIVE BUTTONS --- */
+        .mcq-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 85%;
+            align-self: flex-start;
+            margin-top: -4px;
+        }
+
+        .mcq-button {
+            background: #1e293b;
+            color: var(--text-light);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 12px 16px;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fluid);
+        }
+
+        .mcq-button:hover {
+            background: #2d3748;
+            border-color: var(--brand-orange);
+            transform: translateX(4px);
+        }
+
         .chat-input-row {
-            padding: 15px;
-            background-color: #121824;
+            padding: 18px;
+            background-color: #111622;
             border-top: 1px solid rgba(255,255,255,0.05);
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
 
         .chat-input-row input {
             flex: 1;
-            background: #0d121c;
+            background: #0c101a;
             border: 1px solid rgba(255,255,255,0.08);
-            padding: 12px;
-            border-radius: 8px;
+            padding: 14px;
+            border-radius: 10px;
             color: white;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
         }
 
         .chat-input-row input:focus { outline: none; border-color: var(--brand-orange); }
@@ -668,25 +539,26 @@
             background: var(--brand-orange);
             color: white;
             border: none;
-            padding: 0 16px;
-            border-radius: 8px;
+            padding: 0 18px;
+            border-radius: 10px;
             cursor: pointer;
+            transition: var(--transition-fluid);
         }
 
         @media (max-width: 1024px) {
-            .hero-layout, .benefit-grid, .step-timeline, .review-row, .gallery-grid { grid-template-columns: 1fr; }
-            .main-headline { font-size: 2.8rem; }
+            .hero-banner { padding: 60px 40px; }
+            .main-headline { font-size: 3rem; }
+            .benefit-grid, .gallery-grid { grid-template-columns: 1fr; }
             nav ul { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- STICKY SITE HEADER WITH FUNCTIONAL LOGO LINK HUB -->
+    <!-- STICKY SITE HEADER WITH HOME ROUTING RESET LOGO -->
     <header>
         <div class="nav-container">
             <div onclick="navigateView('home')" class="logo-group">
-                <!-- Exact SVG Sun Icon Layout -->
                 <svg class="logo-sun" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="4"/>
                     <path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5.64 5.64l1.42 1.42M16.94 16.94l1.42 1.42M5.64 19.36l1.42-1.42M16.94 7.06l1.42-1.42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
@@ -704,44 +576,29 @@
         </div>
     </header>
 
-    <!-- VIEW 1: HOME PLATFORM SCENARIO -->
+    <!-- VIEW 1: RE-OPTIMIZED HOME SCENARIO -->
     <main id="home" class="page-section active-view">
         
         <div class="hero-banner">
-            <div class="hero-layout">
-                <div>
-                    <span class="pill-tag">Serving Texas Homeowners Since 2014</span>
-                    <h1 class="main-headline">Wipe Out Your Texas Electric Bill <span>with Premium Home Solar</span></h1>
-                    <p class="hero-paragraph">Custom-designed solar energy systems that eliminate your monthly electric payments, protect your home from grid failures, and increase your property value — all backed by a 25-year industry-leading warranty.</p>
-                    
-                    <div class="action-row">
-                        <button class="btn-solid" onclick="navigateView('get-estimate')">Check Roof Eligibility Now &rarr;</button>
-                        <button class="btn-outline" onclick="navigateView('previous-works')">See Our Previous Work &rarr;</button>
-                    </div>
-
-                    <div class="metric-banner">
-                        <div class="stat-node"><h3>1,847+</h3><p>Texas Homes Powered</p></div>
-                        <div class="stat-node"><h3>21.4 MW</h3><p>Total System Capacity</p></div>
-                        <div class="stat-node"><h3>$2,840/yr</h3><p>Average Customer Savings</p></div>
-                    </div>
+            <div class="hero-content">
+                <span class="pill-tag">Serving Texas Homeowners Since 2014</span>
+                <h1 class="main-headline">Wipe Out Your Texas Electric Bill <span>with Premium Home Solar</span></h1>
+                <p class="hero-paragraph">Custom-designed solar energy systems that eliminate your monthly electric payments, protect your home from grid failures, and increase your property value — all backed by a 25-year industry-leading warranty.</p>
+                
+                <div class="action-row">
+                    <button class="btn-solid" onclick="navigateView('get-estimate')">Check Roof Eligibility Now &rarr;</button>
+                    <button class="btn-outline" onclick="navigateView('previous-works')">See Our Previous Work &rarr;</button>
                 </div>
 
-                <!-- RIGHT ACCURATE SIDEBAR DIALOGUE OPTIONS -->
-                <div>
-                    <div class="quick-box">
-                        <h4>Quick Questions</h4>
-                        <button class="option-trigger" onclick="handleQuickQuestion('Will solar really eliminate my electric bill?')">Will solar really eliminate my electric bill? <i class="fa-solid fa-chevron-right"></i></button>
-                        <button class="option-trigger" onclick="handleQuickQuestion('How long does installation take?')">How long does installation take? <i class="fa-solid fa-chevron-right"></i></button>
-                        <button class="option-trigger" onclick="handleQuickQuestion('Do I qualify for solar?')">Do I qualify for solar? <i class="fa-solid fa-chevron-right"></i></button>
-                        <button class="option-trigger" onclick="handleQuickQuestion('How much does solar cost?')">How much does solar cost? <i class="fa-solid fa-chevron-right"></i></button>
-                        <button class="option-trigger" onclick="handleQuickQuestion('Get a Free Solar Savings Estimate')">Get a Free Solar Savings Estimate <i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
+                <div class="metric-banner">
+                    <div class="stat-node"><h3>1,847+</h3><p>Texas Homes Powered</p></div>
+                    <div class="stat-node"><h3>21.4 MW</h3><p>Total System Capacity</p></div>
+                    <div class="stat-node"><h3>$2,840/yr</h3><p>Average Customer Savings</p></div>
                 </div>
             </div>
         </div>
 
-        <!-- READDY COMPLIANT LAYOUT SUB-SECTION 1: WHY GO SOLAR? -->
-        <section style="margin-top: 80px;">
+        <section>
             <div class="section-header">
                 <h2>Why Go Solar in Texas?</h2>
                 <p>Take absolute infrastructure authority back into your own hands.</p>
@@ -764,68 +621,16 @@
                 </div>
             </div>
         </section>
-
-        <!-- READDY COMPLIANT LAYOUT SUB-SECTION 2: HOW IT WORKS -->
-        <section style="margin-top: 20px;">
-            <div class="section-header">
-                <h2>The Deployment Framework</h2>
-                <p>Four calculated steps to complete clean system implementation.</p>
-            </div>
-            <div class="step-timeline">
-                <div class="step-node"><div class="step-num">1</div><h4>Digital Mapping</h4><p>We analyze satellite profiles to gauge your roof azimuth orientation and total shade factors.</p></div>
-                <div class="step-node"><div class="step-num">2</div><h4>Engineering</h4><p>Our licensed engineers draft system blueprints optimized specifically for local municipal code targets.</p></div>
-                <div class="step-node"><div class="step-num">3</div><h4>Fluid Setup</h4><p>Professional field technicians install tracking modules, rails, and microinverters inside a single working day.</p></div>
-                <div class="step-node"><div class="step-num">4</div><h4>Grid Activation</h4><p>We manage final net-metering inspections with your electric provider to turn on live solar tracking.</p></div>
-            </div>
-        </section>
-
-        <!-- READDY COMPLIANT LAYOUT SUB-SECTION 3: REVIEWS -->
-        <section style="margin-top: 20px; margin-bottom: 40px;">
-            <div class="section-header">
-                <h2>Verified Operational Feedback</h2>
-                <p>Read transparent results sent directly by verified real property owners.</p>
-            </div>
-            <div class="review-row">
-                <div class="review-card">
-                    <div class="star-rack"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"My monthly bill dropped from $340 to the basic grid connection maintenance charge of $14 in the first month."</p>
-                    <div class="user-meta">
-                        <div class="user-avatar">MH</div>
-                        <div class="user-info"><h5>Marcus H.</h5><label>Houston, TX</label></div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="star-rack"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"During the rolling blackouts last spring, our battery backup system took over instantly. Best asset investment ever."</p>
-                    <div class="user-meta">
-                        <div class="user-avatar">SR</div>
-                        <div class="user-info"><h5>Sarah R.</h5><label>Dallas, TX</label></div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="star-rack"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p>"Super clean installation, hidden conduits, and excellent project management handling all the messy HOA filings."</p>
-                    <div class="user-meta">
-                        <div class="user-avatar">DB</div>
-                        <div class="user-info"><h5>David B.</h5><label>Austin, TX</label></div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- VIEW 2: ELIGIBILITY ENGINE PANEL LINKED VIA WEBHOOK -->
+    <!-- VIEW 2: ESTIMATE FORM -->
     <main id="get-estimate" class="page-section">
         <div class="form-panel">
             <div style="text-align:center; margin-bottom:40px;">
                 <h2 style="font-size:2.2rem; font-weight:800; margin-bottom:10px;">Roof Assessment Engine</h2>
                 <p style="color:var(--text-muted);">Provide structural data to submit parameters directly down our verification queue.</p>
             </div>
-            
-            <div class="input-block">
-                <label>Full Legal Name</label>
-                <input type="text" id="form-name" placeholder="John Doe">
-            </div>
+            <div class="input-block"><label>Full Legal Name</label><input type="text" id="form-name" placeholder="John Doe"></div>
             <div class="input-block">
                 <label>Average Monthly Bill Allocation ($)</label>
                 <select id="form-bill">
@@ -835,14 +640,8 @@
                     <option value="$501+">$501+ / mo</option>
                 </select>
             </div>
-            <div class="input-block">
-                <label>Property Street Address</label>
-                <input type="text" id="form-address" placeholder="e.g., 701 Brazos St, Austin, TX 78701">
-            </div>
-            <div class="input-block">
-                <label>Primary Phone Contact</label>
-                <input type="tel" id="form-phone" placeholder="(512) 555-0144">
-            </div>
+            <div class="input-block"><label>Property Street Address</label><input type="text" id="form-address" placeholder="701 Brazos St, Austin, TX 78701"></div>
+            <div class="input-block"><label>Primary Phone Contact</label><input type="tel" id="form-phone" placeholder="(512) 555-0144"></div>
             <div class="input-block">
                 <label>Structural Roof Material Classification</label>
                 <select id="form-roof">
@@ -852,12 +651,11 @@
                     <option value="Flat TPO">Flat TPO / Tar and Gravel</option>
                 </select>
             </div>
-
             <button class="btn-solid" style="width:100%; padding:18px; margin-top:10px;" onclick="handleManualFormSubmit()">Submit Engineered File Request</button>
         </div>
     </main>
 
-    <!-- VIEW 3: WORKS SHOWCASE -->
+    <!-- VIEW 3: WORKS -->
     <main id="previous-works" class="page-section">
         <div class="section-header">
             <h2>Our Operational Portfolio</h2>
@@ -875,7 +673,7 @@
         </div>
     </main>
 
-    <!-- VIEW 4: CONTACT MAP CONTEXT -->
+    <!-- VIEW 4: CONTACT -->
     <main id="contact" class="page-section">
         <div class="form-panel" style="text-align: center;">
             <h2 style="margin-bottom:20px; font-weight:800;">Connect with Engineering</h2>
@@ -885,7 +683,7 @@
         </div>
     </main>
 
-    <!-- --- DOCK FOR CONVERSATIONAL COMPLIANT CHAT BOT ENGINE --- -->
+    <!-- --- CONVERSATIONAL CHAT SYSTEM WITH EMBEDDED INTENT MODULES --- -->
     <div id="chat-dock">
         <div class="chat-card" id="chatCard">
             <div class="chat-top-bar">
@@ -894,20 +692,20 @@
                         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2" stroke="currentColor" stroke-width="2.5"/></svg>
                     </div>
                     <div class="bot-meta-info">
-                        <h5>Solar Specialist</h5>
-                        <span><i class="fa-solid fa-circle" style="font-size:0.45rem"></i> Active Verification Engine</span>
+                        <h5>Texas Solar Support</h5>
+                        <span><i class="fa-solid fa-circle" style="font-size:0.45rem"></i> Local Knowledge Base</span>
                     </div>
                 </div>
                 <button class="chat-dismiss-btn" onclick="toggleChatCard()"><i class="fa-solid fa-xmark"></i></button>
             </div>
             
             <div class="scroll-space" id="chatFlowBox">
-                <!-- Injected via JavaScript Lifecycle loops -->
+                <!-- Dialogue nodes injected via Runtime Javascript below -->
             </div>
             
             <div class="chat-input-row">
-                <input type="text" id="chatInputField" placeholder="Reply or ask a question here..." onkeypress="catchReturnKey(event)">
-                <button class="send-arrow-btn" onclick="processUserReply()"><i class="fa-solid fa-paper-plane"></i></button>
+                <input type="text" id="chatInputField" placeholder="Ask anything about Texas solar rules..." onkeypress="catchReturnKey(event)">
+                <button class="send-arrow-btn" onclick="processUserTextReply()"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
 
@@ -917,11 +715,11 @@
         </div>
     </div>
 
-    <!-- --- PIPELINE AUTOMATION MATRIX LOGIC --- -->
+    <!-- --- BACKEND INTERFACE & FLOW LOGIC ENGINE --- -->
     <script>
         const LiveEndpoint = 'https://hook.us2.make.com/pvr9mymgxtzoyx156125oggs8w4r7w0t';
 
-        // Internal Router States
+        // Core View Router
         function navigateView(targetViewId) {
             document.querySelectorAll('.page-section').forEach(view => view.classList.remove('active-view'));
             document.querySelectorAll('nav a').forEach(navElement => navElement.classList.remove('active'));
@@ -929,13 +727,16 @@
             document.getElementById(targetViewId).classList.add('active-view');
             const correspondingLink = document.getElementById(`link-${targetViewId}`);
             if(correspondingLink) correspondingLink.classList.add('active');
-
             window.scrollTo(0, 0);
         }
 
         const chatCard = document.getElementById('chatCard');
         const chatFlowBox = document.getElementById('chatFlowBox');
         const triggerLabel = document.getElementById('triggerLabel');
+
+        // Conversational Engine Memory Architecture
+        let chatbotState = "KNOWLEDGE_BASE"; // KNOWLEDGE_BASE, GET_NAME, GET_BILL, GET_ADDRESS, GET_PHONE, GET_ROOF, COMPLETED
+        let collectedLeadData = { name: '', bill: '', address: '', phone: '', roof: '' };
 
         function toggleChatCard() {
             if(chatCard.style.display === 'flex') {
@@ -945,142 +746,180 @@
                 chatCard.style.display = 'flex';
                 triggerLabel.innerText = "Close Chat";
                 if(chatFlowBox.children.length === 0) {
-                    runChatbotGreeting();
+                    displayGreetingAndMCQ();
                 }
             }
         }
 
-        // Side Option Injection Module
-        function handleQuickQuestion(questionText) {
-            if(chatCard.style.display !== 'flex') {
-                toggleChatCard();
-            }
-            postUserBubble(questionText);
-            setTimeout(() => { processIntentAnsweringLogic(questionText); }, 600);
-        }
-
-        // Conversation Lifecycle Tracking Engine Variables
-        let currentExtractPhase = "QA_PHASE"; 
-        let collectedData = { name: '', bill: '', address: '', phone: '', roof: '' };
-
-        function postBotBubble(msgText) {
-            const botBubble = document.createElement('div');
-            botBubble.className = "bubble b-system";
-            botBubble.innerText = msgText;
-            chatFlowBox.appendChild(botBubble);
+        function postBotBubble(text) {
+            const b = document.createElement('div');
+            b.className = "bubble b-system";
+            b.innerText = text;
+            chatFlowBox.appendChild(b);
             chatFlowBox.scrollTop = chatFlowBox.scrollHeight;
         }
 
-        function postUserBubble(msgText) {
-            const userBubble = document.createElement('div');
-            userBubble.className = "bubble b-user";
-            userBubble.innerText = msgText;
-            chatFlowBox.appendChild(userBubble);
+        function postUserBubble(text) {
+            const b = document.createElement('div');
+            b.className = "bubble b-user";
+            b.innerText = text;
+            chatFlowBox.appendChild(b);
             chatFlowBox.scrollTop = chatFlowBox.scrollHeight;
         }
 
-        function catchReturnKey(event) {
-            if(event.key === 'Enter') processUserReply();
+        function catchReturnKey(e) {
+            if(e.key === 'Enter') processUserTextReply();
         }
 
-        function runChatbotGreeting() {
-            postBotBubble("Hello! Welcome to Texas Sun Power. I can clear up your solar architecture questions and help cross-reference your roof metrics with local tax incentives.");
-            postBotBubble("Do you have any specific questions about panel setups or installation timelines I can clear up first?");
-            currentExtractPhase = "QA_PHASE";
-        }
-
-        // Flexible Intermediary Answering Framework Module
-        function processIntentAnsweringLogic(userInputRaw) {
-            const normalized = userInputRaw.toLowerCase();
+        // 1. Initial Interactive Option Array Deployment
+        function displayGreetingAndMCQ() {
+            postBotBubble("Hello! I am your Texas residential solar assistant. Ask me anything about local solar policies, tax credits, or grid regulations.");
             
-            if(normalized.includes('bill') || normalized.includes('eliminate') || normalized.includes('save')) {
-                postBotBubble("By structuring a net metering layout, your solar array harvests grid credits to drop utility supply charges entirely. Most properties maintain a near-$0 operational signature.");
-            } else if(normalized.includes('long') || normalized.includes('time') || normalized.includes('install')) {
-                postBotBubble("The physical panel mount deployment phase is fast, requiring exactly one working day. Local city construction permits and utility net-metering approvals take an additional 2-3 weeks.");
-            } else if(normalized.includes('cost') || normalized.includes('price') || normalized.includes('money')) {
-                postBotBubble("Most modern Texas system programs utilize zero-down specialized clean infrastructure financing options. Your new fixed monthly payment replaces your old variable electric bill immediately.");
-            } else if(normalized.includes('qualify') || normalized.includes('eligible')) {
-                postBotBubble("Qualification relies entirely on clear sun exposure access and unshaded roof layouts facing South or West.");
-            } else {
-                postBotBubble("Got it. Let's trace your precise property variables to find out exactly what incentives apply to your setup.");
-            }
+            const mcqBox = document.createElement('div');
+            mcqBox.className = "mcq-container";
+            
+            const options = [
+                { text: "💰 Tell me about the Federal Tax Credit", id: "itc" },
+                { text: "⚡ How does net metering work in Texas?", id: "grid" },
+                { text: "🏢 Can my HOA stop me from installing solar?", id: "hoa" },
+                { text: "🏡 Is my roof structure right for panels?", id: "roof" },
+                { text: "📋 Check My Roof Eligibility (Build Design Report)", id: "lead_pivot" },
+                { text: "💬 Ask Something Else", id: "custom" }
+            ];
 
-            // Continuous Pivot Sequence loop back to targeted field data capture tracking parameters
-            setTimeout(() => {
-                postBotBubble("Let's build out your custom solar engineering report profile file. To start, what is your full legal name?");
-                currentExtractPhase = "GET_NAME";
-            }, 1000);
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = "mcq-button";
+                btn.innerText = opt.text;
+                btn.onclick = () => handleMCQSelection(opt.id, opt.text);
+                mcqBox.appendChild(btn);
+            });
+
+            chatFlowBox.appendChild(mcqBox);
+            chatFlowBox.scrollTop = chatFlowBox.scrollHeight;
         }
 
-        // Intent Parser Switch Processing Engine
-        function processUserReply() {
-            const textInputField = document.getElementById('chatInputField');
-            const userText = textInputField.value.trim();
+        // 2. Interactive Menu Navigation Matrix
+        function handleMCQSelection(optionId, optionText) {
+            postUserBubble(optionText);
+
+            setTimeout(() => {
+                if (optionId === "lead_pivot") {
+                    postBotBubble("Excellent strategy. Let's trace your precise property variables to map out a custom engineered system report.");
+                    postBotBubble("To get started down our design verification queue, what is your full legal name?");
+                    chatbotState = "GET_NAME";
+                } else if (optionId === "custom") {
+                    postBotBubble("Go right ahead. Type your question directly in the field line below and I will check it against our Texas knowledge base parameters.");
+                } else {
+                    // Match directly into embedded Texas knowledge arrays
+                    executeLocalKnowledgeLookup(optionId);
+                    
+                    // Offer seamless looping back to choices or manual collection entry
+                    setTimeout(() => {
+                        postBotBubble("What would you like to check next?");
+                        displayGreetingAndMCQ();
+                    }, 1500);
+                }
+            }, 600);
+        }
+
+        // 3. Embedded Texas Knowledge Base Evaluation Engine
+        function executeLocalKnowledgeLookup(key) {
+            switch(key) {
+                case "itc":
+                    postBotBubble("Under the Federal Solar Tax Credit (ITC), Texas homeowners can deduct a straight 30% of the entire solar configuration cost directly from federal tax balances. This applies to purchased or financed system frameworks, acting as a direct asset write-off rather than an automated discount code.");
+                    break;
+                case "grid":
+                    postBotBubble("Texas runs on a deregulated energy infrastructure framework managed by ERCOT. While there is no uniform statewide mandated net metering law, major infrastructure handlers (ONCOR, CenterPoint, AEP, TNMP) coordinate with Retail Electric Providers like Chariot, Amigo, and Green Mountain to supply competitive solar buyback credits for production overflow.");
+                    break;
+                case "hoa":
+                    postBotBubble("Under Texas Property Code Section 202.010, local Homeowner Associations are legally prohibited from banning or denying residential solar panel installations. They can enforce minor layout adjustments for asset aesthetics or public safety line configurations, but cannot block execution.");
+                    break;
+                case "roof":
+                    postBotBubble("Optimal structural configurations involve unshaded roof surface planes directed toward South or West lines. Advanced mounting frameworks lock cleanly onto composite shingle, standing seam metal, or concrete tile bases. If your roof structure exceeds 15-20 years in age, we strongly recommend a modern replacement cycle before positioning 25-to-30-year operational lifecycle panels.");
+                    break;
+            }
+        }
+
+        // 4. Free-Text Intent Parser Engine
+        function processUserTextReply() {
+            const field = document.getElementById('chatInputField');
+            const userText = field.value.trim();
             if(!userText) return;
 
             postUserBubble(userText);
-            textInputField.value = "";
+            field.value = "";
 
             setTimeout(() => {
-                if(currentExtractPhase === "QA_PHASE") {
-                    processIntentAnsweringLogic(userText);
+                // If checking custom knowledge before initiating application
+                if (chatbotState === "KNOWLEDGE_BASE") {
+                    const low = userText.toLowerCase();
+                    if (low.includes("tax") || low.includes("credit") || low.includes("itc") || low.includes("30%")) {
+                        executeLocalKnowledgeLookup("itc");
+                    } else if (low.includes("metering") || low.includes("buyback") || low.includes("grid") || low.includes("ercot") || low.includes("oncor")) {
+                        executeLocalKnowledgeLookup("grid");
+                    } else if (low.includes("hoa") || low.includes("association") || low.includes("prohibit") || low.includes("ban")) {
+                        executeLocalKnowledgeLookup("hoa");
+                    } else if (low.includes("roof") || low.includes("shading") || low.includes("shingle") || low.includes("metal")) {
+                        executeLocalKnowledgeLookup("roof");
+                    } else if (low.includes("rebate") || low.includes("utility") || low.includes("cps") || low.includes("austin")) {
+                        postBotBubble("Local Texas utility incentives include CPS Energy's per-kW AC scaling installation rebates, Austin Energy's flat-rate structural rebate combined with their Value of Solar (VoS) tariff system, and custom ONCOR solar storage incentives managed via approved field partners.");
+                    } else if (low.includes("property") || low.includes("tax")) {
+                        postBotBubble("Per Texas Tax Code Section 11.27, residential solar energy systems are 100% exempt from property valuation tax increases. Your market equity scales, but your tax calculations remain perfectly insulated from corresponding spikes.");
+                    } else {
+                        postBotBubble("Got it. Our engineers process specific residential parameters across all Texas municipal grids daily.");
+                    }
+
+                    setTimeout(() => {
+                        postBotBubble("Would you like to analyze another policy variable, or begin your official roof qualification profile framework?");
+                        displayGreetingAndMCQ();
+                    }, 2000);
                     return;
                 }
 
-                switch(currentExtractPhase) {
+                // 5. Linear Structural Pipeline Field Extraction State Machine
+                switch(chatbotState) {
                     case "GET_NAME":
-                        collectedData.name = userText;
-                        postBotBubble(`Got it, thank you ${collectedData.name}. Let's pinpoint your historical energy footprint usage metrics.`);
-                        postBotBubble("What is your current typical average monthly electric bill cost? (e.g. $150, $300, or $500+)");
-                        currentExtractPhase = "GET_BILL";
+                        collectedLeadData.name = userText;
+                        postBotBubble(`Understood, tracking profile created for ${collectedLeadData.name}.`);
+                        postBotBubble("What is your current average monthly electricity bill expenditure allocation? (e.g., $150, $350, or $500+)");
+                        chatbotState = "GET_BILL";
                         break;
-                        
                     case "GET_BILL":
-                        collectedData.bill = userText;
-                        postBotBubble("Understood. That usage footprint baseline gives us a great layout model to target for complete offset structure mapping.");
-                        postBotBubble("What is your property's full street address? I need this to run our satellite layout alignment models.");
-                        currentExtractPhase = "GET_ADDRESS";
+                        collectedLeadData.bill = userText;
+                        postBotBubble("Data point logged. This gives us our consumption baseline metric.");
+                        postBotBubble("What is your property's full street address? We need this to initiate structural satellite mapping protocols.");
+                        chatbotState = "GET_ADDRESS";
                         break;
-                        
                     case "GET_ADDRESS":
-                        collectedData.address = userText;
-                        const targetZone = userText.toUpperCase();
-                        if(targetZone.includes('TX') || targetZone.includes('TEXAS') || targetZone.includes('AUSTIN') || targetZone.includes('DALLAS') || targetZone.includes('HOUSTON') || targetZone.includes('SAN') || /\b\d{5}\b/.test(targetZone)) {
-                            postBotBubble("Perfect! That territory verification check tracks completely inside our primary operational service zone layout map.");
-                        } else {
-                            postBotBubble("Received. Our team evaluates custom structures on the edge of the state grid, so I will submit this location profile to the dispatch array for manual inspection.");
-                        }
-                        postBotBubble("What is your primary phone contact number so an engineer can send you your finished design layout proposal metrics file?");
-                        currentExtractPhase = "GET_PHONE";
+                        collectedLeadData.address = userText;
+                        postBotBubble("Location pinned inside state spatial maps.");
+                        postBotBubble("What is your primary phone contact number so an engineer can deliver the final solar architecture design file?");
+                        chatbotState = "GET_PHONE";
                         break;
-                        
                     case "GET_PHONE":
-                        collectedData.phone = userText;
-                        postBotBubble("Perfect. Final baseline architectural calculation variable:");
-                        postBotBubble("What type of roofing material is currently installed on your home? (e.g. Shingle, Metal, Tile, or TPO Flat?)");
-                        currentExtractPhase = "GET_ROOF";
+                        collectedLeadData.phone = userText;
+                        postBotBubble("Understood. Last structural data category:");
+                        postBotBubble("What material classification is your primary roof baseline? (e.g., Composite Shingle, Metal, Tile, or Flat TPO?)");
+                        chatbotState = "GET_ROOF";
                         break;
-                        
                     case "GET_ROOF":
-                        collectedData.roof = userText;
-                        postBotBubble("Awesome. All structural parameter categories have been logged and verified.");
-                        
-                        // Updated Text Dialogue: Stripped platform metadata keywords completely away as requested
+                        collectedLeadData.roof = userText;
+                        postBotBubble("Data collection set complete. Compiling operational fields...");
                         postBotBubble("Processing structural fields and routing your transmission profile directly to our engineering queue...");
                         
-                        dispatchDataToWebhook(collectedData, "ai_chatbot_flow");
-                        currentExtractPhase = "COMPLETE_FLOW";
+                        dispatchDataToWebhook(collectedLeadData, "ai_chatbot_flow");
+                        chatbotState = "COMPLETED";
                         break;
-                        
                     default:
-                        postBotBubble("Your verification parameters have been pushed inside our engineering workflow pipeline tracking matrix. An asset manager will coordinate directly with you!");
+                        postBotBubble("Your verification parameters are safely inside our engineering workflow pipeline tracking matrix. An asset coordinator will connect with you directly.");
                         break;
                 }
             }, 900);
         }
 
         function dispatchDataToWebhook(dataObj, originString) {
-            const structuredPayload = {
+            const payload = {
                 origin_event: originString,
                 name: dataObj.name,
                 bill: dataObj.bill,
@@ -1093,22 +932,22 @@
             fetch(LiveEndpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(structuredPayload)
+                body: JSON.stringify(payload)
             })
-            .then(response => {
-                if(response.ok) {
+            .then(res => {
+                if(res.ok) {
                     if(originString === "ai_chatbot_flow") {
-                        postBotBubble("Data dispatched! Your structural assessment parameters have been fully logged inside our engineering queue system layout successfully.");
+                        postBotBubble("Data pipeline transmission successful! Your assessment file has been fully integrated into the engineering database.");
                     } else {
-                        alert("Eligibility application successfully sent to our engineering data teams.");
+                        alert("Application parameters successfully sent down the design pipeline queue.");
                     }
                 }
             })
-            .catch(error => console.error("Pipeline runtime exception caught:", error));
+            .catch(err => console.error("Pipeline operational fault logged:", err));
         }
 
         function handleManualFormSubmit() {
-            const manualData = {
+            const formObj = {
                 name: document.getElementById('form-name').value.trim(),
                 bill: document.getElementById('form-bill').value,
                 address: document.getElementById('form-address').value.trim(),
@@ -1116,14 +955,13 @@
                 roof: document.getElementById('form-roof').value
             };
 
-            if(!manualData.name || !manualData.address || !manualData.phone) {
-                alert("Please fill out all engineering data parameters before submitting.");
+            if(!formObj.name || !formObj.address || !formObj.phone) {
+                alert("Please complete all parameters before transmitting.");
                 return;
             }
 
-            dispatchDataToWebhook(manualData, "manual_landing_form");
+            dispatchDataToWebhook(formObj, "manual_landing_form");
         }
     </script>
-
 </body>
 </html>
