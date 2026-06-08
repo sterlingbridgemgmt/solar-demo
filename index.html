@@ -1,634 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-behavior-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texas Sun Power | Premium Infrastructure</title>
-    
-    <!-- Premium Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --bg-deep: #060913;
-            --bg-surface: rgba(20, 27, 47, 0.65);
-            --border-glass: rgba(255, 255, 255, 0.07);
-            --neon-orange: #ff5a00;
-            --neon-glow: rgba(255, 90, 0, 0.35);
-            --text-main: #f8fafc;
-            --text-sub: #94a3b8;
-            --font-display: 'Syne', sans-serif;
-            --font-body: 'Space Grotesk', sans-serif;
-            --radius-main: 16px;
+    <title>Sterling Bridge Systems | Premium Infrastructure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Injecting the exact custom color tokens found in your stylesheet code
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0a1628',
+                            950: '#060d1a',
+                        },
+                        orange: {
+                            500: '#ff5c00',
+                            600: '#e65200',
+                            700: '#cc4900',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: var(--font-body);
-        }
-
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text-main);
-            overflow-x: hidden;
-            line-height: 1.5;
-            background-image: 
-                radial-gradient(circle at 80% 20%, rgba(255, 90, 0, 0.07) 0%, transparent 50%),
-                radial-gradient(circle at 10% 80%, rgba(30, 41, 59, 0.5) 0%, transparent 50%);
-        }
-
-        /* --- NAVIGATION --- */
-        header {
-            background: rgba(6, 9, 19, 0.8);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-glass);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .nav-inner {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand {
-            font-family: var(--font-display);
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-        }
-
-        .brand span { color: var(--neon-orange); }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--text-sub);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        nav a:hover, nav a.active { color: var(--text-main); }
-
-        .cta-nav {
-            background: var(--neon-orange);
-            color: white !important;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 700;
-            box-shadow: 0 4px 15px var(--neon-glow);
-        }
-
-        /* --- APP VIEW CONTAINER --- */
-        .view-panel {
-            display: none;
-            padding: 120px 20px 60px 20px;
-            max-width: 1300px;
-            margin: 0 auto;
-            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .view-panel.active { display: block; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- HERO VIEW --- */
-        .hero-block {
-            padding: 80px 40px;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-glass);
-            backdrop-filter: blur(12px);
-            border-radius: 24px;
-            margin-bottom: 60px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .badge {
-            background: rgba(255, 90, 0, 0.1);
-            border: 1px solid rgba(255, 90, 0, 0.2);
-            color: var(--neon-orange);
-            padding: 6px 14px;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .hero-title {
-            font-family: var(--font-display);
-            font-size: 4rem;
-            line-height: 1.1;
-            font-weight: 800;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
-        }
-
-        .hero-title span { color: var(--neon-orange); }
-
-        .hero-desc {
-            color: var(--text-sub);
-            font-size: 1.15rem;
-            max-width: 680px;
-            margin-bottom: 40px;
-        }
-
-        .btn-group { display: flex; gap: 16px; }
-
-        .btn {
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background: var(--neon-orange);
-            color: white;
-            box-shadow: 0 4px 20px var(--neon-glow);
-        }
-
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px var(--neon-glow); }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--border-glass);
-        }
-
-        .btn-secondary:hover { background: rgba(255,255,255,0.05); }
-
-        /* --- METRICS GRID --- */
-        .metrics-bar {
-            display: flex;
-            gap: 40px;
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid var(--border-glass);
-        }
-
-        .metric-item h4 { font-family: var(--font-display); font-size: 2rem; color: white; }
-        .metric-item p { color: var(--text-sub); font-size: 0.85rem; }
-
-        /* --- PREVIOUS WORK & FORMS --- */
-        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-        
-        .card-work {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-glass);
-            border-radius: var(--radius-main);
-            overflow: hidden;
-        }
-
-        .card-img { height: 260px; background-size: cover; background-position: center; }
-
-        .card-body { padding: 24px; }
-
-        .form-holder {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-glass);
-            padding: 40px;
-            border-radius: var(--radius-main);
-        }
-
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 6px; font-size: 0.9rem; color: var(--text-sub); }
-        .form-group input, .form-group select {
-            width: 100%; padding: 12px; background: #0b1120; border: 1px solid var(--border-glass);
-            border-radius: 6px; color: white; font-size: 1rem;
-        }
-
-        /* --- RE-ENGINEERED CONVERSATIONAL FLOATING CONTAINER --- */
-        #chat-wrapper {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 10000;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        .chat-trigger {
-            background: var(--neon-orange);
-            padding: 12px 24px;
-            border-radius: 100px;
-            color: white;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            box-shadow: 0 8px 25px var(--neon-glow);
-            transition: all 0.3s ease;
-        }
-
-        .chat-window {
-            width: 380px;
-            height: 520px;
-            background: #0d1324;
-            border: 1px solid var(--border-glass);
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            margin-bottom: 12px;
-        }
-
-        .chat-header {
-            background: #141c33;
-            padding: 16px 20px;
-            border-bottom: 1px solid var(--border-glass);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .chat-body-scroll {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .msg { max-width: 85%; padding: 12px 16px; border-radius: 12px; font-size: 0.9rem; }
-        .msg-bot { background: #1e293b; color: var(--text-main); align-self: flex-start; }
-        .msg-user { background: var(--neon-orange); color: white; align-self: flex-end; }
-
-        .mcq-stack { display: flex; flex-direction: column; gap: 6px; width: 85%; align-self: flex-start; }
-        .mcq-option {
-            background: #161f38; border: 1px solid var(--border-glass); color: var(--text-main);
-            padding: 10px 14px; border-radius: 8px; text-align: left; font-size: 0.85rem; cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .mcq-option:hover { border-color: var(--neon-orange); background: #1e2a4a; }
-
-        .chat-footer { padding: 12px 16px; background: #0d1324; border-top: 1px solid var(--border-glass); display: flex; gap: 10px; }
-        .chat-footer input { flex: 1; background: #141c33; border: 1px solid var(--border-glass); padding: 10px 14px; border-radius: 8px; color: white; }
-        .chat-footer button { background: var(--neon-orange); border: none; color: white; padding: 0 16px; border-radius: 8px; cursor: pointer; }
-    </style>
+    </script>
 </head>
-<body>
+<body class="bg-navy-900 text-white antialiased font-sans margin-0">
 
-    <!-- STICKY NAVBAR -->
-    <header>
-        <div class="nav-inner">
-            <div onclick="routeTo('home')" class="brand">Texas Sun <span>Power</span></div>
-            <nav>
-                <ul>
-                    <li><a onclick="routeTo('home')" id="nav-home" class="active">Home</a></li>
-                    <li><a onclick="routeTo('portfolio')" id="nav-portfolio">Portfolio</a></li>
-                    <li><a onclick="routeTo('contact')" id="nav-contact">Contact</a></li>
-                    <li><a onclick="routeTo('quote')" id="nav-quote" class="cta-nav">Check Eligibility</a></li>
-                </ul>
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-white/5 bg-navy-900/60">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="font-heading font-extrabold text-xl tracking-tight">
+                STERLING <span class="text-orange-500">BRIDGE</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-white/70">
+                <a href="#solutions" class="hover:text-white transition-colors">Solutions</a>
+                <a href="#infrastructure" class="hover:text-white transition-colors">Infrastructure</a>
+                <a href="#performance" class="hover:text-white transition-colors">Performance</a>
             </nav>
+            <div>
+                <a href="#contact" class="inline-flex cursor-pointer white-space-nowrap bg-orange-500 text-white rounded-md justify-center items-center px-4 py-2 text-sm font-semibold transition-all duration-300 hover:bg-orange-600 active:bg-orange-700">
+                    Get Started
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- VIEW 1: HERO VIEW -->
-    <main id="view-home" class="view-panel active">
-        <div class="hero-block">
-            <span class="badge">Serving Texas Homeowners Since 2014</span>
-            <h1 class="hero-title">Wipe Out Your Texas<br>Electric Bill <span>with Premium Solar</span></h1>
-            <p class="hero-desc">Custom-engineered micro-grid networks designed to systematically drop utility operational costs down to zero. Complete grid independence, completely insulated from market spikes.</p>
-            <div class="btn-group">
-                <button class="btn btn-primary" onclick="routeTo('quote')">Check Roof Eligibility &rarr;</button>
-                <button class="btn btn-secondary" onclick="routeTo('portfolio')">See Portfolio</button>
+    <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-gradient-to-b from-navy-950 to-navy-900">
+        <div class="max-w-4xl mx-auto px-4 text-center z-10">
+            <div class="inline-block uppercase tracking-wider text-xs font-bold text-orange-400 mb-4 bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/10">
+                Next-Gen Automation Ecosystems
             </div>
-            <div class="metrics-bar">
-                <div class="metric-item"><h4>1,847+</h4><p>Texas Frameworks Deployed</p></div>
-                <div class="metric-item"><h4>21.4 MW</h4><p>Infrastructure Output</p></div>
-                <div class="metric-item"><h4>$2,840/yr</h4><p>Average Asset Savings</p></div>
-            </div>
-        </div>
-    </main>
-
-    <!-- VIEW 2: ESTIMATE ASSESSOR -->
-    <main id="view-quote" class="view-panel">
-        <div class="form-holder">
-            <h2 style="font-family:var(--font-display); margin-bottom:20px;">Roof Assessment Engine</h2>
-            <div class="form-group"><label>Full Legal Name</label><input type="text" id="m-name" placeholder="John Doe"></div>
-            <div class="form-group">
-                <label>Average Monthly Bill ($)</label>
-                <select id="m-bill">
-                    <option value="$100-$200">$100 - $200 / mo</option>
-                    <option value="$201-$350">$201 - $350 / mo</option>
-                    <option value="$351-$500">$351 - $500 / mo</option>
-                    <option value="$501+">$501+ / mo</option>
-                </select>
-            </div>
-            <div class="form-group"><label>Property Street Address</label><input type="text" id="m-address" placeholder="123 Main St, Austin, TX"></div>
-            <div class="form-group"><label>Primary Phone Number</label><input type="tel" id="m-phone" placeholder="(512) 555-0199"></div>
-            <div class="form-group">
-                <label>Primary Roof Structural Compound</label>
-                <select id="m-roof">
-                    <option value="Composite Shingle">Composite Asphalt Shingle</option>
-                    <option value="Standing Seam Metal">Standing Seam Metal</option>
-                    <option value="Concrete Tile">Concrete / Clay Tile</option>
-                </select>
-            </div>
-            <button class="btn btn-primary" style="width:100%; margin-top:10px;" onclick="submitManualForm()">Submit For Engineering Review</button>
-        </div>
-    </main>
-
-    <!-- VIEW 3: PORTFOLIO -->
-    <main id="view-portfolio" class="view-panel">
-        <h2 style="font-family:var(--font-display); margin-bottom:30px; text-align:center;">Deployed High-Yield Arrays</h2>
-        <div class="grid-2">
-            <div class="card-work">
-                <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=600&q=80')"></div>
-                <div class="card-body"><h3>Travis County Array Block</h3><p>9.8 kW tracking layout maximizing horizontal midday exposure.</p></div>
-            </div>
-            <div class="card-work">
-                <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=600&q=80')"></div>
-                <div class="card-body"><h3>Bexar Residential Grid</h3><p>14.2 kW rooftop deployment with multi-layer battery integration.</p></div>
+            <h1 class="font-heading font-black text-4xl md:text-6xl tracking-tighter leading-[1.08] mb-6">
+                We Build High-Performance <br class="hidden md:block">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-orange-500">Digital Infrastructure</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-base md:text-lg text-gray-400 leading-relaxed mb-8">
+                Eliminate operational friction. We engineer enterprise-grade website frameworks and custom backend automation structures optimized to scale acquisition seamlessly.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto inline-flex cursor-pointer white-space-nowrap bg-orange-500 text-white rounded-md justify-center items-center px-8 py-4 text-base font-semibold transition-all duration-300 hover:bg-orange-600 active:bg-orange-700 shadow-lg hover:shadow-orange-500/5">
+                    Deploy System
+                </a>
+                <a href="#solutions" class="w-full sm:w-auto inline-flex cursor-pointer white-space-nowrap text-white border-2 border-white/20 rounded-md justify-center items-center px-6 py-3.5 text-sm font-medium transition-all duration-300 hover:bg-white/5 hover:border-white/40">
+                    View Blueprint
+                </a>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- VIEW 4: CONTACT -->
-    <main id="view-contact" class="view-panel">
-        <div class="form-holder" style="text-align:center;">
-            <h2 style="font-family:var(--font-display); margin-bottom:15px;">Operations Control</h2>
-            <p style="color:var(--text-sub); margin-bottom:20px;">Direct communication channel with project managers.</p>
-            <h3 style="color:var(--neon-orange); font-size:1.8rem; margin-bottom:5px;">1-800-TX-SOLAR</h3>
-            <p style="color:var(--text-sub)">desk@texassunpower.com</p>
-        </div>
-    </main>
-
-    <!-- --- PREMIUM INTERACTIVE CHAT ENGINE --- -->
-    <div id="chat-wrapper">
-        <div class="chat-window" id="winChat">
-            <div class="chat-header">
-                <div>
-                    <h4 style="font-size:0.95rem; font-weight:700;">Solar Specialist</h4>
-                    <span style="font-size:0.75rem; color:#10b981;"><i class="fa-solid fa-circle" style="font-size:0.5rem"></i> Texas Rules Engine Active</span>
+    <section id="solutions" class="py-20 bg-navy-950 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-heading font-bold text-2xl md:text-4xl tracking-tight mb-4">
+                    Architectural Integrity. Zero Friction.
+                </h2>
+                <p class="max-w-xl mx-auto text-sm text-gray-400">
+                    Engineered component layouts built on top-tier utility frameworks to maximize user engagement values.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-lg bg-navy-900 border border-white/5 transition-transform duration-300 hover:-translate-y-1 hover:border-orange-500/30 group">
+                    <div class="w-10 h-10 rounded-md bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-500 mb-4 transition-colors duration-300 group-hover:bg-orange-500/20">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18"></path></svg>
+                    </div>
+                    <h3 class="font-heading font-semibold text-lg mb-2">Web Architecture</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Sleek, rapid-response web systems meticulously stylized using robust dark layouts optimized for conversion metrics.
+                    </p>
                 </div>
-                <i class="fa-solid fa-xmark" style="cursor:pointer; color:var(--text-sub);" onclick="toggleChatWindow()"></i>
-            </div>
-            <div class="chat-body-scroll" id="boxFlow"></div>
-            <div class="chat-footer">
-                <input type="text" id="inputChatField" placeholder="Ask about Texas credits, HOAs, grid laws..." on those onkeypress="checkKey(event)">
-                <button onclick="sendTextReply()"><i class="fa-solid fa-paper-plane"></i></button>
+
+                <div class="p-6 rounded-lg bg-navy-900 border border-white/5 transition-transform duration-300 hover:-translate-y-1 hover:border-orange-500/30 group">
+                    <div class="w-10 h-10 rounded-md bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-500 mb-4 transition-colors duration-300 group-hover:bg-orange-500/20">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-heading font-semibold text-lg mb-2">Automation Matrix</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Custom execution layers built directly into backend logic arrays to handle lead flow and structural tracking automatically.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-lg bg-navy-900 border border-white/5 transition-transform duration-300 hover:-translate-y-1 hover:border-orange-500/30 group">
+                    <div class="w-10 h-10 rounded-md bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-500 mb-4 transition-colors duration-300 group-hover:bg-orange-500/20">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="font-heading font-semibold text-lg mb-2">Premium Security</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Data sandboxing and edge protection models implemented continuously across global validation networks.
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="chat-trigger" onclick="toggleChatWindow()">
-            <i class="fa-solid fa-bolt"></i> <span id="lblTrigger">Ask Texas Solar Rules</span>
-        </div>
-    </div>
+    </section>
 
-    <script>
-        const WebhookEndpoint = 'https://hook.us2.make.com/pvr9mymgxtzoyx156125oggs8w4r7w0t';
-
-        // Base Tab Router
-        function routeTo(viewId) {
-            document.querySelectorAll('.view-panel').forEach(v => v.classList.remove('active'));
-            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-            
-            document.getElementById(`view-${viewId}`).classList.add('active');
-            const targetNav = document.getElementById(`nav-${viewId}`);
-            if(targetNav) targetNav.classList.add('active');
-            window.scrollTo(0,0);
-        }
-
-        const winChat = document.getElementById('winChat');
-        const boxFlow = document.getElementById('boxFlow');
-        const lblTrigger = document.getElementById('lblTrigger');
-
-        // State Machine Core Variables
-        let flowState = "FAQ"; // FAQ, NAME_CAPTURE, BILL_CAPTURE, ADDR_CAPTURE, PHONE_CAPTURE, ROOF_CAPTURE, DONE
-        let payloadData = { name: '', bill: '', address: '', phone: '', roof: '' };
-
-        function toggleChatWindow() {
-            if(winChat.style.display === 'flex') {
-                winChat.style.display = 'none';
-                lblTrigger.innerText = "Ask Texas Solar Rules";
-            } else {
-                winChat.style.display = 'flex';
-                lblTrigger.innerText = "Close Engine Window";
-                if(boxFlow.children.length === 0) pushGreetingAndOptions();
-            }
-        }
-
-        function createBotMsg(txt) {
-            const m = document.createElement('div'); m.className = "msg msg-bot"; m.innerText = txt;
-            boxFlow.appendChild(m); boxFlow.scrollTop = boxFlow.scrollHeight;
-        }
-
-        function createUserMsg(txt) {
-            const m = document.createElement('div'); m.className = "msg msg-user"; m.innerText = txt;
-            boxFlow.appendChild(m); boxFlow.scrollTop = boxFlow.scrollHeight;
-        }
-
-        function checkKey(e) { if(e.key === 'Enter') sendTextReply(); }
-
-        // Core Strategy: Interactive MCQ Stack Presentation inside Chat Bubble Flow
-        function pushGreetingAndOptions() {
-            createBotMsg("Welcome to the Texas Residential Knowledge Base Engine. Select a specific local variable to review, or select 'Check Eligibility' to begin your profile config.");
-            
-            const stack = document.createElement('div');
-            stack.className = "mcq-stack";
-            
-            const paths = [
-                { text: "💰 30% Federal Investment Tax Credit (ITC)", id: "itc" },
-                { text: "⚡ ERCOT Grid Deregulation & Net Metering", id: "grid" },
-                { text: "🏢 Property Tax Exemptions (Section 11.27)", id: "prop" },
-                { text: "📜 HOA Legal Protections (Section 202.010)", id: "hoa" },
-                { text: "📋 Check My Roof Eligibility Now", id: "pivot" },
-                { text: "💬 Ask a Custom Question", id: "custom" }
-            ];
-
-            paths.forEach(p => {
-                const b = document.createElement('button');
-                b.className = "mcq-option"; b.innerText = p.text;
-                b.onclick = () => handleChoice(p.id, p.text);
-                stack.appendChild(b);
-            });
-
-            boxFlow.appendChild(stack);
-            boxFlow.scrollTop = boxFlow.scrollHeight;
-        }
-
-        function handleChoice(id, label) {
-            createUserMsg(label);
-            
-            setTimeout(() => {
-                if(id === "pivot") {
-                    createBotMsg("Understood. Transitioning to qualification architecture...");
-                    createBotMsg("To start checking local grid capacity and municipal requirements, what is your full legal name?");
-                    flowState = "NAME_CAPTURE";
-                } else if(id === "custom") {
-                    createBotMsg("Awaiting structural parameter. Type your question directly in the field bar below.");
-                } else {
-                    queryKnowledgeBase(id);
-                    setTimeout(() => {
-                        createBotMsg("What other Texas policy variables would you like to verify?");
-                        pushGreetingAndOptions();
-                    }, 1200);
-                }
-            }, 500);
-        }
-
-        function queryKnowledgeBase(key) {
-            switch(key) {
-                case "itc":
-                    createBotMsg("The Federal ITC lets Texas residential owners write off a full 30% of their total solar setup configuration costs right off their federal tax liability balance. This framework applies explicitly to systems purchased outright or backed by a solar configuration loan program.");
-                    break;
-                case "grid":
-                    createBotMsg("Texas runs a deregulated open energy environment managed by ERCOT. There is no flat statewide net metering law, but major regional distributors (ONCOR, CenterPoint, AEP, TNMP) support custom solar buyback agreements through providers like Green Mountain, Chariot, and Amigo Energy.");
-                    break;
-                case "prop":
-                    createBotMsg("Under Texas Tax Code Section 11.27, home solar arrays are 100% exempt from residential property valuation calculations. Your absolute asset equity expands, but local municipalities are legally blocked from using that value to adjust your property tax obligations upward.");
-                    break;
-                case "hoa":
-                    createBotMsg("Under Texas Property Code Section 202.010, Homeowner Associations cannot legally ban or outright prohibit solar arrays on your private asset. They retain the capability to review safety lines or optimize roof structural alignment aesthetics, but cannot stop execution paths.");
-                    break;
-            }
-        }
-
-        // Sequential State Machine Handling Text Submissions
-        function sendTextReply() {
-            const f = document.getElementById('inputChatField');
-            const val = f.value.trim();
-            if(!val) return;
-
-            createUserMsg(val);
-            f.value = "";
-
-            setTimeout(() => {
-                if(flowState === "FAQ") {
-                    const clean = val.toLowerCase();
-                    if(clean.includes("tax") || clean.includes("itc") || clean.includes("30%")) queryKnowledgeBase("itc");
-                    else if(clean.includes("grid") || clean.includes("metering") || clean.includes("oncor") || clean.includes("buyback")) queryKnowledgeBase("grid");
-                    else if(clean.includes("hoa") || clean.includes("association")) queryKnowledgeBase("hoa");
-                    else if(clean.includes("property")) queryKnowledgeBase("prop");
-                    else if(clean.includes("rebate") || clean.includes("cps") || clean.includes("austin")) {
-                        createBotMsg("Local Texas utility incentives feature CPS Energy's per-kW scaling rebates, Austin Energy's flat qualification metrics combined with Value of Solar (VoS) credit systems, and ONCOR battery storage incentive frameworks.");
-                    } else {
-                        createBotMsg("Acknowledged. Our engineering platform processes this array data against strict ERCOT zoning parameters.");
-                    }
-
-                    setTimeout(() => {
-                        createBotMsg("Would you like to loop back to check more policies, or execute a design qualification review?");
-                        pushGreetingAndOptions();
-                    }, 1500);
-                    return;
-                }
-
-                switch(flowState) {
-                    case "NAME_CAPTURE":
-                        payloadData.name = val;
-                        createBotMsg(`Profile node logged for: ${payloadData.name}.`);
-                        createBotMsg("What is your current average monthly electricity asset spending target? (e.g., $150, $300, $500+)");
-                        flowState = "BILL_CAPTURE";
-                        break;
-                    case "BILL_CAPTURE":
-                        payloadData.bill = val;
-                        createBotMsg("Consumption volume metrics mapped.");
-                        createBotMsg("What is the full physical street address of the property? (Required for satellite layout profiling).");
-                        flowState = "ADDR_CAPTURE";
-                        break;
-                    case "ADDR_CAPTURE":
-                        payloadData.address = val;
-                        createBotMsg("Spatial data point set.");
-                        createBotMsg("What is your direct phone contact line so an asset engineer can submit the configuration file summary?");
-                        flowState = "PHONE_CAPTURE";
-                        break;
-                    case "PHONE_CAPTURE":
-                        payloadData.phone = val;
-                        createBotMsg("Communication path confirmed.");
-                        createBotMsg("What compound is your roof built with? (e.g., Composite Shingle, Metal, Concrete Tile)");
-                        flowState = "ROOF_CAPTURE";
-                        break;
-                    case "ROOF_CAPTURE":
-                        payloadData.roof = val;
-                        createBotMsg("Processing engineering compilation string...");
-                        transmitData(payloadData, "chatbot_pipeline");
-                        flowState = "DONE";
-                        break;
-                    default:
-                        createBotMsg("Your application parameters are safely nested inside our live engineering dispatch lane queue.");
-                        break;
-                }
-            }, 700);
-        }
-
-        function transmitData(obj, originStr) {
-            const data = {
-                origin_event: originStr,
-                name: obj.name,
-                bill: obj.bill,
-                address: obj.address,
-                phone: obj.phone,
-                roof: obj.roof,
-                timestamp: new Date().getTime()
-            };
-
-            fetch(WebhookEndpoint, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            })
-            .then(r => {
-                if(r.ok) {
-                    if(originStr === "chatbot_pipeline") {
-                        createBotMsg("Data pipeline transmission successful! Your assessment parameters are now inside our local queue.");
-                    } else {
-                        alert("Manual lead submission safely dispatched to pipeline.");
-                    }
-                }
-            })
-            .catch(err => console.error("Data pipeline transmission failure logged:", err));
-        }
-
-        function submitManualForm() {
-            const out = {
-                name: document.getElementById('m-name').value.trim(),
-                bill: document.getElementById('m-bill').value,
-                address: document.getElementById('m-address').value.trim(),
-                phone: document.getElementById('m-phone').value.trim(),
-                roof: document.getElementById('m-roof').value
-            };
-            if(!out.name || !out.address || !out.phone) { alert("Please complete required entries."); return; }
-            transmitData(out, "manual_form_view");
-        }
-    </script>
 </body>
 </html>
