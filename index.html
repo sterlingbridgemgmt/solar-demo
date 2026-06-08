@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Texas Sun Power - Premium Home Solar</title>
+    <!-- Tailwind CSS v4 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -31,36 +33,43 @@
 </head>
 <body class="text-slate-200 antialiased min-h-screen flex flex-col justify-between text-base md:text-[17px]">
 
+    <!-- NAVIGATION BAR -->
     <nav class="sticky top-0 z-50 bg-[#060f21] border-b border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
-            <a href="#" onclick="switchView('home')" class="flex items-center gap-4 group">
-                <div class="bg-[#ff5d00] p-3 rounded-xl shadow-lg shadow-[#ff5d00]/20">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" onclick="switchView('home')" class="flex items-center gap-3 group">
+                <div class="bg-[#ff5d00] p-2 rounded-lg shadow-lg shadow-[#ff5d00]/20">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z"></path>
                     </svg>
                 </div>
-                <span class="text-white font-extrabold text-2xl tracking-tight">Texas Sun Power</span>
+                <span class="text-white font-extrabold text-xl tracking-tight">Texas Sun Power</span>
             </a>
 
-            <div class="hidden md:flex items-center gap-10 text-base font-semibold">
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
                 <button onclick="switchView('home')" id="nav-home" class="nav-link text-[#ff5d00] cursor-pointer">Home</button>
                 <button onclick="switchView('estimate')" id="nav-estimate" class="nav-link text-slate-400 hover:text-white cursor-pointer">Get Estimate</button>
                 <button onclick="switchView('portfolio')" id="nav-portfolio" class="nav-link text-slate-400 hover:text-white cursor-pointer">Previous Works</button>
                 <button onclick="switchView('contact')" id="nav-contact" class="nav-link text-slate-400 hover:text-white cursor-pointer">Contact</button>
             </div>
 
+            <!-- Call to Action -->
             <div>
-                <button onclick="switchView('estimate')" class="bg-[#ff5d00] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#e05200] text-base cursor-pointer">
+                <button onclick="switchView('estimate')" class="bg-[#ff5d00] text-white font-bold px-5 py-2.5 rounded-lg shadow-md hover:bg-[#e05200] text-sm cursor-pointer transition-colors">
                     Check Roof Eligibility
                 </button>
             </div>
         </div>
     </nav>
 
+    <!-- MAIN INTERACTIVE HUB CONTENT -->
     <main class="flex-grow">
 
+        <!-- VIEW 1: HOME PAGE MODULE -->
         <div id="view-home" class="view-section">
             
+            <!-- HERO BLOCK -->
             <section class="relative min-h-[80vh] flex items-center pt-16 pb-24 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, #030a16 45%, rgba(3, 10, 22, 0.85) 65%, rgba(3, 10, 22, 0.3) 100%), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1920&q=80');">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                     <div class="max-w-3xl">
@@ -88,45 +97,138 @@
                 </div>
             </section>
 
-            <section class="py-28 bg-[#050c1b] border-t border-b border-slate-900">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-20">
-                        <span class="text-sm font-bold text-[#ff7724] tracking-widest uppercase block mb-4">Financial Freedom & Protection</span>
-                        <h2 class="text-5xl font-black text-white tracking-tight">Why Texas Homeowners Are Switching</h2>
-                        <p class="text-lg text-slate-400 mt-5">The ERCOT grid continues to break price records. Solar isn't just about saving the planet anymore—it's about locking down your predictable financial bottom line.</p>
+            <!-- WHY GO SOLAR SECTION (REBUILT TO MATCH SCREENSHOT 2026-06-08 211900.PNG EXACTLY) -->
+            <section class="py-24 bg-[#030a16] text-center px-4">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Section Headers -->
+                    <span class="text-xs font-bold text-[#ff5d00] tracking-widest uppercase block mb-3">WHY GO SOLAR</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight mb-6">Premium Solar Is More Than Just Panels</h2>
+                    <p class="text-slate-400 text-base md:text-lg max-w-3xl mx-auto mb-16 leading-relaxed">
+                        A properly designed home solar system protects your family from rising energy costs, grid instability, and adds lasting value to your most important asset.
+                    </p>
+
+                    <!-- 6-Card Custom White Grid Layout -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left mb-12">
+                        
+                        <!-- Card 1: Grid Failure Protection -->
+                        <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                            <div>
+                                <div class="bg-[#ff5d00]/10 w-10 h-10 rounded-lg flex items-center justify-center mb-6">
+                                    <svg class="w-5 h-5 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-[#060f21] mb-3">Grid Failure Protection</h3>
+                                <p class="text-[14px] text-slate-500 leading-relaxed font-normal">
+                                    Texas storms and grid strain won’t leave you in the dark. Our battery backup systems automatically switch over in milliseconds, keeping your lights on, refrigerator running, and AC cooling when the grid goes down.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Zero Electric Bills -->
+                        <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                            <div>
+                                <div class="bg-[#ff5d00]/10 w-10 h-10 rounded-lg flex items-center justify-center mb-6">
+                                    <svg class="w-5 h-5 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-[#060f21] mb-3">Zero Electric Bills</h3>
+                                <p class="text-[14px] text-slate-500 leading-relaxed font-normal">
+                                    Our systems are engineered to produce 100% or more of your annual electricity usage. Say goodbye to unpredictable rate hikes from Texas utility companies and hello to predictable $0 bills.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Property Value Increase -->
+                        <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                            <div>
+                                <div class="bg-[#ff5d00]/10 w-10 h-10 rounded-lg flex items-center justify-center mb-6">
+                                    <svg class="w-5 h-5 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-[#060f21] mb-3">Property Value Increase</h3>
+                                <p class="text-[14px] text-slate-500 leading-relaxed font-normal">
+                                    Homes with owned solar systems sell for an average of 4.1% more according to Zillow. A premium solar installation is one of the smartest investments you can make in your Texas property.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Federal Tax Credit -->
+                        <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                            <div>
+                                <div class="bg-[#ff5d00]/10 w-10 h-10 rounded-lg flex items-center justify-center mb-6">
+                                    <svg class="w-5 h-5 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-[#060f21] mb-3">Federal Tax Credit</h3>
+                                <p class="text-[14px] text-slate-500 leading-relaxed font-normal">
+                                    Take advantage of the 30% Federal Solar Investment Tax Credit before potential policy changes. Most Texas homeowners save $8,000–$15,000 on their system cost through this federal incentive.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: 25-Year Full Warranty -->
+                        <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                            <div>
+                                <div class="bg-[#ff5d00]/10 w-10 h-10 rounded-lg flex items-center justify-center mb-6">
+                                    <svg class="w-5 h-5 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-[#060f21] mb-3">25-Year Full Warranty</h3>
+                                <p class="text-[14px] text-slate-500 leading-relaxed font-normal">
+                                    Every Texas Sun Power installation includes our comprehensive 25-year warranty covering panels, inverters, labor, and roof penetration. We stand behind our work for a quarter century.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: Texas-Optimized Design -->
+                        <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 flex flex-col justify-between">
+                            <div>
+                                <div class="bg-[#ff5d00]/10 w-10 h-10 rounded-lg flex items-center justify-center mb-6">
+                                    <svg class="w-5 h-5 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-extrabold text-[#060f21] mb-3">Texas-Optimized Design</h3>
+                                <p class="text-[14px] text-slate-500 leading-relaxed font-normal">
+                                    Our engineers design every system specifically for Texas sun angles, heat conditions, and weather patterns. We use high-temperature-rated panels that maintain efficiency even during 105°F summer days.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                        <div class="bg-[#081125] border border-slate-800/80 p-10 rounded-2xl">
-                            <div class="bg-[#ff5d00]/10 text-[#ff7724] w-14 h-14 rounded-xl flex items-center justify-center font-extrabold text-xl mb-8 border border-[#ff5d00]/20">01</div>
-                            <h3 class="text-2xl font-bold text-white mb-4">Absolute Bill Elimination</h3>
-                            <p class="text-base text-slate-400 leading-relaxed">Offset up to 100%+ of your home consumption metrics, effectively eliminating standard operational charges from your local energy provider completely.</p>
-                        </div>
-                        <div class="bg-[#081125] border border-slate-800/80 p-10 rounded-2xl">
-                            <div class="bg-[#ff5d00]/10 text-[#ff7724] w-14 h-14 rounded-xl flex items-center justify-center font-extrabold text-xl mb-8 border border-[#ff5d00]/20">02</div>
-                            <h3 class="text-2xl font-bold text-white mb-4">Grid Failure Blackout Armor</h3>
-                            <p class="text-base text-slate-400 leading-relaxed">With localized battery array pairings, protect your family seamlessly through devastating blackouts, summer peaks, and freeze anomalies.</p>
-                        </div>
-                        <div class="bg-[#081125] border border-slate-800/80 p-10 rounded-2xl">
-                            <div class="bg-[#ff5d00]/10 text-[#ff7724] w-14 h-14 rounded-xl flex items-center justify-center font-extrabold text-xl mb-8 border border-[#ff5d00]/20">03</div>
-                            <h3 class="text-2xl font-bold text-white mb-4">Instant Equity Addition</h3>
-                            <p class="text-base text-slate-400 leading-relaxed">Real estate valuations verify that home buyers directly value pre-installed solar configurations, adding massive equity value completely property-tax exempt.</p>
-                        </div>
+                    <!-- Centered Custom Action Trigger Routing Directly To Contact Form -->
+                    <div class="flex justify-center mt-10">
+                        <button onclick="switchView('contact')" class="bg-[#ff5d00] hover:bg-[#e05200] text-white font-bold text-base px-10 py-4 rounded-xl inline-flex items-center gap-2.5 transition-colors cursor-pointer shadow-lg shadow-[#ff5d00]/10">
+                            See If Your Roof Qualifies
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </section>
 
+            <!-- HOW IT WORKS SECTION (LOCKED) -->
             <section id="how-it-works" class="py-24 bg-[#0b192c] text-white px-4">
                 <div class="max-w-7xl mx-auto text-center">
                     
+                    <!-- Top Heading Deck -->
                     <p class="text-[#ff5d00] font-bold uppercase text-sm tracking-widest mb-3">How It Works</p>
                     <h2 class="text-4xl md:text-5xl font-black mb-4 tracking-tight">From Consultation to Savings in Four Steps</h2>
                     <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-16">
                         We handle everything from design to permits — your only job is to enjoy the savings.
                     </p>
 
+                    <!-- 4 Column Blueprint Cards Grid Layout -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                         
+                        <!-- Step 01 -->
                         <div class="bg-white text-slate-800 p-8 rounded-2xl text-left shadow-xl flex flex-col justify-between">
                             <div>
                                 <div class="text-5xl font-black text-[#ffd3b6] leading-none mb-3">01</div>
@@ -140,6 +242,7 @@
                             </div>
                         </div>
 
+                        <!-- Step 02 -->
                         <div class="bg-white text-slate-800 p-8 rounded-2xl text-left shadow-xl flex flex-col justify-between">
                             <div>
                                 <div class="text-5xl font-black text-[#ffd3b6] leading-none mb-3">02</div>
@@ -153,6 +256,7 @@
                             </div>
                         </div>
 
+                        <!-- Step 03 -->
                         <div class="bg-white text-slate-800 p-8 rounded-2xl text-left shadow-xl flex flex-col justify-between">
                             <div>
                                 <div class="text-5xl font-black text-[#ffd3b6] leading-none mb-3">03</div>
@@ -167,6 +271,7 @@
                             </div>
                         </div>
 
+                        <!-- Step 04 -->
                         <div class="bg-white text-slate-800 p-8 rounded-2xl text-left shadow-xl flex flex-col justify-between">
                             <div>
                                 <div class="text-5xl font-black text-[#ffd3b6] leading-none mb-3">04</div>
@@ -182,6 +287,7 @@
 
                     </div>
 
+                    <!-- Bottom Integrated Timeline Banner Bar Container Layout -->
                     <div class="bg-white rounded-2xl p-6 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 text-left shadow-xl">
                         <div class="flex items-center gap-5 flex-1 min-w-[280px]">
                             <div class="bg-[#ffefe5] w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
@@ -195,6 +301,7 @@
                             </div>
                         </div>
                         
+                        <!-- Anchor routing cleanly linked directly into Contact views structure -->
                         <button onclick="switchView('contact')" class="bg-[#ff5d00] text-white font-bold text-base px-8 py-4 rounded-xl flex items-center gap-2 tracking-wide cursor-pointer hover:bg-[#e05200] transition-colors whitespace-nowrap w-full lg:w-auto justify-center">
                             Start Your Consultation
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -206,6 +313,7 @@
                 </div>
             </section>
 
+            <!-- REVIEWS / TESTIMONIALS SECTION (STABLE / MANUAL SELECTION ONLY) -->
             <section class="py-28 bg-[#050c1b] border-t border-b border-slate-900 overflow-hidden">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center max-w-3xl mx-auto mb-16">
@@ -214,13 +322,17 @@
                         <p class="text-lg text-slate-400 mt-5">Real stories from families who made the switch to premium solar with Texas Sun Power.</p>
                     </div>
 
+                    <!-- Carousel Content Wrapper -->
                     <div class="relative px-2">
                         <div id="testimonial-slider-deck" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            </div>
+                            <!-- Injected programmatically by Script Engine below -->
+                        </div>
                         
+                        <!-- Manual Pagination Elements overlay framework -->
                         <div class="mt-12 flex items-center justify-between">
                             <div id="slider-dot-indicators" class="flex items-center gap-2">
-                                </div>
+                                <!-- Dots injected dynamically -->
+                            </div>
                             <div class="flex items-center gap-3">
                                 <button onclick="shiftReviewDeck(-1)" class="w-12 h-12 rounded-xl border border-slate-800 bg-slate-900/60 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-all cursor-pointer">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
@@ -234,6 +346,7 @@
                 </div>
             </section>
 
+            <!-- FINAL CTA SECTION (LOCKED - DO NOT TOUCH) -->
             <section class="py-28 bg-gradient-to-b from-[#061126] to-[#030a16] border-b border-slate-900 relative overflow-hidden">
                 <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ff5d00_1px,transparent_1px)] [background-size:16px_16px]"></div>
                 <div class="absolute inset-0 opacity-5 pointer-events-none bg-center bg-cover mix-blend-screen mix-blend-overlay" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80');"></div>
@@ -280,6 +393,7 @@
 
         </div>
 
+        <!-- VIEW 2: GET ESTIMATE FORM PAGE -->
         <div id="view-estimate" class="view-section hidden">
             <section class="py-24 bg-gradient-to-b from-[#09152c] to-[#030a16]">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -350,6 +464,7 @@
             </section>
         </div>
 
+        <!-- VIEW 3: PREVIOUS WORKS PORTFOLIO PAGE -->
         <div id="view-portfolio" class="view-section hidden">
             <section class="py-24 bg-[#030a16]">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -360,6 +475,7 @@
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        <!-- Project 1 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group">
                             <div class="relative h-72 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern Austin Villa" class="w-full h-full object-cover">
@@ -370,6 +486,7 @@
                                 <p class="text-sm text-slate-400 mb-4">Austin, TX</p>
                             </div>
                         </div>
+                        <!-- Project 2 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group">
                             <div class="relative h-72 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Warmly Lit Luxury House" class="w-full h-full object-cover">
@@ -380,6 +497,7 @@
                                 <p class="text-sm text-slate-400 mb-4">Dallas, TX</p>
                             </div>
                         </div>
+                        <!-- Project 3 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group">
                             <div class="relative h-72 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Sleek Minimalist Modern Architecture" class="w-full h-full object-cover">
@@ -395,6 +513,7 @@
             </section>
         </div>
 
+        <!-- VIEW 4: CONTACT PAGE -->
         <div id="view-contact" class="view-section hidden">
             <section class="py-24 bg-[#030a16]">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -436,10 +555,12 @@
 
     </main>
 
+    <!-- FOOTER DECK (LOCKED - DO NOT TOUCH) -->
     <footer class="bg-[#020710] border-t border-slate-900/40 pt-16 pb-8 text-sm md:text-base text-slate-400">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-6 mb-16">
                 
+                <!-- Column 1: Brand & Description -->
                 <div class="md:col-span-4 space-y-6">
                     <a href="#" onclick="switchView('home')" class="flex items-center gap-3 group">
                         <div class="bg-[#ff5d00] p-2.5 rounded-xl shadow-lg shadow-[#ff5d00]/20">
@@ -460,6 +581,7 @@
                     </div>
                 </div>
 
+                <!-- Column 2: Quick Links -->
                 <div class="md:col-span-2 space-y-4">
                     <h4 class="text-white font-bold text-sm uppercase tracking-wider">Quick Links</h4>
                     <ul class="space-y-3.5 text-sm font-medium">
@@ -470,6 +592,7 @@
                     </ul>
                 </div>
 
+                <!-- Column 3: Services -->
                 <div class="md:col-span-3 space-y-4">
                     <h4 class="text-white font-bold text-sm uppercase tracking-wider">Services</h4>
                     <ul class="space-y-3.5 text-sm font-medium text-slate-400">
@@ -482,6 +605,7 @@
                     </ul>
                 </div>
 
+                <!-- Column 4: Contact Info -->
                 <div class="md:col-span-3 space-y-4">
                     <h4 class="text-white font-bold text-sm uppercase tracking-wider">Contact Info</h4>
                     <ul class="space-y-4 text-sm font-medium text-slate-400">
@@ -518,6 +642,7 @@
         </div>
     </footer>
 
+    <!-- INTERACTION SCRIPTS PIPELINE HUB -->
     <script>
         // Global Routing Engine Engine Navigation Router
         function switchView(viewId) {
