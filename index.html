@@ -190,15 +190,53 @@
                 </div>
             </section>
 
-            <!-- FINAL CTA SECTION -->
-            <section class="py-20 bg-gradient-to-r from-[#0a1836] to-[#040b19] border-b border-slate-900">
-                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">Ready to Eliminate Your Electric Bill?</h2>
-                    <p class="text-base text-slate-300 max-w-2xl mx-auto mb-8">Secure your complete financial energy consultation evaluation map block today. Claim your direct federal tax offset incentive packages before year-end limits refresh.</p>
-                    <button onclick="switchView('estimate')" class="bg-[#ff5d00] hover:bg-[#e05200] text-white font-extrabold px-10 py-4 rounded-xl shadow-xl shadow-[#ff5d00]/10 transition-all text-base inline-flex items-center gap-2 cursor-pointer">
-                        Lock In Your Free Solar Proposal
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </button>
+            <!-- FINAL CTA SECTION WITH FAINT ELECTRODE/CIRCUIT PATTERN -->
+            <section class="py-24 bg-gradient-to-b from-[#061126] to-[#030a16] border-b border-slate-900 relative overflow-hidden">
+                <!-- Radial dot pattern baseline -->
+                <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ff5d00_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                
+                <!-- Added Faint Electrodes / Tech Blueprint Grid Background Image Overlay -->
+                <div class="absolute inset-0 opacity-5 pointer-events-none bg-center bg-cover mix-blend-screen mix-blend-overlay" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80');"></div>
+                
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <h2 class="text-4xl md:text-[44px] font-extrabold text-white tracking-tight mb-5 leading-tight">
+                        Ready to Eliminate Your Electric Bill?
+                    </h2>
+                    <p class="text-[15px] text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+                        Take the first step toward energy independence. Our team will analyze your roof and provide a detailed savings projection — completely free.
+                    </p>
+                    
+                    <!-- Action Button Cluster -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                        <button onclick="switchView('estimate')" class="w-full sm:w-auto bg-[#ff5d00] hover:bg-[#e05200] text-white font-bold px-7 py-4 rounded-lg shadow-xl shadow-[#ff5d00]/10 transition-all text-sm inline-flex items-center justify-center gap-2 cursor-pointer">
+                            <span>Check Roof Eligibility Now</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </button>
+                        <button onclick="switchView('contact')" class="w-full sm:w-auto border border-slate-700 hover:border-slate-600 bg-slate-900/40 text-white font-bold px-7 py-4 rounded-lg transition-all text-sm inline-flex items-center justify-center gap-2 cursor-pointer">
+                            <span>Talk to Our Team</span>
+                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.72l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.72.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        </button>
+                    </div>
+
+                    <!-- Trust Signals Footer Row inside Section Body Block -->
+                    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium text-slate-400">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            <span>25-Year Warranty</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4m-4 0H8m12 4a2 2 0 11-4 0 2 2 0 014 0zM4 12a2 2 0 114 0 2 2 0 01-4 0z"></path></svg>
+                            <span>Licensed & Insured</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-[#ff5d00]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <span>5-Star Rated</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
+                            <span>Texas-Based Team</span>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -387,7 +425,7 @@
                                 <div class="flex items-start gap-4">
                                     <div class="text-[#ff5d00] font-bold">DATA:</div>
                                     <p class="text-slate-300"><a href="mailto:info@texassunpower.com" class="hover:text-[#ff5d00] transition-colors">info@texassunpower.com</a></p>
-                                end</div>
+                                </div>
                             </div>
                         </div>
                         <div class="lg:col-span-7 h-96 lg:h-[450px] w-full rounded-3xl overflow-hidden border border-slate-800 shadow-2xl relative">
@@ -400,7 +438,7 @@
 
     </main>
 
-    <!-- FOOTER DECK (REBUILT TO MATCH SCREENSHOT 2026-06-08 202212.PNG) -->
+    <!-- FOOTER DECK (LOCKED - NO CHANGES ALLOWED) -->
     <footer class="bg-[#020710] border-t border-slate-900/40 pt-16 pb-8 text-sm text-slate-400">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-6 mb-16">
@@ -489,7 +527,7 @@
         </div>
     </footer>
 
-    <!-- PERSISTENT FLOATING ACTIONS ("Talk with Us" Widget from Screenshot) -->
+    <!-- PERSISTENT FLOATING ACTIONS -->
     <div class="fixed bottom-6 right-6 z-50">
         <button onclick="switchView('contact')" class="bg-[#0b1424] border border-slate-800 hover:border-slate-700 text-white font-bold px-5 py-3 rounded-2xl shadow-2xl transition-all flex items-center gap-3 text-xs tracking-wide cursor-pointer group">
             <div class="bg-[#ff5d00] p-1.5 rounded-lg text-white group-hover:scale-105 transition-transform">
