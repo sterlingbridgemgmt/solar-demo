@@ -17,23 +17,23 @@
         }
     </style>
 </head>
-<body class="text-slate-200 antialiased min-h-screen flex flex-col justify-between">
+<body class="text-slate-200 antialiased min-h-screen flex flex-col justify-between text-base md:text-[17px]">
 
     <!-- NAVIGATION BAR -->
     <nav class="sticky top-0 z-50 bg-[#060f21]/90 backdrop-blur-md border-b border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
             <!-- Brand Logo -->
-            <a href="#" onclick="switchView('home')" class="flex items-center gap-3 group">
-                <div class="bg-[#ff5d00] p-2 rounded-xl shadow-lg shadow-[#ff5d00]/20 transition-transform group-hover:scale-105">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <a href="#" onclick="switchView('home')" class="flex items-center gap-4 group">
+                <div class="bg-[#ff5d00] p-3 rounded-xl shadow-lg shadow-[#ff5d00]/20 transition-transform group-hover:scale-105">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z"></path>
                     </svg>
                 </div>
-                <span class="text-white font-extrabold text-xl tracking-tight">Texas Sun Power</span>
+                <span class="text-white font-extrabold text-2xl tracking-tight">Texas Sun Power</span>
             </a>
 
             <!-- Navigation Links -->
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+            <div class="hidden md:flex items-center gap-10 text-base font-semibold">
                 <button onclick="switchView('home')" id="nav-home" class="nav-link text-[#ff5d00] hover:text-[#ff7724] transition-colors cursor-pointer">Home</button>
                 <button onclick="switchView('estimate')" id="nav-estimate" class="nav-link text-slate-400 hover:text-white transition-colors cursor-pointer">Get Estimate</button>
                 <button onclick="switchView('portfolio')" id="nav-portfolio" class="nav-link text-slate-400 hover:text-white transition-colors cursor-pointer">Previous Works</button>
@@ -42,7 +42,7 @@
 
             <!-- Call to Action -->
             <div>
-                <button onclick="switchView('estimate')" class="bg-[#ff5d00] text-white font-semibold px-5 py-2.5 rounded-xl shadow-md hover:bg-[#e05200] transition-all text-sm cursor-pointer">
+                <button onclick="switchView('estimate')" class="bg-[#ff5d00] text-white font-bold px-6 py-3 rounded-xl shadow-md hover:bg-[#e05200] transition-all text-base cursor-pointer">
                     Check Roof Eligibility
                 </button>
             </div>
@@ -56,26 +56,26 @@
         <div id="view-home" class="view-section">
             
             <!-- HERO BLOCK -->
-            <section class="relative min-h-[85vh] flex items-center pt-16 pb-24 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, #030a16 40%, rgba(3, 10, 22, 0.8) 65%, rgba(3, 10, 22, 0.3) 100%), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1920&q=80');">
+            <section class="relative min-h-[85vh] flex items-center pt-20 pb-28 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, #030a16 45%, rgba(3, 10, 22, 0.85) 65%, rgba(3, 10, 22, 0.3) 100%), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1920&q=80');">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                    <div class="max-w-2xl">
-                        <div class="inline-flex items-center gap-2 bg-[#ff5d00]/10 border border-[#ff5d00]/20 text-[#ff7724] text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6">
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#ff5d00] animate-pulse"></span>
+                    <div class="max-w-3xl">
+                        <div class="inline-flex items-center gap-2.5 bg-[#ff5d00]/10 border border-[#ff5d00]/20 text-[#ff7724] text-sm font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-8">
+                            <span class="w-2 h-2 rounded-full bg-[#ff5d00] animate-pulse"></span>
                             Serving Texas Homeowners Since 2014
                         </div>
-                        <h1 class="text-5xl md:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
+                        <h1 class="text-6xl md:text-7xl font-black text-white tracking-tight leading-[1.1] mb-8">
                             Wipe Out Your Texas <br>Electric Bill <br>
                             <span class="text-[#ff5d00]">with Premium Home Solar</span>
                         </h1>
-                        <p class="text-lg text-slate-300 leading-relaxed font-normal mb-10 max-w-xl">
+                        <p class="text-xl text-slate-300 leading-relaxed font-normal mb-12 max-w-2xl">
                             Custom-designed solar systems that eliminate monthly payments, secure your power during grid failures, and elevate property values. All optimized for the harsh Texas heat.
                         </p>
-                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                            <button onclick="switchView('estimate')" class="bg-[#ff5d00] hover:bg-[#e05200] text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-[#ff5d00]/10 transition-all flex items-center justify-center gap-2 text-base cursor-pointer">
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-5">
+                            <button onclick="switchView('estimate')" class="bg-[#ff5d00] hover:bg-[#e05200] text-white font-bold px-10 py-5 rounded-xl shadow-lg shadow-[#ff5d00]/10 transition-all flex items-center justify-center gap-3 text-lg cursor-pointer">
                                 Check Roof Eligibility Now
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </button>
-                            <button onclick="switchView('portfolio')" class="border border-slate-700 bg-slate-900/60 backdrop-blur-sm hover:bg-slate-800/60 text-white font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-base cursor-pointer">
+                            <button onclick="switchView('portfolio')" class="border-2 border-slate-700 bg-slate-900/60 backdrop-blur-sm hover:bg-slate-800/60 text-white font-bold px-10 py-5 rounded-xl transition-all flex items-center justify-center gap-3 text-lg cursor-pointer">
                                 See Our Previous Work
                             </button>
                         </div>
@@ -84,105 +84,105 @@
             </section>
 
             <!-- WHY GO SOLAR SECTION -->
-            <section class="py-24 bg-[#050c1b] border-t border-b border-slate-900">
+            <section class="py-28 bg-[#050c1b] border-t border-b border-slate-900">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-16">
-                        <span class="text-xs font-bold text-[#ff7724] tracking-widest uppercase block mb-3">Financial Freedom & Protection</span>
-                        <h2 class="text-4xl font-black text-white tracking-tight">Why Texas Homeowners Are Switching</h2>
-                        <p class="text-base text-slate-400 mt-4">The ERCOT grid continues to break price records. Solar isn't just about saving the planet anymore—it's about locking down your predictable financial bottom line.</p>
+                    <div class="text-center max-w-3xl mx-auto mb-20">
+                        <span class="text-sm font-bold text-[#ff7724] tracking-widest uppercase block mb-4">Financial Freedom & Protection</span>
+                        <h2 class="text-5xl font-black text-white tracking-tight">Why Texas Homeowners Are Switching</h2>
+                        <p class="text-lg text-slate-400 mt-5">The ERCOT grid continues to break price records. Solar isn't just about saving the planet anymore—it's about locking down your predictable financial bottom line.</p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="bg-[#081125] border border-slate-800/80 p-8 rounded-2xl">
-                            <div class="bg-[#ff5d00]/10 text-[#ff7724] w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg mb-6 border border-[#ff5d00]/20">01</div>
-                            <h3 class="text-xl font-bold text-white mb-3">Absolute Bill Elimination</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">Offset up to 100%+ of your home consumption metrics, effectively eliminating standard operational charges from your local energy provider completely.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        <div class="bg-[#081125] border border-slate-800/80 p-10 rounded-2xl">
+                            <div class="bg-[#ff5d00]/10 text-[#ff7724] w-14 h-14 rounded-xl flex items-center justify-center font-extrabold text-xl mb-8 border border-[#ff5d00]/20">01</div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Absolute Bill Elimination</h3>
+                            <p class="text-base text-slate-400 leading-relaxed">Offset up to 100%+ of your home consumption metrics, effectively eliminating standard operational charges from your local energy provider completely.</p>
                         </div>
-                        <div class="bg-[#081125] border border-slate-800/80 p-8 rounded-2xl">
-                            <div class="bg-[#ff5d00]/10 text-[#ff7724] w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg mb-6 border border-[#ff5d00]/20">02</div>
-                            <h3 class="text-xl font-bold text-white mb-3">Grid Failure Blackout Armor</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">With localized battery array pairings, protect your family seamlessly through devastating blackouts, summer peaks, and freeze anomalies.</p>
+                        <div class="bg-[#081125] border border-slate-800/80 p-10 rounded-2xl">
+                            <div class="bg-[#ff5d00]/10 text-[#ff7724] w-14 h-14 rounded-xl flex items-center justify-center font-extrabold text-xl mb-8 border border-[#ff5d00]/20">02</div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Grid Failure Blackout Armor</h3>
+                            <p class="text-base text-slate-400 leading-relaxed">With localized battery array pairings, protect your family seamlessly through devastating blackouts, summer peaks, and freeze anomalies.</p>
                         </div>
-                        <div class="bg-[#081125] border border-slate-800/80 p-8 rounded-2xl">
-                            <div class="bg-[#ff5d00]/10 text-[#ff7724] w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg mb-6 border border-[#ff5d00]/20">03</div>
-                            <h3 class="text-xl font-bold text-white mb-3">Instant Equity Addition</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">Real estate valuations verify that home buyers directly value pre-installed solar configurations, adding massive equity value completely property-tax exempt.</p>
+                        <div class="bg-[#081125] border border-slate-800/80 p-10 rounded-2xl">
+                            <div class="bg-[#ff5d00]/10 text-[#ff7724] w-14 h-14 rounded-xl flex items-center justify-center font-extrabold text-xl mb-8 border border-[#ff5d00]/20">03</div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Instant Equity Addition</h3>
+                            <p class="text-base text-slate-400 leading-relaxed">Real estate valuations verify that home buyers directly value pre-installed solar configurations, adding massive equity value completely property-tax exempt.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- HOW IT WORKS -->
-            <section class="py-24 bg-[#030a16]">
+            <section class="py-28 bg-[#030a16]">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-20">
-                        <span class="text-xs font-bold text-[#ff7724] tracking-widest uppercase block mb-3">Operational Framework</span>
-                        <h2 class="text-4xl font-black text-white tracking-tight">How It Works: From Consultation to Savings in Four Steps</h2>
-                        <p class="text-base text-slate-400 mt-4">We handle everything end-to-end, keeping your asset generation deployment smooth, transparent, and completely hands-free.</p>
+                    <div class="text-center max-w-3xl mx-auto mb-24">
+                        <span class="text-sm font-bold text-[#ff7724] tracking-widest uppercase block mb-4">Operational Framework</span>
+                        <h2 class="text-5xl font-black text-white tracking-tight">How It Works: From Consultation to Savings in Four Steps</h2>
+                        <p class="text-lg text-slate-400 mt-5">We handle everything end-to-end, keeping your asset generation deployment smooth, transparent, and completely hands-free.</p>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 relative">
                         <div>
-                            <div class="text-6xl font-black text-slate-800/50 mb-2">01</div>
-                            <h4 class="text-lg font-bold text-white mb-2">Roof Analysis</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed">We utilize remote satellite monitoring systems to carefully layout panel pitch alignments without altering structural integrity.</p>
+                            <div class="text-7xl font-black text-slate-800/50 mb-3">01</div>
+                            <h4 class="text-xl font-bold text-white mb-3">Roof Analysis</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">We utilize remote satellite monitoring systems to carefully layout panel pitch alignments without altering structural integrity.</p>
                         </div>
                         <div>
-                            <div class="text-6xl font-black text-slate-800/50 mb-2">02</div>
-                            <h4 class="text-lg font-bold text-white mb-2">Custom Engineering</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed">Engineers design a bespoke blueprint specific to your high-performance load expectations and local permitting standards.</p>
+                            <div class="text-7xl font-black text-slate-800/50 mb-3">02</div>
+                            <h4 class="text-xl font-bold text-white mb-3">Custom Engineering</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">Engineers design a bespoke blueprint specific to your high-performance load expectations and local permitting standards.</p>
                         </div>
                         <div>
-                            <div class="text-6xl font-black text-slate-800/50 mb-2">03</div>
-                            <h4 class="text-lg font-bold text-white mb-2">Rapid Deployment</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed">Professional installation specialists fit structural panel arrays and safely map backup battery systems onto your household mains.</p>
+                            <div class="text-7xl font-black text-slate-800/50 mb-3">03</div>
+                            <h4 class="text-xl font-bold text-white mb-3">Rapid Deployment</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">Professional installation specialists fit structural panel arrays and safely map backup battery systems onto your household mains.</p>
                         </div>
                         <div>
-                            <div class="text-6xl font-black text-slate-800/50 mb-2">04</div>
-                            <h4 class="text-lg font-bold text-white mb-2">Grid Activation</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed">Permission to Operate (PTO) gets finalized, your old high-price utility meter flips back, and clear asset accumulation begins.</p>
+                            <div class="text-7xl font-black text-slate-800/50 mb-3">04</div>
+                            <h4 class="text-xl font-bold text-white mb-3">Grid Activation</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">Permission to Operate (PTO) gets finalized, your old high-price utility meter flips back, and clear asset accumulation begins.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- REVIEWS / TESTIMONIALS SECTION -->
-            <section class="py-24 bg-[#050c1b] border-t border-b border-slate-900">
+            <section class="py-28 bg-[#050c1b] border-t border-b border-slate-900">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-16">
-                        <span class="text-xs font-bold text-[#ff7724] tracking-widest uppercase block mb-3">Verified Operations Feedback</span>
-                        <h2 class="text-4xl font-black text-white tracking-tight">What Your Neighbors Are Saying</h2>
-                        <p class="text-base text-slate-400 mt-4">Real results from verified homeowners who took total control over their power storage requirements.</p>
+                    <div class="text-center max-w-3xl mx-auto mb-20">
+                        <span class="text-sm font-bold text-[#ff7724] tracking-widest uppercase block mb-4">Verified Operations Feedback</span>
+                        <h2 class="text-5xl font-black text-white tracking-tight">What Your Neighbors Are Saying</h2>
+                        <p class="text-lg text-slate-400 mt-5">Real results from verified homeowners who took total control over their power storage requirements.</p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="bg-[#081125] border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
-                            <p class="text-sm text-slate-300 italic leading-relaxed">"Our summer bills plummeted from upwards of $450 all the way down to a minimum connection fee. During the grid warnings last month, our batteries took over flawlessly. Exceptional service!"</p>
-                            <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-[#ff5d00]/20 flex items-center justify-center font-bold text-xs text-[#ff7724]">MA</div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                        <div class="bg-[#081125] border border-slate-800 p-8 rounded-2xl flex flex-col justify-between">
+                            <p class="text-base text-slate-300 italic leading-relaxed">"Our summer bills plummeted from upwards of $450 all the way down to a minimum connection fee. During the grid warnings last month, our batteries took over flawlessly. Exceptional service!"</p>
+                            <div class="mt-8 pt-5 border-t border-slate-800/60 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-[#ff5d00]/20 flex items-center justify-center font-bold text-sm text-[#ff7724]">MA</div>
                                 <div>
-                                    <h5 class="text-sm font-bold text-white">Marcus A.</h5>
-                                    <p class="text-[11px] text-slate-500">Austin, TX</p>
+                                    <h5 class="text-base font-bold text-white">Marcus A.</h5>
+                                    <p class="text-xs text-slate-500">Austin, TX</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-[#081125] border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
-                            <p class="text-sm text-slate-300 italic leading-relaxed">"The engineering phase was straightforward, cleanly explained, and executed on schedule. No visual clutter on our roofline, completely premium aesthetics. Zero complaints."</p>
-                            <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-[#ff5d00]/20 flex items-center justify-center font-bold text-xs text-[#ff7724]">SR</div>
+                        <div class="bg-[#081125] border border-slate-800 p-8 rounded-2xl flex flex-col justify-between">
+                            <p class="text-base text-slate-300 italic leading-relaxed">"The engineering phase was straightforward, cleanly explained, and executed on schedule. No visual clutter on our roofline, completely premium aesthetics. Zero complaints."</p>
+                            <div class="mt-8 pt-5 border-t border-slate-800/60 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-[#ff5d00]/20 flex items-center justify-center font-bold text-sm text-[#ff7724]">SR</div>
                                 <div>
-                                    <h5 class="text-sm font-bold text-white">Sarah R.</h5>
-                                    <p class="text-[11px] text-slate-500">Houston, TX</p>
+                                    <h5 class="text-base font-bold text-white">Sarah R.</h5>
+                                    <p class="text-xs text-slate-500">Houston, TX</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-[#081125] border border-slate-800 p-6 rounded-2xl flex flex-col justify-between">
-                            <p class="text-sm text-slate-300 italic leading-relaxed">"We chose Texas Sun Power to gain pure independence from regional blackouts. They configured everything exactly to our metrics. The webhook reporting engine updates are brilliant."</p>
-                            <div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full bg-[#ff5d00]/20 flex items-center justify-center font-bold text-xs text-[#ff7724]">DK</div>
+                        <div class="bg-[#081125] border border-slate-800 p-8 rounded-2xl flex flex-col justify-between">
+                            <p class="text-base text-slate-300 italic leading-relaxed">"We chose Texas Sun Power to gain pure independence from regional blackouts. They configured everything exactly to our metrics. The webhook reporting engine updates are brilliant."</p>
+                            <div class="mt-8 pt-5 border-t border-slate-800/60 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-[#ff5d00]/20 flex items-center justify-center font-bold text-sm text-[#ff7724]">DK</div>
                                 <div>
-                                    <h5 class="text-sm font-bold text-white">David K.</h5>
-                                    <p class="text-[11px] text-slate-500">Dallas, TX</p>
+                                    <h5 class="text-base font-bold text-white">David K.</h5>
+                                    <p class="text-xs text-slate-500">Dallas, TX</p>
                                 </div>
                             </div>
                         </div>
@@ -191,49 +191,49 @@
             </section>
 
             <!-- FINAL CTA SECTION WITH FAINT ELECTRODE/CIRCUIT PATTERN -->
-            <section class="py-24 bg-gradient-to-b from-[#061126] to-[#030a16] border-b border-slate-900 relative overflow-hidden">
+            <section class="py-28 bg-gradient-to-b from-[#061126] to-[#030a16] border-b border-slate-900 relative overflow-hidden">
                 <!-- Radial dot pattern baseline -->
                 <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ff5d00_1px,transparent_1px)] [background-size:16px_16px]"></div>
                 
-                <!-- Added Faint Electrodes / Tech Blueprint Grid Background Image Overlay -->
+                <!-- Faint Electrodes / Tech Blueprint Grid Background Image Overlay -->
                 <div class="absolute inset-0 opacity-5 pointer-events-none bg-center bg-cover mix-blend-screen mix-blend-overlay" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80');"></div>
                 
-                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                    <h2 class="text-4xl md:text-[44px] font-extrabold text-white tracking-tight mb-5 leading-tight">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <h2 class="text-5xl md:text-[52px] font-extrabold text-white tracking-tight mb-6 leading-tight">
                         Ready to Eliminate Your Electric Bill?
                     </h2>
-                    <p class="text-[15px] text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+                    <p class="text-lg text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-normal">
                         Take the first step toward energy independence. Our team will analyze your roof and provide a detailed savings projection — completely free.
                     </p>
                     
                     <!-- Action Button Cluster -->
-                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                        <button onclick="switchView('estimate')" class="w-full sm:w-auto bg-[#ff5d00] hover:bg-[#e05200] text-white font-bold px-7 py-4 rounded-lg shadow-xl shadow-[#ff5d00]/10 transition-all text-sm inline-flex items-center justify-center gap-2 cursor-pointer">
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-5 mb-16">
+                        <button onclick="switchView('estimate')" class="w-full sm:w-auto bg-[#ff5d00] hover:bg-[#e05200] text-white font-bold px-8 py-4.5 rounded-lg shadow-xl shadow-[#ff5d00]/10 transition-all text-base inline-flex items-center justify-center gap-2.5 cursor-pointer">
                             <span>Check Roof Eligibility Now</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </button>
-                        <button onclick="switchView('contact')" class="w-full sm:w-auto border border-slate-700 hover:border-slate-600 bg-slate-900/40 text-white font-bold px-7 py-4 rounded-lg transition-all text-sm inline-flex items-center justify-center gap-2 cursor-pointer">
+                        <button onclick="switchView('contact')" class="w-full sm:w-auto border-2 border-slate-700 hover:border-slate-600 bg-slate-900/40 text-white font-bold px-8 py-4.5 rounded-lg transition-all text-base inline-flex items-center justify-center gap-2.5 cursor-pointer">
                             <span>Talk to Our Team</span>
-                            <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.72l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.72.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.72l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.72.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                         </button>
                     </div>
 
                     <!-- Trust Signals Footer Row inside Section Body Block -->
-                    <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium text-slate-400">
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm font-semibold text-slate-400">
+                        <div class="flex items-center gap-2.5">
+                            <svg class="w-5 h-5 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                             <span>25-Year Warranty</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4m-4 0H8m12 4a2 2 0 11-4 0 2 2 0 014 0zM4 12a2 2 0 114 0 2 2 0 01-4 0z"></path></svg>
+                        <div class="flex items-center gap-2.5">
+                            <svg class="w-5 h-5 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0h4m-4 0H8m12 4a2 2 0 11-4 0 2 2 0 014 0zM4 12a2 2 0 114 0 2 2 0 01-4 0z"></path></svg>
                             <span>Licensed & Insured</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-[#ff5d00]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        <div class="flex items-center gap-2.5">
+                            <svg class="w-5 h-5 text-[#ff5d00]" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
                             <span>5-Star Rated</span>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
+                        <div class="flex items-center gap-2.5">
+                            <svg class="w-5 h-5 text-[#ff5d00]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
                             <span>Texas-Based Team</span>
                         </div>
                     </div>
@@ -244,44 +244,44 @@
 
         <!-- VIEW 2: GET ESTIMATE FORM PAGE -->
         <div id="view-estimate" class="view-section hidden">
-            <section class="py-20 bg-gradient-to-b from-[#09152c] to-[#030a16]">
+            <section class="py-24 bg-gradient-to-b from-[#09152c] to-[#030a16]">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
                         <div class="lg:col-span-5">
-                            <span class="text-xs font-bold text-[#ff7724] tracking-widest uppercase block mb-3">Instant Evaluation</span>
-                            <h2 class="text-4xl font-black text-white tracking-tight leading-tight mb-6">Calculate Your Solar Blueprint</h2>
-                            <p class="text-base text-slate-400 leading-relaxed mb-8">
+                            <span class="text-sm font-bold text-[#ff7724] tracking-widest uppercase block mb-4">Instant Evaluation</span>
+                            <h2 class="text-5xl font-black text-white tracking-tight leading-tight mb-6">Calculate Your Solar Blueprint</h2>
+                            <p class="text-lg text-slate-400 leading-relaxed mb-8">
                                 Provide your monthly metrics below. Our system handles advanced satellite evaluation mapping across your roof profile coordinates to model real-world production expectations.
                             </p>
                         </div>
 
-                        <div class="lg:col-span-7 bg-white rounded-3xl p-8 md:p-10 shadow-2xl">
-                            <h3 class="text-xl font-bold text-slate-900 mb-1">Roof Eligibility Assessment</h3>
-                            <p class="text-xs text-slate-500 mb-6">Please provide matching operational details to prevent data verification dropouts.</p>
+                        <div class="lg:col-span-7 bg-white rounded-3xl p-10 md:p-12 shadow-2xl">
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2">Roof Eligibility Assessment</h3>
+                            <p class="text-sm text-slate-500 mb-8">Please provide matching operational details to prevent data verification dropouts.</p>
                             
-                            <form id="solar-blueprint-form" onsubmit="submitToMakeWebhook(event)" class="space-y-5 text-slate-800">
+                            <form id="solar-blueprint-form" onsubmit="submitToMakeWebhook(event)" class="space-y-6 text-slate-800">
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-2">Full Name</label>
-                                    <input type="text" name="name" required placeholder="John Smith" class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-sm px-4 py-3.5 rounded-xl outline-none text-slate-900 placeholder:text-slate-400">
+                                    <label class="block text-sm font-bold uppercase tracking-wide text-slate-700 mb-2.5">Full Name</label>
+                                    <input type="text" name="name" required placeholder="John Smith" class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-base px-5 py-4 rounded-xl outline-none text-slate-900 placeholder:text-slate-400">
                                 </div>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
-                                        <label class="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-2">Phone Number</label>
-                                        <input type="tel" name="phone" required placeholder="(512) 555-0199" class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-sm px-4 py-3.5 rounded-xl outline-none text-slate-900 placeholder:text-slate-400">
+                                        <label class="block text-sm font-bold uppercase tracking-wide text-slate-700 mb-2.5">Phone Number</label>
+                                        <input type="tel" name="phone" required placeholder="(512) 555-0199" class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-base px-5 py-4 rounded-xl outline-none text-slate-900 placeholder:text-slate-400">
                                     </div>
                                     <div>
-                                        <label class="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-2">Email Address</label>
-                                        <input type="email" name="email" required placeholder="john@example.com" class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-sm px-4 py-3.5 rounded-xl outline-none text-slate-900 placeholder:text-slate-400">
+                                        <label class="block text-sm font-bold uppercase tracking-wide text-slate-700 mb-2.5">Email Address</label>
+                                        <input type="email" name="email" required placeholder="john@example.com" class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-base px-5 py-4 rounded-xl outline-none text-slate-900 placeholder:text-slate-400">
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-2">Home Address</label>
-                                    <input type="text" name="address" required placeholder="123 Main Street, Austin, TX 78701" class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-sm px-4 py-3.5 rounded-xl outline-none text-slate-900 placeholder:text-slate-400">
+                                    <label class="block text-sm font-bold uppercase tracking-wide text-slate-700 mb-2.5">Home Address</label>
+                                    <input type="text" name="address" required placeholder="123 Main Street, Austin, TX 78701" class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-base px-5 py-4 rounded-xl outline-none text-slate-900 placeholder:text-slate-400">
                                 </div>
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
-                                        <label class="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-2">Average Monthly Electric Bill ($)</label>
-                                        <select name="bill" required class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-sm px-4 py-3.5 rounded-xl outline-none text-slate-900 cursor-pointer">
+                                        <label class="block text-sm font-bold uppercase tracking-wide text-slate-700 mb-2.5">Average Monthly Electric Bill ($)</label>
+                                        <select name="bill" required class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-base px-5 py-4 rounded-xl outline-none text-slate-900 cursor-pointer">
                                             <option value="" disabled selected>Select average bill</option>
                                             <option value="Under $150">Under $150</option>
                                             <option value="$150 - $250">$150 - $250</option>
@@ -290,8 +290,8 @@
                                         </select>
                                     </div>
                                     <div>
-                                        <label class="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-2">Roof Material Architecture</label>
-                                        <select name="roof" required class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-sm px-4 py-3.5 rounded-xl outline-none text-slate-900 cursor-pointer">
+                                        <label class="block text-sm font-bold uppercase tracking-wide text-slate-700 mb-2.5">Roof Material Architecture</label>
+                                        <select name="roof" required class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-base px-5 py-4 rounded-xl outline-none text-slate-900 cursor-pointer">
                                             <option value="" disabled selected>Select roof architecture</option>
                                             <option value="Asphalt Shingle">Asphalt Shingle</option>
                                             <option value="Standing Seam Metal">Standing Seam Metal</option>
@@ -301,11 +301,11 @@
                                     </div>
                                 </div>
 
-                                <div id="form-alert-banner" class="hidden text-sm p-4 rounded-xl font-medium border"></div>
+                                <div id="form-alert-banner" class="hidden text-base p-4 rounded-xl font-medium border"></div>
 
-                                <button type="submit" id="form-submit-trigger" class="w-full bg-[#ff5d00] hover:bg-[#e05200] text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#ff5d00]/20 text-base cursor-pointer">
+                                <button type="submit" id="form-submit-trigger" class="w-full bg-[#ff5d00] hover:bg-[#e05200] text-white font-bold py-4.5 rounded-xl transition-all flex items-center justify-center gap-3 shadow-lg shadow-[#ff5d00]/20 text-lg cursor-pointer">
                                     <span>Submit Verification Payload</span>
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </button>
                             </form>
                         </div>
@@ -316,79 +316,79 @@
 
         <!-- VIEW 3: PREVIOUS WORKS PORTFOLIO PAGE -->
         <div id="view-portfolio" class="view-section hidden">
-            <section class="py-20 bg-[#030a16]">
+            <section class="py-24 bg-[#030a16]">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center max-w-3xl mx-auto mb-16">
-                        <span class="text-xs font-bold text-[#ff7724] tracking-widest uppercase block mb-3">Architectural Case Studies</span>
-                        <h2 class="text-4xl font-black text-white tracking-tight mb-4">Aesthetic Texas Solar Deployments</h2>
-                        <p class="text-base text-slate-400">Real execution examples on premium, modern residential architectures optimized for maximum load offsets.</p>
+                    <div class="text-center max-w-3xl mx-auto mb-20">
+                        <span class="text-sm font-bold text-[#ff7724] tracking-widest uppercase block mb-4">Architectural Case Studies</span>
+                        <h2 class="text-4xl font-black text-white tracking-tight mb-5">Aesthetic Texas Solar Deployments</h2>
+                        <p class="text-lg text-slate-400">Real execution examples on premium, modern residential architectures optimized for maximum load offsets.</p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                         <!-- Project 1 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
-                            <div class="relative h-64 bg-slate-900 overflow-hidden">
+                            <div class="relative h-72 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern Austin Villa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
                             </div>
-                            <div class="p-6 border-t border-slate-900">
-                                <h4 class="text-lg font-bold text-white mb-1">The Westlake Estate</h4>
-                                <p class="text-xs text-slate-400 mb-4">Austin, TX</p>
+                            <div class="p-8 border-t border-slate-900">
+                                <h4 class="text-xl font-bold text-white mb-2">The Westlake Estate</h4>
+                                <p class="text-sm text-slate-400 mb-4">Austin, TX</p>
                             </div>
                         </div>
                         <!-- Project 2 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
-                            <div class="relative h-64 bg-slate-900 overflow-hidden">
+                            <div class="relative h-72 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Warmly Lit Luxury House" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
                             </div>
-                            <div class="p-6 border-t border-slate-900">
-                                <h4 class="text-lg font-bold text-white mb-1">Highland Crest Residence</h4>
-                                <p class="text-xs text-slate-400 mb-4">Dallas, TX</p>
+                            <div class="p-8 border-t border-slate-900">
+                                <h4 class="text-xl font-bold text-white mb-2">Highland Crest Residence</h4>
+                                <p class="text-sm text-slate-400 mb-4">Dallas, TX</p>
                             </div>
                         </div>
                         <!-- Project 3 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
-                            <div class="relative h-64 bg-slate-900 overflow-hidden">
+                            <div class="relative h-72 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Sleek Minimalist Modern Architecture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
                             </div>
-                            <div class="p-6 border-t border-slate-900">
-                                <h4 class="text-lg font-bold text-white mb-1">The Woodlands Mid-Century</h4>
-                                <p class="text-xs text-slate-400 mb-4">Houston, TX</p>
+                            <div class="p-8 border-t border-slate-900">
+                                <h4 class="text-xl font-bold text-white mb-2">The Woodlands Mid-Century</h4>
+                                <p class="text-sm text-slate-400 mb-4">Houston, TX</p>
                             </div>
                         </div>
                         <!-- Project 4 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
-                            <div class="relative h-64 bg-slate-900 overflow-hidden">
+                            <div class="relative h-72 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="San Antonio Colonial Estate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
                             </div>
-                            <div class="p-6 border-t border-slate-900">
-                                <h4 class="text-lg font-bold text-white mb-1">Alamo Heights Manor</h4>
-                                <p class="text-xs text-slate-400 mb-4">San Antonio, TX</p>
+                            <div class="p-8 border-t border-slate-900">
+                                <h4 class="text-xl font-bold text-white mb-2">Alamo Heights Manor</h4>
+                                <p class="text-sm text-slate-400 mb-4">San Antonio, TX</p>
                             </div>
                         </div>
                         <!-- Project 5 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
-                            <div class="relative h-64 bg-slate-900 overflow-hidden">
+                            <div class="relative h-72 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt="Ultra Modern Fort Worth Build" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
                             </div>
-                            <div class="p-6 border-t border-slate-900">
-                                <h4 class="text-lg font-bold text-white mb-1">Rivercrest Contemporary</h4>
-                                <p class="text-xs text-slate-400 mb-4">Fort Worth, TX</p>
+                            <div class="p-8 border-t border-slate-900">
+                                <h4 class="text-xl font-bold text-white mb-2">Rivercrest Contemporary</h4>
+                                <p class="text-sm text-slate-400 mb-4">Fort Worth, TX</p>
                             </div>
                         </div>
                         <!-- Project 6 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
-                            <div class="relative h-64 bg-slate-900 overflow-hidden">
+                            <div class="relative h-72 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80" alt="El Paso Desert Modern House" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
                             </div>
-                            <div class="p-6 border-t border-slate-900">
-                                <h4 class="text-lg font-bold text-white mb-1">Coronado Foothills Villa</h4>
-                                <p class="text-xs text-slate-400 mb-4">El Paso, TX</p>
+                            <div class="p-8 border-t border-slate-900">
+                                <h4 class="text-xl font-bold text-white mb-2">Coronado Foothills Villa</h4>
+                                <p class="text-sm text-slate-400 mb-4">El Paso, TX</p>
                             </div>
                         </div>
                     </div>
@@ -398,19 +398,19 @@
 
         <!-- VIEW 4: CONTACT PAGE -->
         <div id="view-contact" class="view-section hidden">
-            <section class="py-20 bg-[#030a16]">
+            <section class="py-24 bg-[#030a16]">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
                         <div class="lg:col-span-5 flex flex-col justify-between">
                             <div>
-                                <span class="text-xs font-bold text-[#ff7724] tracking-widest uppercase block mb-3">Direct Infrastructure Access</span>
-                                <h2 class="text-4xl font-black text-white tracking-tight mb-6">Connect With Our Austin Team</h2>
-                                <p class="text-base text-slate-400 leading-relaxed mb-8">
+                                <span class="text-sm font-bold text-[#ff7724] tracking-widest uppercase block mb-4">Direct Infrastructure Access</span>
+                                <h2 class="text-5xl font-black text-white tracking-tight mb-8">Connect With Our Austin Team</h2>
+                                <p class="text-lg text-slate-400 leading-relaxed mb-10">
                                     Need real-time pipeline adjustments or priority consultation routing? Drop into our corporate hub right in downtown Austin or initiate an ingestion check.
                                 </p>
                             </div>
-                            <div class="space-y-6 border-t border-slate-800/80 pt-8 text-sm">
-                                <div class="flex items-start gap-4">
+                            <div class="space-y-8 border-t border-slate-800/80 pt-10 text-base">
+                                <div class="flex items-start gap-5">
                                     <div class="text-[#ff5d00] font-bold">LOC:</div>
                                     <p class="text-slate-300">
                                         <strong>Austin HQ (Heart of the City)</strong><br>
@@ -418,17 +418,17 @@
                                         Austin, TX 78701
                                     </p>
                                 </div>
-                                <div class="flex items-start gap-4">
+                                <div class="flex items-start gap-5">
                                     <div class="text-[#ff5d00] font-bold">TEL:</div>
                                     <p class="text-slate-300"><a href="tel:5125550199" class="hover:text-[#ff5d00] transition-colors">(512) 555-0199</a></p>
                                 </div>
-                                <div class="flex items-start gap-4">
+                                <div class="flex items-start gap-5">
                                     <div class="text-[#ff5d00] font-bold">DATA:</div>
                                     <p class="text-slate-300"><a href="mailto:info@texassunpower.com" class="hover:text-[#ff5d00] transition-colors">info@texassunpower.com</a></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="lg:col-span-7 h-96 lg:h-[450px] w-full rounded-3xl overflow-hidden border border-slate-800 shadow-2xl relative">
+                        <div class="lg:col-span-7 h-96 lg:h-[500px] w-full rounded-3xl overflow-hidden border border-slate-800 shadow-2xl relative">
                             <iframe class="absolute top-0 left-0 w-full h-full filter invert-[90%] hue-rotate-[180deg] contrast-[110%]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m4!2s701+Brazos+St+Austin+TX+78701!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b5062a4d3b87%3A0x64cf2bd6c90518ab!2s701%20Brazos%20St%2C%20Austin%2C%20TX%2078701!5e0!3m2!1sen!2sus!4v1717880000000!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
@@ -453,7 +453,7 @@
                         </div>
                         <span class="text-white font-extrabold text-lg tracking-tight">Texas Sun Power</span>
                     </a>
-                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm font-normal">
+                    <p class="text-xs text-slate-400 carriage-return max-w-sm font-normal">
                         Texas's most trusted premium solar installer. We help homeowners eliminate electric bills with custom-designed solar energy systems backed by industry-leading warranties.
                     </p>
                     <!-- Social Icons Nested Directly Under Description -->
@@ -529,9 +529,9 @@
 
     <!-- PERSISTENT FLOATING ACTIONS -->
     <div class="fixed bottom-6 right-6 z-50">
-        <button onclick="switchView('contact')" class="bg-[#0b1424] border border-slate-800 hover:border-slate-700 text-white font-bold px-5 py-3 rounded-2xl shadow-2xl transition-all flex items-center gap-3 text-xs tracking-wide cursor-pointer group">
-            <div class="bg-[#ff5d00] p-1.5 rounded-lg text-white group-hover:scale-105 transition-transform">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <button onclick="switchView('contact')" class="bg-[#0b1424] border border-slate-800 hover:border-slate-700 text-white font-bold px-6 py-4 rounded-2xl shadow-2xl transition-all flex items-center gap-3 text-sm tracking-wide cursor-pointer group">
+            <div class="bg-[#ff5d00] p-2 rounded-lg text-white group-hover:scale-105 transition-transform">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                 </svg>
             </div>
@@ -589,7 +589,7 @@
             submitBtn.classList.add('opacity-40', 'cursor-not-allowed');
             submitBtn.querySelector('span').innerText = "Transmitting...";
             
-            alertBanner.className = "hidden text-sm p-4 rounded-xl font-medium border";
+            alertBanner.className = "hidden text-base p-4 rounded-xl font-medium border";
 
             try {
                 const apiResponse = await fetch(PRODUCTION_WEBHOOK_URL, {
