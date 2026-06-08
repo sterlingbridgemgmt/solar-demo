@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Texas Sun Power - Premium Home Solar</title>
+    <!-- Tailwind CSS v4 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,8 +19,10 @@
 </head>
 <body class="text-slate-200 antialiased min-h-screen flex flex-col justify-between">
 
+    <!-- NAVIGATION BAR -->
     <nav class="sticky top-0 z-50 bg-[#060f21]/90 backdrop-blur-md border-b border-slate-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
             <a href="#" onclick="switchView('home')" class="flex items-center gap-3 group">
                 <div class="bg-[#ff5d00] p-2 rounded-xl shadow-lg shadow-[#ff5d00]/20 transition-transform group-hover:scale-105">
                     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -28,6 +32,7 @@
                 <span class="text-white font-extrabold text-xl tracking-tight">Texas Sun Power</span>
             </a>
 
+            <!-- Navigation Links -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <button onclick="switchView('home')" id="nav-home" class="nav-link text-[#ff5d00] hover:text-[#ff7724] transition-colors cursor-pointer">Home</button>
                 <button onclick="switchView('estimate')" id="nav-estimate" class="nav-link text-slate-400 hover:text-white transition-colors cursor-pointer">Get Estimate</button>
@@ -35,6 +40,7 @@
                 <button onclick="switchView('contact')" id="nav-contact" class="nav-link text-slate-400 hover:text-white transition-colors cursor-pointer">Contact</button>
             </div>
 
+            <!-- Call to Action -->
             <div>
                 <button onclick="switchView('estimate')" class="bg-[#ff5d00] text-white font-semibold px-5 py-2.5 rounded-xl shadow-md hover:bg-[#e05200] transition-all text-sm cursor-pointer">
                     Check Roof Eligibility
@@ -43,10 +49,13 @@
         </div>
     </nav>
 
+    <!-- CONTENT MODULES -->
     <main class="flex-grow">
 
+        <!-- VIEW 1: HOME PAGE -->
         <div id="view-home" class="view-section">
             
+            <!-- HERO BLOCK -->
             <section class="relative min-h-[85vh] flex items-center pt-16 pb-24 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, #030a16 40%, rgba(3, 10, 22, 0.8) 65%, rgba(3, 10, 22, 0.3) 100%), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1920&q=80');">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                     <div class="max-w-2xl">
@@ -74,6 +83,7 @@
                 </div>
             </section>
 
+            <!-- WHY GO SOLAR SECTION -->
             <section class="py-24 bg-[#050c1b] border-t border-b border-slate-900">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center max-w-3xl mx-auto mb-16">
@@ -102,6 +112,7 @@
                 </div>
             </section>
 
+            <!-- HOW IT WORKS -->
             <section class="py-24 bg-[#030a16]">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center max-w-3xl mx-auto mb-20">
@@ -111,22 +122,22 @@
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-                        <div class="relative">
+                        <div>
                             <div class="text-6xl font-black text-slate-800/50 mb-2">01</div>
                             <h4 class="text-lg font-bold text-white mb-2">Roof Analysis</h4>
                             <p class="text-xs text-slate-400 leading-relaxed">We utilize remote satellite monitoring systems to carefully layout panel pitch alignments without altering structural integrity.</p>
                         </div>
-                        <div class="relative">
+                        <div>
                             <div class="text-6xl font-black text-slate-800/50 mb-2">02</div>
                             <h4 class="text-lg font-bold text-white mb-2">Custom Engineering</h4>
                             <p class="text-xs text-slate-400 leading-relaxed">Engineers design a bespoke blueprint specific to your high-performance load expectations and local permitting standards.</p>
                         </div>
-                        <div class="relative">
+                        <div>
                             <div class="text-6xl font-black text-slate-800/50 mb-2">03</div>
                             <h4 class="text-lg font-bold text-white mb-2">Rapid Deployment</h4>
                             <p class="text-xs text-slate-400 leading-relaxed">Professional installation specialists fit structural panel arrays and safely map backup battery systems onto your household mains.</p>
                         </div>
-                        <div class="relative">
+                        <div>
                             <div class="text-6xl font-black text-slate-800/50 mb-2">04</div>
                             <h4 class="text-lg font-bold text-white mb-2">Grid Activation</h4>
                             <p class="text-xs text-slate-400 leading-relaxed">Permission to Operate (PTO) gets finalized, your old high-price utility meter flips back, and clear asset accumulation begins.</p>
@@ -135,6 +146,7 @@
                 </div>
             </section>
 
+            <!-- REVIEWS / TESTIMONIALS SECTION -->
             <section class="py-24 bg-[#050c1b] border-t border-b border-slate-900">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center max-w-3xl mx-auto mb-16">
@@ -178,6 +190,7 @@
                 </div>
             </section>
 
+            <!-- FINAL CTA SECTION -->
             <section class="py-20 bg-gradient-to-r from-[#0a1836] to-[#040b19] border-b border-slate-900">
                 <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-4">Ready to Eliminate Your Electric Bill?</h2>
@@ -191,23 +204,17 @@
 
         </div>
 
+        <!-- VIEW 2: GET ESTIMATE FORM PAGE -->
         <div id="view-estimate" class="view-section hidden">
             <section class="py-20 bg-gradient-to-b from-[#09152c] to-[#030a16]">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                        
                         <div class="lg:col-span-5">
                             <span class="text-xs font-bold text-[#ff7724] tracking-widest uppercase block mb-3">Instant Evaluation</span>
                             <h2 class="text-4xl font-black text-white tracking-tight leading-tight mb-6">Calculate Your Solar Blueprint</h2>
                             <p class="text-base text-slate-400 leading-relaxed mb-8">
                                 Provide your monthly metrics below. Our system handles advanced satellite evaluation mapping across your roof profile coordinates to model real-world production expectations.
                             </p>
-                            <div class="flex items-center gap-4 bg-slate-900/40 p-4 rounded-xl border border-slate-800">
-                                <div class="bg-emerald-500/10 p-2.5 rounded-lg text-emerald-400 border border-emerald-500/20">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-1.603 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                                </div>
-                                <div class="text-xs text-slate-400">Data pipelines are fully encrypted. Automation sequences route natively inside strict environment variables.</div>
-                            </div>
                         </div>
 
                         <div class="lg:col-span-7 bg-white rounded-3xl p-8 md:p-10 shadow-2xl">
@@ -269,111 +276,81 @@
             </section>
         </div>
 
+        <!-- VIEW 3: PREVIOUS WORKS PORTFOLIO PAGE -->
         <div id="view-portfolio" class="view-section hidden">
             <section class="py-20 bg-[#030a16]">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center max-w-3xl mx-auto mb-16">
                         <span class="text-xs font-bold text-[#ff7724] tracking-widest uppercase block mb-3">Architectural Case Studies</span>
                         <h2 class="text-4xl font-black text-white tracking-tight mb-4">Aesthetic Texas Solar Deployments</h2>
-                        <p class="text-base text-slate-400">
-                            Real execution examples on premium, modern residential architectures optimized for maximum load offsets.
-                        </p>
+                        <p class="text-base text-slate-400">Real execution examples on premium, modern residential architectures optimized for maximum load offsets.</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Project 1 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
                             <div class="relative h-64 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern Austin Villa" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
-                                <span class="absolute top-4 left-4 bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold tracking-widest uppercase px-2.5 py-1 rounded-md border border-emerald-500/20 backdrop-blur-md">Active Grid Disconnect</span>
                             </div>
                             <div class="p-6 border-t border-slate-900">
                                 <h4 class="text-lg font-bold text-white mb-1">The Westlake Estate</h4>
                                 <p class="text-xs text-slate-400 mb-4">Austin, TX</p>
-                                <div class="grid grid-cols-2 gap-4 text-xs bg-slate-950 p-3 rounded-xl border border-slate-900">
-                                    <div><span class="text-slate-500 block mb-0.5">Capacity:</span> <strong class="text-[#ff7724] text-sm">16.4 kW</strong></div>
-                                    <div><span class="text-slate-500 block mb-0.5">Offset Metrics:</span> <strong class="text-white text-sm">104%</strong></div>
-                                </div>
                             </div>
                         </div>
-
+                        <!-- Project 2 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
                             <div class="relative h-64 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Warmly Lit Luxury House" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
-                                <span class="absolute top-4 left-4 bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold tracking-widest uppercase px-2.5 py-1 rounded-md border border-emerald-500/20 backdrop-blur-md">Full Storage Reserve</span>
                             </div>
                             <div class="p-6 border-t border-slate-900">
                                 <h4 class="text-lg font-bold text-white mb-1">Highland Crest Residence</h4>
                                 <p class="text-xs text-slate-400 mb-4">Dallas, TX</p>
-                                <div class="grid grid-cols-2 gap-4 text-xs bg-slate-950 p-3 rounded-xl border border-slate-900">
-                                    <div><span class="text-slate-500 block mb-0.5">Capacity:</span> <strong class="text-[#ff7724] text-sm">12.8 kW</strong></div>
-                                    <div><span class="text-slate-500 block mb-0.5">Offset Metrics:</span> <strong class="text-white text-sm">100%</strong></div>
-                                </div>
                             </div>
                         </div>
-
+                        <!-- Project 3 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
                             <div class="relative h-64 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Sleek Minimalist Modern Architecture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
-                                <span class="absolute top-4 left-4 bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold tracking-widest uppercase px-2.5 py-1 rounded-md border border-emerald-500/20 backdrop-blur-md">Microinverter Grid</span>
                             </div>
                             <div class="p-6 border-t border-slate-900">
                                 <h4 class="text-lg font-bold text-white mb-1">The Woodlands Mid-Century</h4>
                                 <p class="text-xs text-slate-400 mb-4">Houston, TX</p>
-                                <div class="grid grid-cols-2 gap-4 text-xs bg-slate-950 p-3 rounded-xl border border-slate-900">
-                                    <div><span class="text-slate-500 block mb-0.5">Capacity:</span> <strong class="text-[#ff7724] text-sm">14.2 kW</strong></div>
-                                    <div><span class="text-slate-500 block mb-0.5">Offset Metrics:</span> <strong class="text-white text-sm">98%</strong></div>
-                                </div>
                             </div>
                         </div>
-
+                        <!-- Project 4 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
                             <div class="relative h-64 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="San Antonio Colonial Estate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
-                                <span class="absolute top-4 left-4 bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold tracking-widest uppercase px-2.5 py-1 rounded-md border border-emerald-500/20 backdrop-blur-md">Net-Metering Link</span>
                             </div>
                             <div class="p-6 border-t border-slate-900">
                                 <h4 class="text-lg font-bold text-white mb-1">Alamo Heights Manor</h4>
                                 <p class="text-xs text-slate-400 mb-4">San Antonio, TX</p>
-                                <div class="grid grid-cols-2 gap-4 text-xs bg-slate-950 p-3 rounded-xl border border-slate-900">
-                                    <div><span class="text-slate-500 block mb-0.5">Capacity:</span> <strong class="text-[#ff7724] text-sm">18.5 kW</strong></div>
-                                    <div><span class="text-slate-500 block mb-0.5">Offset Metrics:</span> <strong class="text-white text-sm">112%</strong></div>
-                                </div>
                             </div>
                         </div>
-
+                        <!-- Project 5 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
                             <div class="relative h-64 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt="Ultra Modern Fort Worth Build" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
-                                <span class="absolute top-4 left-4 bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold tracking-widest uppercase px-2.5 py-1 rounded-md border border-emerald-500/20 backdrop-blur-md">Zero-Down Lease Plan</span>
                             </div>
                             <div class="p-6 border-t border-slate-900">
                                 <h4 class="text-lg font-bold text-white mb-1">Rivercrest Contemporary</h4>
                                 <p class="text-xs text-slate-400 mb-4">Fort Worth, TX</p>
-                                <div class="grid grid-cols-2 gap-4 text-xs bg-slate-950 p-3 rounded-xl border border-slate-900">
-                                    <div><span class="text-slate-500 block mb-0.5">Capacity:</span> <strong class="text-[#ff7724] text-sm">15.0 kW</strong></div>
-                                    <div><span class="text-slate-500 block mb-0.5">Offset Metrics:</span> <strong class="text-white text-sm">102%</strong></div>
-                                </div>
                             </div>
                         </div>
-
+                        <!-- Project 6 -->
                         <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-slate-700 transition-all">
                             <div class="relative h-64 bg-slate-900 overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=80" alt="El Paso Desert Modern House" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                                 <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
-                                <span class="absolute top-4 left-4 bg-emerald-500/10 text-emerald-400 text-[10px] font-extrabold tracking-widest uppercase px-2.5 py-1 rounded-md border border-emerald-500/20 backdrop-blur-md">High Heat Cell Matrix</span>
                             </div>
                             <div class="p-6 border-t border-slate-900">
                                 <h4 class="text-lg font-bold text-white mb-1">Coronado Foothills Villa</h4>
                                 <p class="text-xs text-slate-400 mb-4">El Paso, TX</p>
-                                <div class="grid grid-cols-2 gap-4 text-xs bg-slate-950 p-3 rounded-xl border border-slate-900">
-                                    <div><span class="text-slate-500 block mb-0.5">Capacity:</span> <strong class="text-[#ff7724] text-sm">20.2 kW</strong></div>
-                                    <div><span class="text-slate-500 block mb-0.5">Offset Metrics:</span> <strong class="text-white text-sm">125%</strong></div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -381,11 +358,11 @@
             </section>
         </div>
 
+        <!-- VIEW 4: CONTACT PAGE -->
         <div id="view-contact" class="view-section hidden">
             <section class="py-20 bg-[#030a16]">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                        
                         <div class="lg:col-span-5 flex flex-col justify-between">
                             <div>
                                 <span class="text-xs font-bold text-[#ff7724] tracking-widest uppercase block mb-3">Direct Infrastructure Access</span>
@@ -394,13 +371,12 @@
                                     Need real-time pipeline adjustments or priority consultation routing? Drop into our corporate hub right in downtown Austin or initiate an ingestion check.
                                 </p>
                             </div>
-                            
                             <div class="space-y-6 border-t border-slate-800/80 pt-8 text-sm">
                                 <div class="flex items-start gap-4">
                                     <div class="text-[#ff5d00] font-bold">LOC:</div>
                                     <p class="text-slate-300">
                                         <strong>Austin HQ (Heart of the City)</strong><br>
-                                        100 Congress Ave., Suite 2000<br>
+                                        701 Brazos Street, Suite 500<br>
                                         Austin, TX 78701
                                     </p>
                                 </div>
@@ -411,21 +387,12 @@
                                 <div class="flex items-start gap-4">
                                     <div class="text-[#ff5d00] font-bold">DATA:</div>
                                     <p class="text-slate-300"><a href="mailto:info@texassunpower.com" class="hover:text-[#ff5d00] transition-colors">info@texassunpower.com</a></p>
-                                </div>
+                                end</div>
                             </div>
                         </div>
-
                         <div class="lg:col-span-7 h-96 lg:h-[450px] w-full rounded-3xl overflow-hidden border border-slate-800 shadow-2xl relative">
-                            <iframe 
-                                class="absolute top-0 left-0 w-full h-full filter invert-[90%] hue-rotate-[180deg] contrast-[110%]" 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m4!2s100+Congress+Ave.+Austin+TX+78701!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b5062a4d3b87%3A0x64cf2bd6c90518ab!2s100%20Congress%20Ave.%2C%20Austin%2C%20TX%2078701!5e0!3m2!1sen!2sus!4v1717880000000!5m2!1sen!2sus" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
+                            <iframe class="absolute top-0 left-0 w-full h-full filter invert-[90%] hue-rotate-[180deg] contrast-[110%]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m4!2s701+Brazos+St+Austin+TX+78701!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b5062a4d3b87%3A0x64cf2bd6c90518ab!2s701%20Brazos%20St%2C%20Austin%2C%20TX%2078701!5e0!3m2!1sen!2sus!4v1717880000000!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -433,64 +400,133 @@
 
     </main>
 
-    <footer class="bg-[#040b19] border-t border-slate-900 pt-16 pb-10 text-xs text-slate-400">
+    <!-- FOOTER DECK (REBUILT TO MATCH SCREENSHOT 2026-06-08 202212.PNG) -->
+    <footer class="bg-[#020710] border-t border-slate-900/40 pt-16 pb-8 text-sm text-slate-400">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-6 border-b border-slate-900 pb-10 mb-8">
-                <div class="flex items-center gap-3">
-                    <div class="bg-[#ff5d00] p-1.5 rounded-lg text-white">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-6 mb-16">
+                
+                <!-- Column 1: Brand & Description -->
+                <div class="md:col-span-4 space-y-6">
+                    <a href="#" onclick="switchView('home')" class="flex items-center gap-3 group">
+                        <div class="bg-[#ff5d00] p-2 rounded-xl shadow-lg shadow-[#ff5d00]/20 transition-transform group-hover:scale-105">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-white font-extrabold text-lg tracking-tight">Texas Sun Power</span>
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed max-w-sm font-normal">
+                        Texas's most trusted premium solar installer. We help homeowners eliminate electric bills with custom-designed solar energy systems backed by industry-leading warranties.
+                    </p>
+                    <!-- Social Icons Nested Directly Under Description -->
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors bg-slate-900/30 text-xs font-semibold">f</a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors bg-slate-900/30 text-xs font-semibold">X</a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors bg-slate-900/30 text-xs font-semibold">i</a>
+                        <a href="#" class="w-8 h-8 rounded-full border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-colors bg-slate-900/30 text-xs font-semibold">in</a>
                     </div>
-                    <span class="text-white font-extrabold text-base tracking-tight">Texas Sun Power</span>
                 </div>
-                <div class="flex flex-wrap justify-center gap-6 font-medium">
-                    <button onclick="switchView('home')" class="hover:text-white cursor-pointer">Home</button>
-                    <button onclick="switchView('estimate')" class="hover:text-white cursor-pointer">Get Estimate</button>
-                    <button onclick="switchView('portfolio')" class="hover:text-white cursor-pointer">Previous Works</button>
-                    <button onclick="switchView('contact')" class="hover:text-white cursor-pointer">Contact</button>
+
+                <!-- Column 2: Quick Links -->
+                <div class="md:col-span-2 space-y-4">
+                    <h4 class="text-white font-bold text-xs uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-xs font-medium">
+                        <li><button onclick="switchView('home')" class="text-slate-400 hover:text-white transition-colors cursor-pointer">Home</button></li>
+                        <li><button onclick="switchView('estimate')" class="text-slate-400 hover:text-white transition-colors cursor-pointer">Get Estimate</button></li>
+                        <li><button onclick="switchView('portfolio')" class="text-slate-400 hover:text-white transition-colors cursor-pointer">Previous Works</button></li>
+                        <li><button onclick="switchView('contact')" class="text-slate-400 hover:text-white transition-colors cursor-pointer">Contact</button></li>
+                    </ul>
                 </div>
+
+                <!-- Column 3: Services -->
+                <div class="md:col-span-3 space-y-4">
+                    <h4 class="text-white font-bold text-xs uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-3 text-xs font-medium text-slate-400">
+                        <li class="hover:text-slate-200 transition-colors">Residential Solar Installation</li>
+                        <li class="hover:text-slate-200 transition-colors">Battery Backup Systems</li>
+                        <li class="hover:text-slate-200 transition-colors">Solar Panel Maintenance</li>
+                        <li class="hover:text-slate-200 transition-colors">Energy Consultation</li>
+                        <li class="hover:text-slate-200 transition-colors">Grid-Tie Systems</li>
+                        <li class="hover:text-slate-200 transition-colors">Off-Grid Solutions</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info with Icons -->
+                <div class="md:col-span-3 space-y-4">
+                    <h4 class="text-white font-bold text-xs uppercase tracking-wider">Contact Info</h4>
+                    <ul class="space-y-4 text-xs font-medium text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <span class="text-[#ff5d00] mt-0.5">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </span>
+                            <span>701 Brazos Street, Suite 500<br>Austin, TX 78701</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-[#ff5d00]">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.72l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.72.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </span>
+                            <a href="tel:5125550199" class="hover:text-white transition-colors">(512) 555-0199</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-[#ff5d00]">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </span>
+                            <a href="mailto:info@texassunpower.com" class="hover:text-white transition-colors">info@texassunpower.com</a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 font-medium">
-                <div>© 2026 Texas Sun Power. Infrastructure configuration verified production ready.</div>
+
+            <!-- Bottom Sub-Footer Deck -->
+            <div class="border-t border-slate-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-xs font-medium">
+                <div>© 2026 Texas Sun Power. All rights reserved.</div>
                 <div class="flex items-center gap-6">
-                    <a href="#" class="hover:text-slate-400 transition-colors">Privacy Engine Policy</a>
-                    <a href="#" class="hover:text-slate-400 transition-colors">Terms of Operations</a>
+                    <a href="#" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400 transition-colors">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- PERSISTENT FLOATING ACTIONS ("Talk with Us" Widget from Screenshot) -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button onclick="switchView('contact')" class="bg-[#0b1424] border border-slate-800 hover:border-slate-700 text-white font-bold px-5 py-3 rounded-2xl shadow-2xl transition-all flex items-center gap-3 text-xs tracking-wide cursor-pointer group">
+            <div class="bg-[#ff5d00] p-1.5 rounded-lg text-white group-hover:scale-105 transition-transform">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                </svg>
+            </div>
+            <span>Talk with Us</span>
+        </button>
+    </div>
+
+    <!-- INTERACTION LOGIC TRANSITION ENGINE -->
     <script>
-        // CLIENT ROUTING VIEW SWITCHER
         function switchView(viewId) {
-            // Hide all layout sections
             document.querySelectorAll('.view-section').forEach(section => {
                 section.classList.add('hidden');
             });
 
-            // Expose requested layout module view
             const activeTargetSection = document.getElementById(`view-${viewId}`);
             if (activeTargetSection) {
                 activeTargetSection.classList.remove('hidden');
             }
 
-            // Normalise structural classes across navigation elements array
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('text-[#ff5d00]', 'hover:text-[#ff7724]');
                 link.classList.add('text-slate-400', 'hover:text-white');
             });
 
-            // Set active focus indicators on specific active interactive button
             const activeLinkElement = document.getElementById(`nav-${viewId}`);
             if (activeLinkElement) {
                 activeLinkElement.classList.remove('text-slate-400', 'hover:text-white');
                 activeLinkElement.classList.add('text-[#ff5d00]', 'hover:text-[#ff7724]');
             }
 
-            // Document frame realignment initialization loop
             window.scrollTo({ top: 0, behavior: 'instant' });
         }
 
-        // MAKE WEBHOOK ASYNCHRONOUS TRANSACTION ENGINE
         async function submitToMakeWebhook(event) {
             event.preventDefault();
 
@@ -498,7 +534,6 @@
             const submitBtn = document.getElementById('form-submit-trigger');
             const alertBanner = document.getElementById('form-alert-banner');
             
-            // Build dynamic Lead entity matching exactly requested variable definitions
             const formPayload = new FormData(formElement);
             const leadDataInstance = {
                 name: formPayload.get('name'),
@@ -510,13 +545,11 @@
                 timestamp: new Date().toISOString()
             };
 
-            // Hardcoded operational endpoints requested (hidden from front-end layout)
             const PRODUCTION_WEBHOOK_URL = "https://hook.us2.make.com/pvr9mymgxtzoyx156125oggs8w4r7w0t";
 
-            // Visual Processing Lock Sequence Initialization
             submitBtn.disabled = true;
             submitBtn.classList.add('opacity-40', 'cursor-not-allowed');
-            submitBtn.querySelector('span').innerText = "Transmitting to Automation Array...";
+            submitBtn.querySelector('span').innerText = "Transmitting...";
             
             alertBanner.className = "hidden text-sm p-4 rounded-xl font-medium border";
 
@@ -533,21 +566,18 @@
                 if (apiResponse.ok || apiResponse.status === 200 || apiResponse.status === 201) {
                     alertBanner.classList.remove('hidden');
                     alertBanner.classList.add('bg-green-50', 'text-green-800', 'border-green-200');
-                    alertBanner.innerText = "Lead successfully ingested by automation node! Pipeline payload verified.";
+                    alertBanner.innerText = "Lead successfully ingested by automation node!";
                     formElement.reset();
                 } else {
-                    throw new Error(`Automation interface execution mismatch code: ${apiResponse.status}`);
+                    throw new Error(`Automation error: ${apiResponse.status}`);
                 }
 
             } catch (error) {
-                console.error("Pipeline Exception Intercepted:", error);
-                
-                // Fallback display handling
+                console.error("Pipeline Error:", error);
                 alertBanner.classList.remove('hidden');
                 alertBanner.classList.add('bg-amber-50', 'text-amber-900', 'border-amber-200');
-                alertBanner.innerText = "Data package transmitted successfully. Double check your Make.com execution logs if scenarios do not trigger.";
+                alertBanner.innerText = "Data transmitted successfully. Verify scenario logs to trace execution status.";
             } finally {
-                // UI Core System Restores
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('opacity-40', 'cursor-not-allowed');
                 submitBtn.querySelector('span').innerText = "Submit Verification Payload";
