@@ -10,10 +10,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
+   <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #030a16;
+        }
+        /* Every link and button gets smooth transitions */
+        a, button {
+            transition: all 0.5s ease-in-out !important;
+        }
+        /* Fade-in entrance effect */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Apply animation to navigation and footer buttons */
+        nav button, footer button {
+            animation: fadeIn 1s ease-out forwards;
         }
         /* Custom smooth scrollbar */
         ::-webkit-scrollbar {
@@ -29,13 +42,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #ff5d00;
         }
-        #testimonial-slider-deck {
-    transition: opacity 0.5s ease-in-out;
-    opacity: 1;
-}
-        html {
-    scroll-behavior: smooth;
-}
     </style>
 </head>
 <body class="text-slate-200 antialiased min-h-screen flex flex-col justify-between text-base md:text-[17px]">
@@ -609,7 +615,12 @@
                 <div class="md:col-span-2 space-y-4">
                     <h4 class="text-white font-bold text-sm uppercase tracking-wider">Quick Links</h4>
                     <ul class="space-y-3.5 text-sm font-medium">
-                      <li><button onclick="window.scrollTo({top: 0, behavior: 'smooth'}); setTimeout(() => switchView('home'), 100);" class="text-slate-400 hover:text-white cursor-pointer">Home</button></li>
+                     <li>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'}); setTimeout(() => switchView('home'), 100);" 
+            class="text-slate-400 hover:text-white cursor-pointer hover:translate-y-[-2px]">
+        Home
+    </button>
+</li>
                         <li><button onclick="switchView('estimate')" class="text-slate-400 hover:text-white cursor-pointer">Get Estimate</button></li>
                         <li><button onclick="switchView('portfolio')" class="text-slate-400 hover:text-white cursor-pointer">Previous Works</button></li>
                         <li><button onclick="switchView('contact')" class="text-slate-400 hover:text-white cursor-pointer">Contact</button></li>
