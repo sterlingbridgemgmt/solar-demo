@@ -74,12 +74,12 @@
         <div id="view-home" class="view-section">
             
             <!-- HERO BLOCK MATCHING SCREENSHOT 2026-06-08 212854.JPG PERFECTLY -->
-<section class="relative w-full h-screen flex flex-col justify-center pt-28 pb-20 overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1592959646549-d3e91122a106?auto=format&fit=crop&w=1920&q=80" 
-         class="absolute inset-0 w-full h-full object-cover z-0" 
-         alt="Modern Solar Home">
-    
-    <div class="absolute inset-0 bg-[#030a16]/60 z-0"></div>
+<section class="relative w-full h-screen flex flex-col justify-center pt-28 pb-20 overflow-hidden bg-[#030a16]">
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1592959646549-d3e91122a106?auto=format&fit=crop&w=1920&q=80" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-[#030a16]/60"></div>
+    </div>
     
     <div class="w-full px-8 relative z-10 mt-auto">
         <div class="max-w-4xl">
@@ -99,14 +99,11 @@
             <div class="flex flex-wrap items-center gap-4 mb-14">
                 <button onclick="switchView('estimate')" class="bg-[#ff5d00] hover:bg-[#e05200] text-white font-bold px-7 py-3.5 rounded-lg shadow-lg shadow-[#ff5d00]/10 transition-all flex items-center justify-center gap-2.5 text-base cursor-pointer">
                     Check Roof Eligibility Now
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </button>
                 <button onclick="switchView('portfolio')" class="border border-slate-700 bg-slate-950/40 backdrop-blur-sm hover:bg-slate-900/60 hover:border-slate-500 text-white font-bold px-7 py-3.5 rounded-lg transition-all flex items-center justify-center gap-2.5 text-base cursor-pointer">
                     See Our Previous Work
-                    <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </button>
             </div>
-
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-y-6 gap-x-8 border-t border-slate-800/60 pt-8 max-w-3xl">
                 <div class="flex items-start gap-3">
                     <div class="w-1 h-9 bg-[#ff5d00] rounded-full"></div>
