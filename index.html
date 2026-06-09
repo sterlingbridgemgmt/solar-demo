@@ -29,6 +29,10 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #ff5d00;
         }
+        #testimonial-slider-deck {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
     </style>
 </head>
 <body class="text-slate-200 antialiased min-h-screen flex flex-col justify-between text-base md:text-[17px]">
@@ -70,7 +74,7 @@
         <div id="view-home" class="view-section">
             
             <!-- HERO BLOCK MATCHING SCREENSHOT 2026-06-08 212854.JPG PERFECTLY -->
-<section class="relative min-h-screen flex flex-col justify-center pt-28 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(3, 10, 22, 0.6), rgba(3, 10, 22, 0.6)), url('https://images.unsplash.com/photo-1592959646549-d3e91122a106?auto=format&fit=crop&w=1920&q=80');">    <div class="w-full px-8 relative z-10 w-full mt-auto">
+<section class="relative w-full h-screen flex flex-col justify-center pt-28 pb-20" style="background: linear-gradient(rgba(3, 10, 22, 0.6), rgba(3, 10, 22, 0.6)), url('https://images.unsplash.com/photo-1592959646549-d3e91122a106?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">    <div class="w-full px-8 relative z-10 w-full mt-auto">
                     <div class="max-w-4xl">
                         <!-- Pill Badge -->
                         <div class="inline-flex items-center gap-2 bg-[#ff5d00]/15 border border-[#ff5d00]/30 text-[#ff8138] text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">
@@ -850,58 +854,61 @@
 
         function buildReviewDeckStructure() {
             const containerElement = document.getElementById('testimonial-slider-deck');
-            containerElement.innerHTML = '';
+            
+            // Fade out
+            containerElement.style.opacity = '0';
+            
+            setTimeout(() => {
+                containerElement.innerHTML = '';
 
-            for (let positionOffset = 0; positionOffset < 3; positionOffset++) {
-                const calculatedIndex = (currentReviewIndex + positionOffset) % totalReviewsCount;
-                const reviewItem = reviewDatabase[calculatedIndex];
+                for (let positionOffset = 0; positionOffset < 3; positionOffset++) {
+                    const calculatedIndex = (currentReviewIndex + positionOffset) % totalReviewsCount;
+                    const reviewItem = reviewDatabase[calculatedIndex];
 
-                const cardBodyHtml = `
-                    <div class="bg-white rounded-2xl p-8 md:p-10 shadow-2xl border border-slate-100 flex flex-col justify-between text-slate-800">
-                        <div>
-                            <div class="flex items-center gap-1 mb-6">
-                                <div class="flex items-center text-[#ff5d00] gap-0.5">
-                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                    const cardBodyHtml = `
+                        <div class="bg-white rounded-2xl p-8 md:p-10 shadow-2xl border border-slate-100 flex flex-col justify-between text-slate-800">
+                            <div>
+                                <div class="flex items-center gap-1 mb-6">
+                                    <div class="flex items-center text-[#ff5d00] gap-0.5">
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                    </div>
+                                    <span class="text-xs font-semibold text-slate-400 ml-2">5.0 Rating</span>
                                 </div>
-                                <span class="text-xs font-semibold text-slate-400 ml-2">5.0 Rating</span>
+                                <p class="text-[15px] md:text-base text-slate-600 leading-relaxed font-normal italic mb-8">"${reviewItem.text}"</p>
                             </div>
-                            <p class="text-[15px] md:text-base text-slate-600 leading-relaxed font-normal italic mb-8">
-                                "${reviewItem.text}"
-                            </p>
+                            <div class="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+                                <div class="flex items-center gap-3.5">
+                                    <div class="w-11 h-11 rounded-full bg-[#ff5d00] flex items-center justify-center font-bold text-sm text-white shadow-md">${reviewItem.initials}</div>
+                                    <div>
+                                        <h5 class="text-[15px] font-extrabold text-slate-900">${reviewItem.name}</h5>
+                                        <p class="text-xs font-semibold text-slate-400 mt-0.5">${reviewItem.location}</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-5">
+                                    <div>
+                                        <span class="block text-[#ff5d00] font-extrabold text-base tracking-tight">${reviewItem.savings}</span>
+                                        <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">Annual Savings</span>
+                                    </div>
+                                    <div class="border-l border-slate-200 pl-4">
+                                        <span class="block text-slate-800 font-extrabold text-base tracking-tight">${reviewItem.size}</span>
+                                        <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">System Size</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
-                        <div class="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
-                            <div class="flex items-center gap-3.5">
-                                <div class="w-11 h-11 rounded-full bg-[#ff5d00] flex items-center justify-center font-bold text-sm text-white shadow-md">
-                                    ${reviewItem.initials}
-                                </div>
-                                <div>
-                                    <h5 class="text-[15px] font-extrabold text-slate-900">${reviewItem.name}</h5>
-                                    <p class="text-xs font-semibold text-slate-400 mt-0.5">${reviewItem.location}</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center gap-5">
-                                <div>
-                                    <span class="block text-[#ff5d00] font-extrabold text-base tracking-tight">${reviewItem.savings}</span>
-                                    <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">Annual Savings</span>
-                                </div>
-                                <div class="border-l border-slate-200 pl-4">
-                                    <span class="block text-slate-800 font-extrabold text-base tracking-tight">${reviewItem.size}</span>
-                                    <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-0.5">System Size</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                containerElement.innerHTML += cardBodyHtml;
-            }
+                    `;
+                    containerElement.innerHTML += cardBodyHtml;
+                }
 
-            renderIndicatorDots();
+                renderIndicatorDots();
+                
+                // Fade in
+                containerElement.style.opacity = '1';
+            }, 250); 
         }
 
         function renderIndicatorDots() {
