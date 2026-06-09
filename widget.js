@@ -1,5 +1,5 @@
 (function () {
-    const WIDGET_URL = "https://YOUR-USERNAME.github.io/solar-demo/chatbotclean.html";
+    const WIDGET_URL = "https://sterlingbridgemgmt.github.io/solar-demo/chatbot.html";
 
     // Create floating button
     const btn = document.createElement("div");
