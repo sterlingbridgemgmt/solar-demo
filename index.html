@@ -937,31 +937,91 @@
         document.addEventListener('DOMContentLoaded', () => {
             buildReviewDeckStructure();
         });
-        // Chatbot functionality
-document.getElementById('chat-toggle').addEventListener('click', toggleChat);
-
-function toggleChat() {
-    const window = document.getElementById('chat-window');
-    window.classList.toggle('hidden');
-}
     </script>
-    <div id="chatbot-component" class="fixed bottom-6 right-6 z-[100]">
-    <button id="chat-toggle" class="bg-[#ff5d00] w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
-        <i class="fa-solid fa-comment text-white text-xl"></i>
-    </button>
-    
-    <div id="chat-window" class="hidden absolute bottom-16 right-0 w-[350px] h-[500px] bg-[#000] border border-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col">
-        <div class="p-4 border-b border-slate-800 flex justify-between items-center bg-[#070a13]">
-            <span class="text-white font-bold text-sm">Solar Assistant</span>
-            <button onclick="toggleChat()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+    <div id="sbs-chat-wrapper">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        #sbs-chat-wrapper { --sbs-orange: #ff5a00; --sbs-bg: #000000; --sbs-text: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; }
+        #sbs-chat-wrapper * { box-sizing: border-box; }
+        #sbs-chat-wrapper .sbs-fixed { position: fixed; bottom: 30px; right: 30px; z-index: 999999; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+        #sbs-chat-wrapper .sbs-window { display: none; width: 380px; height: 550px; background: #000; border: 1px solid #222; border-radius: 20px; overflow: hidden; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        #sbs-chat-wrapper .sbs-window.sbs-open { display: flex; }
+        #sbs-chat-wrapper .sbs-header { padding: 15px 20px; border-bottom: 1px solid #222; display: flex; justify-content: space-between; align-items: center; }
+        #sbs-chat-wrapper .sbs-msgs { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
+        #sbs-chat-wrapper .sbs-msg { padding: 10px 15px; border-radius: 12px; font-size: 0.9rem; max-width: 85%; }
+        #sbs-chat-wrapper .sbs-bot { background: #111; color: #fff; align-self: flex-start; }
+        #sbs-chat-wrapper .sbs-user { background: var(--sbs-orange); color: #fff; align-self: flex-end; }
+        #sbs-chat-wrapper .sbs-footer { padding: 10px; display: flex; gap: 5px; border-top: 1px solid #222; }
+        #sbs-chat-wrapper input { flex: 1; background: #111; border: 1px solid #333; color: white; padding: 10px; border-radius: 8px; }
+        #sbs-chat-wrapper button { background: var(--sbs-orange); border: none; color: white; padding: 0 15px; border-radius: 8px; cursor: pointer; }
+        #sbs-chat-wrapper .sbs-launcher { width: 60px; height: 60px; background: var(--sbs-orange); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.5rem; }
+    </style>
+
+    <div class="sbs-fixed">
+        <div class="sbs-window" id="sbs-win">
+            <div class="sbs-header">
+                <h3 style="color:#fff; font-size:0.9rem;">Sarah | Sterling Bridge</h3>
+                <i class="fa-solid fa-xmark" style="color:#fff; cursor:pointer;" onclick="sbsToggle()"></i>
+            </div>
+            <div class="sbs-msgs" id="sbs-msgs"></div>
+            <div class="sbs-footer">
+                <input type="text" id="sbs-in" placeholder="Type message...">
+                <button onclick="sbsProc()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
         </div>
-        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3">
-            <div class="text-sm p-3 bg-slate-900 text-white rounded-lg max-w-[80%]">How can I help you today?</div>
-        </div>
-        <div class="p-3 border-t border-slate-800 bg-[#070a13]">
-            <input type="text" placeholder="Type a message..." class="w-full bg-slate-900 text-white rounded-lg p-2 text-sm border border-slate-700 outline-none focus:border-[#ff5d00]">
-        </div>
+        <div class="sbs-launcher" onclick="sbsToggle()"><i class="fa-solid fa-comments"></i></div>
     </div>
+
+    <script>
+        let state = "MENU", bill = '', roof = '', address = '', name = '', phone = '';
+        const webhook = 'https://hook.us2.make.com/pvr9mymgxtzoyx156125oggs8w4r7w0t';
+        
+        function sbsToggle() { document.getElementById('sbs-win').classList.toggle('sbs-open'); }
+        function sbsAdd(txt, type) {
+            const m = document.getElementById('sbs-msgs');
+            m.innerHTML += `<div class="sbs-msg sbs-${type}">${txt}</div>`;
+            m.scrollTop = m.scrollHeight;
+        }
+
+        function sbsProc() {
+            const input = document.getElementById('sbs-in');
+            const val = input.value.trim();
+            if(!val) return;
+            sbsAdd(val, 'user');
+            input.value = '';
+
+            setTimeout(() => {
+                if(state === "MENU") {
+                    sbsAdd("Processing... (Logic placeholder)", 'bot');
+                    state = "CAPTURE_BILL";
+                    sbsAdd("What is your monthly electric bill?", 'bot');
+                } else if(state === "CAPTURE_BILL") {
+                    bill = val;
+                    state = "CAPTURE_ROOF";
+                    sbsAdd("Got it. What roof material?", 'bot');
+                } else if(state === "CAPTURE_ROOF") {
+                    roof = val;
+                    state = "CAPTURE_ADDRESS";
+                    sbsAdd("Address?", 'bot');
+                } else if(state === "CAPTURE_ADDRESS") {
+                    address = val;
+                    state = "CAPTURE_NAME";
+                    sbsAdd("Name?", 'bot');
+                } else if(state === "CAPTURE_NAME") {
+                    name = val;
+                    state = "CAPTURE_PHONE";
+                    sbsAdd("Phone?", 'bot');
+                } else if(state === "CAPTURE_PHONE") {
+                    phone = val;
+                    fetch(webhook, { method: 'POST', body: JSON.stringify({bill, roof, address, name, phone}) });
+                    sbsAdd("Done. We'll reach out.", 'bot');
+                    state = "DONE";
+                }
+            }, 500);
+        }
+        sbsAdd("Hi! I'm Sarah from Sterling Bridge. How can I help?", 'bot');
+    </script>
 </div>
 </body>
 </html>
