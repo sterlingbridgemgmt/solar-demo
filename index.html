@@ -949,7 +949,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
     :root {
@@ -1287,7 +1287,10 @@
                     </div>
                     <div class="tsp-header-meta">
                         <h3>Sarah | Texas Sun Power</h3>
-                        <span><i class="fa-solid fa-circle" style="font-size: 0.4rem;"></i> Operational Link</span>
+                        <span>
+    <i class="fa-solid fa-circle" style="font-size:6px;color:#10b981;"></i>
+    Operational Link
+</span>
                     </div>
                 </div>
                 
@@ -1310,7 +1313,7 @@
         </div>
 
         <div class="tsp-chat-launcher-btn" onclick="tsp_toggleChatInterfaceWindow()">
-            <i class="fa-solid fa-headset" id="tsp-launcherIconNode"></i>
+    <i class="fa-solid fa-headset" id="tsp-launcherIconNode"></i>
             <div class="tsp-notification-counter-badge" id="tsp-unreadCounterNode">0</div>
         </div>
     </div>
@@ -1624,7 +1627,7 @@ answer:"Premium Tier-1 manufacturers such as REC, Qcells, Panasonic, and others 
         tsp_systemChatFrame.classList.add('tsp-window-visible');
         tsp_floatingCalloutBubble.style.display = 'none';
 
-        tsp_launcherIconNode.innerHTML = "✕";
+        tsp_launcherIconNode.className = "fa-solid fa-xmark";
         tsp_unreadMessagesCount = 0;
         tsp_updateNotificationBadgeDisplay();
 
@@ -1809,36 +1812,46 @@ answer:"Premium Tier-1 manufacturers such as REC, Qcells, Panasonic, and others 
             if (tsp_conversationState === "MENU_STAGE" || tsp_conversationState === "CUSTOM_QA_STAGE") {
                 const normalizedInput = rawText.toLowerCase();
                 const userQuestions = normalizedInput.split(/[?.!,]| and /);
-                let responseBuffer = [];
-let alreadyAnswered = new Set();
+                let foundMatch = false;
 
-                tsp_AI_Solar_Knowledge_Base.forEach(knowledgeBlock => {
-                    const matchedKeyword = knowledgeBlock.keywords.some(keyword =>
-normalizedInput.includes(keyword.toLowerCase())
-);
-                    if (matchedKeyword && !alreadyAnswered.has(knowledgeBlock.answer)) {
-    responseBuffer.push(knowledgeBlock.answer);
-    alreadyAnswered.add(knowledgeBlock.answer);
+tsp_AI_Solar_Knowledge_Base.forEach(knowledgeBlock => {
+
+    const matchedKeyword =
+        knowledgeBlock.keywords.some(keyword =>
+            normalizedInput.includes(keyword)
+        );
+
+    if (matchedKeyword) {
+
+        foundMatch = true;
+
+        tsp_pushBotMessage(
+            knowledgeBlock.answer
+        );
+
+    }
+
+});
+
+if (!foundMatch) {
+
+    tsp_pushBotMessage(
+        "That's a great question. One of our solar specialists can provide exact guidance for your specific situation."
+    );
+
 }
-                });
 
-               if (responseBuffer.length > 0) {
+                const waitTime =
+    Math.max(
+        3000,
+        responseBuffer.length * 2500
+    );
 
-    const uniqueAnswers = [...new Set(responseBuffer)];
-
-    tsp_pushBotMessage(uniqueAnswers.join("\n\n"));
-
-} else {
-                    tsp_pushBotMessage(
-"I don't have a specific answer for that yet, but one of our solar specialists can help. You can also ask about costs, batteries, storms, warranties, installation timelines, tax credits, savings, roof requirements, or solar performance."
-);
-                }
-
-                setTimeout(() => {
-                    tsp_conversationState = "MENU_STAGE";
-                    tsp_pushBotMessage("What step would you like to explore next?");
-                    tsp_renderThreeChoicesMenu();
-                }, 4000); 
+setTimeout(() => {
+    tsp_conversationState = "MENU_STAGE";
+    tsp_pushBotMessage("What would you like help with next?");
+    tsp_renderThreeChoicesMenu();
+}, 8000); 
                 return;
             }
 
@@ -1938,24 +1951,24 @@ normalizedInput.includes(keyword.toLowerCase())
             body: JSON.stringify(compiledPayload)
         })
         .then(() => {
-            tsp_pushBotMessage("Thank you! Your property profile has been securely compiled and transmitted. A solar design architect will reach out via text shortly.");
+            tsp_pushBotMessage("Perfect — your information has been sent to our solar team.  A specialist will review your property and reach out shortly to discuss your options and potential savings.  In the meantime, feel free to ask me any solar-related questions.");
             tsp_renderConversationResetOption();
         })
         .catch(() => {
-            tsp_pushBotMessage("Thank you! Your property profile has been securely compiled and transmitted. A solar design architect will reach out via text shortly.");
+            tsp_pushBotMessage("Perfect — your information has been sent to our solar team.  A specialist will review your property and reach out shortly to discuss your options and potential savings.  In the meantime, feel free to ask me any solar-related questions.");
             tsp_renderConversationResetOption();
         });
     }
 
     function tsp_renderConversationResetOption() {
-        tsp_conversationState = "FLOW_FINISHED";
+        tsp_conversationState = "CUSTOM_QA_STAGE";
         const resetContainer = document.createElement('div');
         resetContainer.className = "tsp-menu-wrapper";
 
         const resetBtn = document.createElement('button');
         resetBtn.className = "tsp-menu-btn";
         resetBtn.style.textAlign = "center";
-        resetBtn.innerHTML = "<i class='fa-solid fa-rotate-right'></i> Start New Conversation";
+        resetBtn.innerHTML = "↻ Start New Conversation";
         resetBtn.onclick = () => {
             tsp_initializeChatContentMatrix();
         };
