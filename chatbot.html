@@ -378,6 +378,8 @@
     </div>
 
     <script>
+        const urlParams = new URLSearchParams(window.location.search);
+const isEmbed = urlParams.get("embed") === "true";
         const TargetWebhookUrl = 'https://hook.us2.make.com/pvr9mymgxtzoyx156125oggs8w4r7w0t';
         const chatFlowBox = document.getElementById('chatFlowBox');
         const chatInputField = document.getElementById('chatInputField');
@@ -444,15 +446,20 @@
         }
 
         function toggleChatInterfaceWindow() {
+            if (isEmbed) return;
             isChatWindowOpen = !isChatWindowOpen;
             if (isChatWindowOpen) {
-                systemChatFrame.classList.add('window-visible');
+                if (!isEmbed) {
+    systemChatFrame.classList.add("window-visible");
+}
                 floatingCalloutBubble.style.display = 'none';
                 launcherIconNode.className = "fa-solid fa-xmark";
                 unreadMessagesCount = 0;
                 updateNotificationBadgeDisplay();
             } else {
-                systemChatFrame.classList.remove('window-visible');
+                if (!isEmbed) {
+    systemChatFrame.classList.remove("window-visible");
+}
                 launcherIconNode.className = "fa-solid fa-comments";
             }
         }
