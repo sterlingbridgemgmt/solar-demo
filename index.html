@@ -1292,8 +1292,8 @@
                 </div>
                 
                 <div class="tsp-header-action-deck">
-                    <button class="tsp-header-control-btn tsp-reset-trigger" onclick="tsp_triggerSystemHardReset()" title="Reset Session Layout"><i class="fa-solid fa-rotate-right"></i></button>
-                    <button class="tsp-header-control-btn" onclick="tsp_toggleChatInterfaceWindow()" title="Minimize UI"><i class="fa-solid fa-minus"></i></button>
+                    <button class="tsp-header-control-btn tsp-reset-trigger" onclick="tsp_triggerSystemHardReset()" title="Reset Session Layout">↻</button>
+                    <button class="tsp-header-control-btn" onclick="tsp_toggleChatInterfaceWindow()" title="Minimize UI">−</button>
                 </div>
             </div>
 
@@ -1301,7 +1301,7 @@
 
             <div class="tsp-chat-footer">
                 <input type="text" id="tsp-chatInputField" placeholder="Type message..." onkeypress="tsp_handleKeySubmit(event)">
-                <button onclick="tsp_processUserTextInput()"><i class="fa-solid fa-paper-plane"></i></button>
+                <button onclick="tsp_processUserTextInput()">➤</button>
             </div>
         </div>
 
@@ -1310,7 +1310,7 @@
         </div>
 
         <div class="tsp-chat-launcher-btn" onclick="tsp_toggleChatInterfaceWindow()">
-            <i class="fa-solid fa-comments" id="tsp-launcherIconNode"></i>
+            <i class="fa-solid fa-headset" id="tsp-launcherIconNode"></i>
             <div class="tsp-notification-counter-badge" id="tsp-unreadCounterNode">0</div>
         </div>
     </div>
@@ -1354,6 +1354,234 @@ let tsp_hasOpenedBefore = false;
         { keywords: ["lifespan", "degrade", "efficiency", "last", "years", "old"], answer: "Premium silicon tier infrastructure modules maintain a highly resilient structural life expectancy exceeding 25 to 30 years. System degradation paths are strictly regulated, maintaining over 86% of original day-one peak operational efficiency at year 25." },
         { keywords: ["tax credit", "itc", "incentive", "rebate", "exempt"], answer: "Texas setups optimize financial returns via the 30% Federal Investment Tax Credit (ITC), directly deducting dollar-for-dollar from tax liabilities. Furthermore, Texas Property Tax Code Sec 11.27 guarantees 100% of the home equity value added by solar remains completely tax exempt." },
         { keywords: ["hoa", "association", "by laws", "block", "approve", "permission", "trouble"], answer: "Under strict Texas Property Code Section 202.010, Homeowner Associations are legally barred from blocking residential solar configurations. They retain variance rights to shape visual placement constraints for street visibility, but cannot stop execution tracks." }
+        {
+keywords:["storm","storms","hurricane","hail","wind","lightning","tornado","weather"],
+answer:"Modern solar panels are engineered to withstand severe weather including hail, heavy rain, and high winds. Most premium panels are tested against hail impacts and wind loads exceeding 140 MPH."
+},
+
+{
+keywords:["winter","snow","cold","freeze","freezing","ice"],
+answer:"Solar panels continue producing electricity during winter. Cold temperatures actually improve panel efficiency, although shorter daylight hours can reduce total production."
+},
+
+{
+keywords:["cloudy","clouds","overcast","shade","shaded"],
+answer:"Solar panels still generate electricity on cloudy days. Production decreases compared to full sunlight, but modern systems continue producing usable energy even under overcast conditions."
+},
+
+{
+keywords:["sell","selling","move","moving","house value","home value","resale"],
+answer:"Solar often increases home value because buyers appreciate lower utility costs. In many markets, solar-equipped homes sell faster and at higher prices than comparable properties."
+},
+
+{
+keywords:["insurance","insured","coverage","homeowners insurance"],
+answer:"Most homeowners insurance policies cover rooftop solar systems. Many providers only require a simple policy update after installation."
+},
+
+{
+keywords:["maintenance","cleaning","wash","dirty panels"],
+answer:"Solar systems require very little maintenance. Rain typically handles most cleaning, and periodic inspections help ensure maximum performance."
+},
+
+{
+keywords:["electricity bill","electric bill","utility bill","monthly bill"],
+answer:"A properly designed solar system can significantly reduce monthly utility costs by generating electricity directly from sunlight rather than purchasing all power from the utility."
+},
+
+{
+keywords:["panels","solar panels","equipment","modules"],
+answer:"Modern Tier-1 solar panels are designed to operate for 25 to 30 years or longer while maintaining strong performance throughout their lifespan."
+},
+
+{
+keywords:["roof damage","roof leak","leak","damage roof"],
+answer:"When installed correctly by qualified professionals, solar systems do not damage roofs. Mounting systems are engineered with weatherproof flashing and sealing methods."
+},
+
+{
+keywords:["battery","storage","powerwall","backup battery","backup power"],
+answer:"Battery systems store excess solar production for later use and can provide backup power during grid outages depending on the system design."
+},
+
+{
+keywords:["outage","power outage","blackout","grid down","lose power"],
+answer:"Traditional grid-tied solar systems automatically shut down during outages for safety. Adding battery storage allows critical appliances and circuits to remain powered."
+},
+
+{
+keywords:["tax credit","itc","rebate","incentive","tax incentives"],
+answer:"Many homeowners qualify for the federal solar tax credit, which can significantly reduce the overall cost of installing a solar energy system."
+},
+
+{
+keywords:["how long","installation","install","timeline","process"],
+answer:"Most residential solar projects move through consultation, design, permitting, installation, inspection, and utility approval. Physical installation typically takes one to two days."
+},
+
+{
+keywords:["worth it","good investment","roi","return","save money"],
+answer:"For many homeowners, solar provides long-term savings by reducing dependence on utility rate increases while creating predictable energy costs."
+},
+
+{
+keywords:["night","nighttime","after dark","sun goes down"],
+answer:"Solar panels do not generate electricity at night. Homes draw power from the grid or from battery storage if a battery system is installed."
+},
+
+{
+keywords:["hoa","homeowners association","hoa approval","hoa rules"],
+answer:"Many states limit how much HOAs can restrict residential solar installations, although they may impose reasonable aesthetic requirements."
+},
+
+{
+keywords:["permit","permits","inspection","city approval"],
+answer:"Permitting and inspections are standard parts of the installation process and are typically handled by the solar company."
+},
+
+{
+keywords:["financing","loan","finance","payment","monthly payment"],
+answer:"Many homeowners choose solar financing options that allow installation with little or no upfront investment while spreading costs over time."
+},
+
+{
+keywords:["net metering","sell power","export power","credits"],
+answer:"Net metering and similar utility programs may provide bill credits when your solar system produces more electricity than your home consumes."
+},
+
+{
+keywords:["increase rates","electric rates","utility increase"],
+answer:"One reason homeowners choose solar is to reduce exposure to future utility rate increases and create more predictable long-term energy costs."
+}
+    {
+keywords:["storm","storms","hurricane","hail","wind","weather"],
+answer:"Modern solar panels are engineered to withstand severe Texas weather including hail, heavy rain, and high winds. Most premium panels are tested against hail impacts and carry extensive manufacturer warranties."
+},
+
+{
+keywords:["cloudy","clouds","overcast","rainy"],
+answer:"Solar panels still generate electricity during cloudy weather. Production decreases compared to full sun conditions, but systems continue producing usable power throughout the day."
+},
+
+{
+keywords:["night","nighttime","after dark"],
+answer:"Solar panels do not produce electricity at night. Homes automatically pull power from the utility grid unless battery storage has been installed."
+},
+
+{
+keywords:["sell house","selling house","move","moving"],
+answer:"Solar systems can increase property value and are often viewed as an asset by buyers. Transfer procedures are straightforward and can be handled during the home sale process."
+},
+
+{
+keywords:["increase value","home value","property value"],
+answer:"Multiple studies have shown that solar-equipped homes often sell faster and at higher values than comparable non-solar homes."
+},
+
+{
+keywords:["electric car","ev","tesla","vehicle charging"],
+answer:"Solar pairs exceptionally well with EV charging because your system can offset much of the electricity required to charge your vehicle."
+},
+
+{
+keywords:["winter","cold","freeze","snow"],
+answer:"Solar panels actually operate more efficiently in cooler temperatures. While production depends on sunlight availability, cold weather itself does not harm performance."
+},
+
+{
+keywords:["clean","cleaning","wash panels","dirty panels"],
+answer:"Rain naturally removes most debris. In Texas, occasional cleaning may improve performance if significant dust, pollen, or debris accumulates."
+},
+
+{
+keywords:["maintenance","maintain","service"],
+answer:"Modern solar systems require very little maintenance. Most homeowners only monitor production through the system app while equipment warranties provide long-term protection."
+},
+
+{
+keywords:["shade","shaded","trees","tree"],
+answer:"Shade can reduce production, but modern panel layouts and microinverter technology help minimize losses. A site assessment determines the exact impact."
+},
+
+{
+keywords:["roof leak","leaking","leaks"],
+answer:"Professional solar installations use engineered flashing and waterproofing systems. Properly installed solar systems should not create roof leaks."
+},
+
+{
+keywords:["replace roof","new roof","roof replacement"],
+answer:"If your roof needs replacement soon, it is generally recommended to complete the roof work before installing solar."
+},
+
+{
+keywords:["outage","power outage","blackout","lose power"],
+answer:"Standard solar systems shut down during utility outages for safety reasons. Adding battery storage allows critical loads to continue operating."
+},
+
+{
+keywords:["battery","batteries","powerwall","storage"],
+answer:"Battery systems store excess solar production for use at night, during peak utility pricing periods, or during power outages."
+},
+
+{
+keywords:["panels made","where made","manufacturer"],
+answer:"Most premium systems use Tier-1 manufacturers with extensive quality testing, long warranties, and decades of operating history."
+},
+
+{
+keywords:["financing","loan","monthly payment"],
+answer:"Many homeowners choose solar financing because it often allows them to replace a rising utility bill with a predictable fixed payment."
+},
+
+{
+keywords:["cash purchase","buy outright"],
+answer:"Cash purchases generally provide the highest long-term financial return because there are no financing costs involved."
+},
+
+{
+keywords:["permit","permits"],
+answer:"The installation company handles permitting, engineering approvals, inspections, and utility interconnection paperwork."
+},
+
+{
+keywords:["inspection","inspect"],
+answer:"Local inspections verify the system meets all electrical and structural requirements before activation."
+},
+
+{
+keywords:["meter","net metering"],
+answer:"Net metering and utility export programs allow excess electricity production to be credited back through the utility provider where available."
+},
+
+{
+keywords:["break","broken panel","damaged panel"],
+answer:"Individual panels can be replaced if damaged. Manufacturer warranties typically cover defects while homeowner insurance often covers external damage."
+},
+
+{
+keywords:["monitoring","app","track production"],
+answer:"Most modern systems include monitoring software that allows homeowners to view production, usage, and performance directly from a phone app."
+},
+
+{
+keywords:["fire","fire risk"],
+answer:"Properly installed solar systems are extremely safe and must comply with strict electrical and fire safety standards."
+},
+
+{
+keywords:["insurance","insured"],
+answer:"Most homeowners simply notify their insurance provider after installation. Coverage is usually straightforward and often results in little or no premium increase."
+},
+
+{
+keywords:["remove panels","take off panels"],
+answer:"Solar systems can be removed and reinstalled if major roof work becomes necessary in the future."
+},
+
+{
+keywords:["best panels","highest quality panels"],
+answer:"Premium Tier-1 manufacturers such as REC, Qcells, Panasonic, and others are known for strong warranties, efficiency, and long-term reliability."
+}
     ];
 
     window.addEventListener('load', () => {
@@ -1404,8 +1632,7 @@ let tsp_hasOpenedBefore = false;
         tsp_systemChatFrame.classList.add('tsp-window-visible');
         tsp_floatingCalloutBubble.style.display = 'none';
 
-        tsp_launcherIconNode.className = "fa-solid fa-xmark";
-
+        tsp_launcherIconNode.innerHTML = "✕";
         tsp_unreadMessagesCount = 0;
         tsp_updateNotificationBadgeDisplay();
 
@@ -1417,7 +1644,7 @@ let tsp_hasOpenedBefore = false;
             tsp_floatingCalloutBubble.style.display = 'block';
         }
 
-        tsp_launcherIconNode.className = "fa-solid fa-comments";
+        tsp_launcherIconNode.className = "fa-solid fa-headset";
     }
 }
     function tsp_initializeChatContentMatrix() {
@@ -1446,19 +1673,72 @@ let tsp_hasOpenedBefore = false;
         }
     }
 
-    function tsp_pushBotMessage(text) {
-        const bubble = document.createElement('div');
-        bubble.className = "tsp-msg tsp-msg-bot";
-        bubble.innerText = text;
-        tsp_chatFlowBox.appendChild(bubble);
-        tsp_chatFlowBox.scrollTop = tsp_chatFlowBox.scrollHeight;
+    function tsp_showTypingIndicator() {
 
-        if (!tsp_isChatWindowOpen) {
-            tsp_unreadMessagesCount++;
-            tsp_updateNotificationBadgeDisplay();
+    const typing = document.createElement('div');
+
+    typing.className = "tsp-msg tsp-msg-bot";
+
+    typing.id = "tspTypingIndicator";
+
+    typing.innerHTML = "● ● ●";
+
+    tsp_chatFlowBox.appendChild(typing);
+
+    tsp_chatFlowBox.scrollTop =
+        tsp_chatFlowBox.scrollHeight;
+}
+
+    function tsp_removeTypingIndicator() {
+
+    const node =
+        document.getElementById('tspTypingIndicator');
+
+    if(node) node.remove();
+}
+
+    function tsp_pushBotMessage(text) {
+
+    const bubble = document.createElement('div');
+
+    bubble.className = "tsp-msg tsp-msg-bot";
+
+    bubble.innerHTML = "";
+
+    tsp_chatFlowBox.appendChild(bubble);
+
+    let i = 0;
+
+    const typingSpeed = 15;
+
+    function typeCharacter() {
+
+        if (i < text.length) {
+
+            bubble.innerHTML += text.charAt(i);
+
+            i++;
+
+            tsp_chatFlowBox.scrollTop =
+                tsp_chatFlowBox.scrollHeight;
+
+            setTimeout(typeCharacter, typingSpeed);
+
         }
-        tsp_playDigitalMessageNotificationChime();
     }
+
+    typeCharacter();
+
+    if (!tsp_isChatWindowOpen) {
+
+        tsp_unreadMessagesCount++;
+
+        tsp_updateNotificationBadgeDisplay();
+
+    }
+
+    tsp_playDigitalMessageNotificationChime();
+}
 
     function tsp_pushUserMessage(text) {
         const bubble = document.createElement('div');
@@ -1536,19 +1816,30 @@ let tsp_hasOpenedBefore = false;
         setTimeout(() => {
             if (tsp_conversationState === "MENU_STAGE" || tsp_conversationState === "CUSTOM_QA_STAGE") {
                 const normalizedInput = rawText.toLowerCase();
+                const userQuestions = normalizedInput.split(/[?.!,]| and /);
                 let responseBuffer = [];
+let alreadyAnswered = new Set();
 
                 tsp_AI_Solar_Knowledge_Base.forEach(knowledgeBlock => {
-                    const matchedKeyword = knowledgeBlock.keywords.some(keyword => normalizedInput.includes(keyword));
-                    if (matchedKeyword) {
-                        responseBuffer.push(knowledgeBlock.answer);
-                    }
+                    const matchedKeyword = knowledgeBlock.keywords.some(keyword =>
+normalizedInput.includes(keyword.toLowerCase())
+);
+                    if (matchedKeyword && !alreadyAnswered.has(knowledgeBlock.answer)) {
+    responseBuffer.push(knowledgeBlock.answer);
+    alreadyAnswered.add(knowledgeBlock.answer);
+}
                 });
 
-                if (responseBuffer.length > 0) {
-                    responseBuffer.forEach(matchedAnswer => tsp_pushBotMessage(matchedAnswer));
-                } else {
-                    tsp_pushBotMessage("That's an excellent question. Texas localized power rules are fully structured to protect residential consumer generation systems, ensuring safe utility grid balancing and financial shielding.");
+               if (responseBuffer.length > 0) {
+
+    const uniqueAnswers = [...new Set(responseBuffer)];
+
+    tsp_pushBotMessage(uniqueAnswers.join("\n\n"));
+
+} else {
+                    tsp_pushBotMessage(
+"I don't have a specific answer for that yet, but one of our solar specialists can help. You can also ask about costs, batteries, storms, warranties, installation timelines, tax credits, savings, roof requirements, or solar performance."
+);
                 }
 
                 setTimeout(() => {
