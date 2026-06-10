@@ -1002,6 +1002,10 @@ max-width: calc(100vw - 24px);
     bottom: 24px;
     right: 24px;
     z-index: 2147483647;
+      position: fixed !important;
+right: 24px !important;
+bottom: 24px !important;
+transform: none !important;
 }
 
 .chat-header {
@@ -1176,7 +1180,7 @@ max-width: calc(100vw - 24px);
 <div id="welcomeBubble" class="welcome-bubble">
     👋 Hi! Want to see if your home qualifies for solar savings?
 </div>
-<div class="chat-container">
+<div class="chat-container" style="z-index:999999999;">
     <div class="chat-header">
         <div class="header-identity-block">
             <div class="bot-avatar-img">
