@@ -10,23 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-   <style>
+    <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #030a16;
-        }
-        /* Every link and button gets smooth transitions */
-        a, button {
-            transition: all 0.5s ease-in-out !important;
-        }
-        /* Fade-in entrance effect */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        /* Apply animation to navigation and footer buttons */
-        nav button, footer button {
-            animation: fadeIn 1s ease-out forwards;
         }
         /* Custom smooth scrollbar */
         ::-webkit-scrollbar {
@@ -42,6 +29,13 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #ff5d00;
         }
+        #testimonial-slider-deck {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+        html {
+    scroll-behavior: smooth;
+}
     </style>
 </head>
 <body class="text-slate-200 antialiased min-h-screen flex flex-col justify-between text-base md:text-[17px]">
@@ -429,10 +423,10 @@
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                         <div class="lg:col-span-5">
-                            <span class="text-sm font-bold text-[#ff7724] tracking-widest uppercase block mb-4">Instant Evaluation</span>
-                            <h2 class="text-4xl font-black text-white tracking-tight leading-tight mb-5">Calculate Your Solar Blueprint</h2>
+                            <span class="text-sm font-bold text-[#ff7724] tracking-widest uppercase block mb-4">Free Estimate</span>
+                            <h2 class="text-4xl font-black text-white tracking-tight leading-tight mb-5">Get Your Free Solar Estimate</h2>
                             <p class="text-base text-slate-400 leading-relaxed mb-6">
-                                Provide your monthly metrics below. Our system handles advanced satellite evaluation mapping across your roof profile coordinates to model real-world production expectations.
+                                Fill out the form and our energy consultants will analyze your roof using advanced satellite imaging to determine your home's solar potential. You'll receive a detailed savings projection within 24 hours — no obligation, no pressure.<ul class='mt-6 space-y-2 text-slate-300'><li>✓ Free roof analysis</li><li>✓ Custom system design and production estimate</li><li>✓ Detailed savings projection with payback timeline</li><li>✓ No obligation — zero pressure, zero cost</li></ul>
                             </p>
                         </div>
 
@@ -452,7 +446,7 @@
                                     </div>
                                     <div>
                                         <label class="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-2">Email Address</label>
-                                        <input type="email" name="email" required placeholder="john@example.com" class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-sm px-4 py-3 rounded-xl outline-none text-slate-900 placeholder:text-slate-400">
+                                        <input type="email" name="email" placeholder="john@example.com" class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-sm px-4 py-3 rounded-xl outline-none text-slate-900 placeholder:text-slate-400">
                                     </div>
                                 </div>
                                 <div>
@@ -473,12 +467,18 @@
                                     <div>
                                         <label class="block text-xs font-bold uppercase tracking-wide text-slate-700 mb-2">Roof Architecture</label>
                                         <select name="roof" required class="w-full bg-slate-50 border border-slate-200 focus:border-[#ff5d00] text-sm px-4 py-3 rounded-xl outline-none text-slate-900 cursor-pointer">
-                                            <option value="" disabled selected>Select roof architecture</option>
-                                            <option value="Asphalt Shingle">Asphalt Shingle</option>
-                                            <option value="Standing Seam Metal">Standing Seam Metal</option>
-                                            <option value="Clay / Concrete Tile">Clay / Concrete Tile</option>
-                                            <option value="Flat Membrane">Flat Membrane</option>
-                                        </select>
+<option value="" disabled selected>Select roof architecture</option>
+<option value="Shingles">Shingles</option>
+<option value="Metal">Metal</option>
+<option value="Tile">Tile</option>
+<option value="Flat">Flat</option>
+<option value="Foam">Foam</option>
+<option value="Wood">Wood</option>
+<option value="Composite">Composite</option>
+<option value="Synthetic">Synthetic</option>
+<option value="Mixed">Mixed</option>
+<option value="Not Sure">Not Sure</option>
+</select>
                                     </div>
                                 </div>
 
@@ -495,95 +495,109 @@
         </div>
 
         <!-- VIEW 3: PREVIOUS WORKS PORTFOLIO PAGE -->
-        <div id="view-portfolio" class="view-section hidden">
-            <section class="py-24 bg-[#030a16]">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-                    <div class="text-center max-w-3xl mx-auto mb-20">
-                        <span class="text-sm font-bold text-[#ff7724] tracking-widest uppercase block mb-4">Architectural Case Studies</span>
-                        <h2 class="text-4xl font-black text-white tracking-tight mb-5">Aesthetic Texas Solar Deployments</h2>
-                        <p class="text-lg text-slate-400">Real execution examples on premium, modern residential architectures optimized for maximum load offsets.</p>
-                    </div>
+        
+<div id="view-portfolio" class="view-section hidden">
+<section class="py-24 bg-[#030a16]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="text-sm font-bold text-[#ff7724] tracking-widest uppercase block mb-4">Previous Works</span>
+<h2 class="text-5xl font-black text-white mb-6">Solar Installations Across Texas</h2>
+<p class="text-lg text-slate-400">Browse our portfolio of premium residential solar installations. Each system is custom-engineered for the home and the homeowner's specific energy needs.</p>
+</div>
+<div class="grid md:grid-cols-4 gap-6 mb-16">
+<div class="bg-white p-8 rounded-2xl"><div class="text-4xl font-black text-[#ff7724]">1,847+</div><div class="text-slate-800">Installations</div></div>
+<div class="bg-white p-8 rounded-2xl"><div class="text-4xl font-black text-[#ff7724]">21.4 MW</div><div class="text-slate-800">Total Capacity</div></div>
+<div class="bg-white p-8 rounded-2xl"><div class="text-4xl font-black text-[#ff7724]">$2,840</div><div class="text-slate-800">Avg. Annual Savings</div></div>
+<div class="bg-white p-8 rounded-2xl"><div class="text-4xl font-black text-[#ff7724]">12 Years</div><div class="text-slate-800">Experience</div></div>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-lg"><img src="https://i.postimg.cc/15kc3Yn7/Screenshot-2026-06-10-112219.png" alt="Solar Installation" class="w-full h-56 object-cover rounded-t-xl mb-4 transition-transform duration-300 hover:scale-[1.02]"/><div class="text-slate-900 font-bold">Austin, TX</div><div class="text-slate-500">Westlake Hills</div><div class="grid grid-cols-2 gap-4 mt-4 text-sm"><div><div class="text-slate-500">System Size</div><div class="font-semibold text-slate-900">14.2 kW</div></div><div><div class="text-slate-500">Annual Savings</div><div class="font-semibold text-[#ff7724]">$3,200/year</div></div><div><div class="text-slate-500">Production</div><div class="font-semibold text-slate-900">19,800 kWh</div></div><div><div class="text-slate-500">Type</div><div class="font-semibold text-slate-900">With Battery</div></div></div></div><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-lg"><img src="https://i.postimg.cc/sDk9g0Q0/Screenshot-2026-06-10-112226.png" alt="Solar Installation" class="w-full h-56 object-cover rounded-t-xl mb-4 transition-transform duration-300 hover:scale-[1.02]"/><div class="text-slate-900 font-bold">Dallas, TX</div><div class="text-slate-500">Highland Park</div><div class="grid grid-cols-2 gap-4 mt-4 text-sm"><div><div class="text-slate-500">System Size</div><div class="font-semibold text-slate-900">16.8 kW</div></div><div><div class="text-slate-500">Annual Savings</div><div class="font-semibold text-[#ff7724]">$3,900/year</div></div><div><div class="text-slate-500">Production</div><div class="font-semibold text-slate-900">23,500 kWh</div></div><div><div class="text-slate-500">Type</div><div class="font-semibold text-slate-900">With Battery</div></div></div></div><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-lg"><img src="https://i.postimg.cc/bN7HwFDW/Screenshot-2026-06-10-112232.png" alt="Solar Installation" class="w-full h-56 object-cover rounded-t-xl mb-4 transition-transform duration-300 hover:scale-[1.02]"/><div class="text-slate-900 font-bold">Houston, TX</div><div class="text-slate-500">The Woodlands</div><div class="grid grid-cols-2 gap-4 mt-4 text-sm"><div><div class="text-slate-500">System Size</div><div class="font-semibold text-slate-900">11.6 kW</div></div><div><div class="text-slate-500">Annual Savings</div><div class="font-semibold text-[#ff7724]">$2,600/year</div></div><div><div class="text-slate-500">Production</div><div class="font-semibold text-slate-900">16,200 kWh</div></div><div><div class="text-slate-500">Type</div><div class="font-semibold text-slate-900">Grid-Tied</div></div></div></div><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-lg"><img src="https://i.postimg.cc/Yq5fCyGV/Screenshot-2026-06-10-112237.png" alt="Solar Installation" class="w-full h-56 object-cover rounded-t-xl mb-4 transition-transform duration-300 hover:scale-[1.02]"/><div class="text-slate-900 font-bold">San Antonio, TX</div><div class="text-slate-500">Alamo Heights</div><div class="grid grid-cols-2 gap-4 mt-4 text-sm"><div><div class="text-slate-500">System Size</div><div class="font-semibold text-slate-900">13.0 kW</div></div><div><div class="text-slate-500">Annual Savings</div><div class="font-semibold text-[#ff7724]">$2,950/year</div></div><div><div class="text-slate-500">Production</div><div class="font-semibold text-slate-900">18,100 kWh</div></div><div><div class="text-slate-500">Type</div><div class="font-semibold text-slate-900">With Battery</div></div></div></div><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-lg"><img src="https://i.postimg.cc/vHJLZSxw/Screenshot-2026-06-10-112244.png" alt="Solar Installation" class="w-full h-56 object-cover rounded-t-xl mb-4 transition-transform duration-300 hover:scale-[1.02]"/><div class="text-slate-900 font-bold">Fort Worth, TX</div><div class="text-slate-500">TCU Area</div><div class="grid grid-cols-2 gap-4 mt-4 text-sm"><div><div class="text-slate-500">System Size</div><div class="font-semibold text-slate-900">15.4 kW</div></div><div><div class="text-slate-500">Annual Savings</div><div class="font-semibold text-[#ff7724]">$3,500/year</div></div><div><div class="text-slate-500">Production</div><div class="font-semibold text-slate-900">21,400 kWh</div></div><div><div class="text-slate-500">Type</div><div class="font-semibold text-slate-900">With Battery</div></div></div></div><div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-lg"><img src="https://i.postimg.cc/dtbmVSZF/Screenshot-2026-06-10-112252.png" alt="Solar Installation" class="w-full h-56 object-cover rounded-t-xl mb-4 transition-transform duration-300 hover:scale-[1.02]"/><div class="text-slate-900 font-bold">El Paso, TX</div><div class="text-slate-500">West Side</div><div class="grid grid-cols-2 gap-4 mt-4 text-sm"><div><div class="text-slate-500">System Size</div><div class="font-semibold text-slate-900">10.8 kW</div></div><div><div class="text-slate-500">Annual Savings</div><div class="font-semibold text-[#ff7724]">$2,400/year</div></div><div><div class="text-slate-500">Production</div><div class="font-semibold text-slate-900">17,300 kWh</div></div><div><div class="text-slate-500">Type</div><div class="font-semibold text-slate-900">Grid-Tied</div></div></div></div></div></div></section></div>
+<div id="view-contact" class="view-section hidden">
+<section class="py-24 bg-[#030a16]">
+<div class="max-w-7xl mx-auto px-4 pt-10">
+<div class="text-center mb-16">
+<span class="text-sm font-bold text-[#ff7724] uppercase">Contact Us</span>
+<h2 class="text-5xl font-black text-white mt-4">Get in Touch With Our Team</h2>
+<p class="text-slate-400 mt-4">Ready to eliminate your electric bill? Our Texas-based team is here to answer your questions, provide estimates, and guide you through every step of going solar.</p>
+</div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        <!-- Project 1 -->
-                        <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group">
-                            <div class="relative h-72 bg-slate-900 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern Austin Villa" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
-                            </div>
-                            <div class="p-8 border-t border-slate-900">
-                                <h4 class="text-xl font-bold text-white mb-2">The Westlake Estate</h4>
-                                <p class="text-sm text-slate-400 mb-4">Austin, TX</p>
-                            </div>
-                        </div>
-                        <!-- Project 2 -->
-                        <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group">
-                            <div class="relative h-72 bg-slate-900 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Warmly Lit Luxury House" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
-                            </div>
-                            <div class="p-8 border-t border-slate-900">
-                                <h4 class="text-xl font-bold text-white mb-2">Highland Crest Residence</h4>
-                                <p class="text-sm text-slate-400 mb-4">Dallas, TX</p>
-                            </div>
-                        </div>
-                        <!-- Project 3 -->
-                        <div class="bg-[#060f21] border border-slate-800/60 rounded-2xl overflow-hidden group">
-                            <div class="relative h-72 bg-slate-900 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Sleek Minimalist Modern Architecture" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-[#060f21] to-transparent"></div>
-                            </div>
-                            <div class="p-8 border-t border-slate-900">
-                                <h4 class="text-xl font-bold text-white mb-2">The Woodlands Mid-Century</h4>
-                                <p class="text-sm text-slate-400 mb-4">Houston, TX</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+<div class="grid md:grid-cols-3 gap-8 mb-16">
+<div class="bg-white p-8 rounded-3xl shadow-lg text-center flex flex-col justify-between min-h-[280px]">
+<div>
+<div class="w-16 h-16 rounded-full bg-[#ff7724]/10 flex items-center justify-center mx-auto mb-6">
+<span class="text-[#ff7724] text-3xl">📞</span>
+</div>
+<h3 class="text-2xl font-bold text-black mb-4">Phone</h3>
+<p class="text-gray-700 mb-3">(512) 555-0199</p>
+<p class="text-gray-500">Monday – Friday, 8 AM – 6 PM</p>
+</div>
+<a href="tel:5125550199" class="mt-8 text-[#ff7724] font-semibold">Call Now</a>
+</div>
 
-        <!-- VIEW 4: CONTACT PAGE -->
-        <div id="view-contact" class="view-section hidden">
-            <section class="py-24 bg-[#030a16]">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                        <div class="lg:col-span-5 flex flex-col justify-between">
-                            <div>
-                                <span class="text-sm font-bold text-[#ff7724] tracking-widest uppercase block mb-4">Direct Infrastructure Access</span>
-                                <h2 class="text-5xl font-black text-white tracking-tight mb-8">Connect With Our Austin Team</h2>
-                                <p class="text-lg text-slate-400 leading-relaxed mb-10">
-                                    Need real-time pipeline adjustments or priority consultation routing? Drop into our corporate hub right in downtown Austin or initiate an ingestion check.
-                                </p>
-                            </div>
-                            <div class="space-y-8 border-t border-slate-800/80 pt-10 text-base">
-                                <div class="flex items-start gap-5">
-                                    <div class="text-[#ff5d00] font-bold">LOC:</div>
-                                    <p class="text-slate-300">
-                                        <strong>Austin HQ (Heart of the City)</strong><br>
-                                        701 Brazos Street, Suite 500<br>
-                                        Austin, TX 78701
-                                    </p>
-                                </div>
-                                <div class="flex items-start gap-5">
-                                    <div class="text-[#ff5d00] font-bold">TEL:</div>
-                                    <p class="text-slate-300"><a href="tel:5125550199" class="hover:text-[#ff5d00] transition-colors">(512) 555-0199</a></p>
-                                </div>
-                                <div class="flex items-start gap-5">
-                                    <div class="text-[#ff5d00] font-bold">DATA:</div>
-                                    <p class="text-slate-300"><a href="mailto:info@texassunpower.com" class="hover:text-[#ff5d00] transition-colors">info@texassunpower.com</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lg:col-span-7 h-96 lg:h-[500px] w-full rounded-3xl overflow-hidden border border-slate-800 shadow-2xl relative">
-                            <iframe class="absolute top-0 left-0 w-full h-full filter invert-[90%] hue-rotate-[180deg] contrast-[110%]" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m4!2s701+Brazos+St+Austin+TX+78701!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b5062a4d3b87%3A0x64cf2bd6c90518ab!2s701%20Brazos%20St%2C%20Austin%2C%20TX%2078701!5e0!3m2!1sen!2sus!4v1717880000000!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
+<div class="bg-white p-8 rounded-3xl shadow-lg text-center flex flex-col justify-between min-h-[280px]">
+<div>
+<div class="w-16 h-16 rounded-full bg-[#ff7724]/10 flex items-center justify-center mx-auto mb-6">
+<span class="text-[#ff7724] text-3xl">✉️</span>
+</div>
+<h3 class="text-2xl font-bold text-black mb-4">Email</h3>
+<p class="text-gray-700 mb-3">info@texassunpower.com</p>
+<p class="text-gray-500">support@texassunpower.com</p>
+</div>
+<a href="mailto:info@texassunpower.com" class="mt-8 text-[#ff7724] font-semibold">Send Email</a>
+</div>
 
-    </main>
+<div class="bg-white p-8 rounded-3xl shadow-lg text-center flex flex-col justify-between min-h-[280px]">
+<div>
+<div class="w-16 h-16 rounded-full bg-[#ff7724]/10 flex items-center justify-center mx-auto mb-6">
+<span class="text-[#ff7724] text-3xl">📍</span>
+</div>
+<h3 class="text-2xl font-bold text-black mb-4">Office</h3>
+<p class="text-gray-700 mb-3">701 Brazos Street, Suite 500</p>
+<p class="text-gray-500">Austin, TX 78701</p>
+</div>
+<a href="#" class="mt-8 text-[#ff7724] font-semibold">View Location</a>
+</div>
+</div>
+
+<div class="grid lg:grid-cols-5 gap-10">
+<div class="lg:col-span-3 bg-white rounded-3xl p-8 shadow-lg">
+<h3 class="text-4xl font-bold text-black mb-8">Visit Our Austin Office</h3>
+<img src="https://i.postimg.cc/4yVfXdhJ/Screenshot-2026-06-10-115026.png" alt="Texas Sun Power Office" class="w-full rounded-2xl shadow-lg mb-8"/>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="text-[#ff7724] text-2xl">🅿️</div>
+<div>
+<div class="font-bold text-black">Parking</div>
+<div class="text-gray-500">Free visitor parking available in the building garage. Validation provided at check-in.</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="text-[#ff7724] text-2xl">🕒</div>
+<div>
+<div class="font-bold text-black">Office Hours</div>
+<div class="text-gray-500">Monday – Friday: 8:00 AM – 6:00 PM | Saturday: By appointment only | Sunday: Closed</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="lg:col-span-2 bg-white rounded-3xl p-8 shadow-lg">
+<h3 class="text-4xl font-bold text-black mb-6">Service Areas</h3>
+<p class="text-gray-500 mb-8">Texas Sun Power proudly serves homeowners across the entire state of Texas. Our installation teams are based in major metro areas for rapid response and local permitting expertise.</p>
+<div class="space-y-5">
+<div class="flex items-center gap-3"><span class="text-[#ff7724]">✓</span><span class="text-black">Austin Metro</span></div>
+<div class="flex items-center gap-3"><span class="text-[#ff7724]">✓</span><span class="text-black">Dallas / Fort Worth</span></div>
+<div class="flex items-center gap-3"><span class="text-[#ff7724]">✓</span><span class="text-black">Houston / The Woodlands</span></div>
+<div class="flex items-center gap-3"><span class="text-[#ff7724]">✓</span><span class="text-black">San Antonio</span></div>
+<div class="flex items-center gap-3"><span class="text-[#ff7724]">✓</span><span class="text-black">El Paso / West Texas</span></div>
+<div class="flex items-center gap-3"><span class="text-[#ff7724]">✓</span><span class="text-black">Corpus Christi</span></div>
+<div class="flex items-center gap-3"><span class="text-[#ff7724]">✓</span><span class="text-black">Midland / Odessa</span></div>
+<div class="flex items-center gap-3"><span class="text-[#ff7724]">✓</span><span class="text-black">Waco / Central Texas</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div></main>
 
     <!-- FOOTER DECK (LOCKED) -->
     <footer class="bg-[#020710] border-t border-slate-900/40 pt-16 pb-8 text-sm md:text-base text-slate-400">
@@ -615,12 +629,7 @@
                 <div class="md:col-span-2 space-y-4">
                     <h4 class="text-white font-bold text-sm uppercase tracking-wider">Quick Links</h4>
                     <ul class="space-y-3.5 text-sm font-medium">
-                    <li>
-    <button onclick="switchView('home')" 
-            class="text-slate-400 hover:text-white cursor-pointer">
-        Home
-    </button>
-</li>
+                      <li><button onclick="window.scrollTo({top: 0, behavior: 'smooth'}); setTimeout(() => switchView('home'), 100);" class="text-slate-400 hover:text-white cursor-pointer">Home</button></li>
                         <li><button onclick="switchView('estimate')" class="text-slate-400 hover:text-white cursor-pointer">Get Estimate</button></li>
                         <li><button onclick="switchView('portfolio')" class="text-slate-400 hover:text-white cursor-pointer">Previous Works</button></li>
                         <li><button onclick="switchView('contact')" class="text-slate-400 hover:text-white cursor-pointer">Contact</button></li>
@@ -742,13 +751,11 @@
             
             const formPayload = new FormData(formElement);
             const leadDataInstance = {
-                name: formPayload.get('name'),
-                phone: formPayload.get('phone'),
-                email: formPayload.get('email'),
-                address: formPayload.get('address'),
                 bill: formPayload.get('bill'),
                 roof: formPayload.get('roof'),
-                timestamp: new Date().toISOString()
+                address: formPayload.get('address'),
+                name: formPayload.get('name'),
+                phone: formPayload.get('phone')
             };
 
             const PRODUCTION_WEBHOOK_URL = "https://hook.us2.make.com/pvr9mymgxtzoyx156125oggs8w4r7w0t";
@@ -770,7 +777,7 @@
                 if (apiResponse.ok || apiResponse.status === 200 || apiResponse.status === 201) {
                     alertBanner.classList.remove('hidden');
                     alertBanner.classList.add('bg-green-50', 'text-green-800', 'border-green-200');
-                    alertBanner.innerText = "Lead successfully ingested by automation node!";
+                    alertBanner.innerText = "Thank you! Our solar engineers have received your information and will contact you shortly with your personalized solar assessment and savings estimate.";
                     formElement.reset();
                 } else {
                     throw new Error(`Automation Node Issue: ${apiResponse.status}`);
