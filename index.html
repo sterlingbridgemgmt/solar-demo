@@ -1288,7 +1288,7 @@
                     <div class="tsp-header-meta">
                         <h3>Sarah | Texas Sun Power</h3>
                         <span>
-    <i class="fa-solid fa-circle" style="font-size:6px;color:#10b981;"></i>
+    🟢
     Operational Link
 </span>
                     </div>
@@ -1313,7 +1313,7 @@
         </div>
 
         <div class="tsp-chat-launcher-btn" onclick="tsp_toggleChatInterfaceWindow()">
-    <i class="fa-solid fa-headset" id="tsp-launcherIconNode"></i>
+    <span id="tsp-launcherIconNode">💬</span>
             <div class="tsp-notification-counter-badge" id="tsp-unreadCounterNode">0</div>
         </div>
     </div>
@@ -1425,11 +1425,6 @@ answer:"Solar panels do not generate electricity at night. Homes draw power from
 },
 
 {
-keywords:["hoa","homeowners association","hoa approval","hoa rules"],
-answer:"Many states limit how much HOAs can restrict residential solar installations, although they may impose reasonable aesthetic requirements."
-},
-
-{
 keywords:["permit","permits","inspection","city approval"],
 answer:"Permitting and inspections are standard parts of the installation process and are typically handled by the solar company."
 },
@@ -1448,11 +1443,7 @@ answer:"Net metering and similar utility programs may provide bill credits when 
 keywords:["increase rates","electric rates","utility increase"],
 answer:"One reason homeowners choose solar is to reduce exposure to future utility rate increases and create more predictable long-term energy costs."
 },
-    {
-keywords:["storm","storms","hurricane","hail","wind","weather"],
-answer:"Modern solar panels are engineered to withstand severe Texas weather including hail, heavy rain, and high winds. Most premium panels are tested against hail impacts and carry extensive manufacturer warranties."
-},
-
+    
 {
 keywords:["cloudy","clouds","overcast","rainy"],
 answer:"Solar panels still generate electricity during cloudy weather. Production decreases compared to full sun conditions, but systems continue producing usable power throughout the day."
@@ -1627,7 +1618,7 @@ answer:"Premium Tier-1 manufacturers such as REC, Qcells, Panasonic, and others 
         tsp_systemChatFrame.classList.add('tsp-window-visible');
         tsp_floatingCalloutBubble.style.display = 'none';
 
-        tsp_launcherIconNode.className = "fa-solid fa-xmark";
+        tsp_launcherIconNode.innerHTML = "✕";
         tsp_unreadMessagesCount = 0;
         tsp_updateNotificationBadgeDisplay();
 
@@ -1639,7 +1630,7 @@ answer:"Premium Tier-1 manufacturers such as REC, Qcells, Panasonic, and others 
             tsp_floatingCalloutBubble.style.display = 'block';
         }
 
-        tsp_launcherIconNode.className = "fa-solid fa-headset";
+        tsp_launcherIconNode.innerHTML = "💬";
     }
 }
     function tsp_initializeChatContentMatrix() {
@@ -1698,31 +1689,9 @@ answer:"Premium Tier-1 manufacturers such as REC, Qcells, Panasonic, and others 
 
     bubble.className = "tsp-msg tsp-msg-bot";
 
-    bubble.innerHTML = "";
+    bubble.innerHTML = text;
 
     tsp_chatFlowBox.appendChild(bubble);
-
-    let i = 0;
-
-    const typingSpeed = 15;
-
-    function typeCharacter() {
-
-        if (i < text.length) {
-
-            bubble.innerHTML += text.charAt(i);
-
-            i++;
-
-            tsp_chatFlowBox.scrollTop =
-                tsp_chatFlowBox.scrollHeight;
-
-            setTimeout(typeCharacter, typingSpeed);
-
-        }
-    }
-
-    typeCharacter();
 
     if (!tsp_isChatWindowOpen) {
 
@@ -1733,6 +1702,9 @@ answer:"Premium Tier-1 manufacturers such as REC, Qcells, Panasonic, and others 
     }
 
     tsp_playDigitalMessageNotificationChime();
+
+    tsp_chatFlowBox.scrollTop =
+        tsp_chatFlowBox.scrollHeight;
 }
 
     function tsp_pushUserMessage(text) {
@@ -1811,8 +1783,9 @@ answer:"Premium Tier-1 manufacturers such as REC, Qcells, Panasonic, and others 
         setTimeout(() => {
             if (tsp_conversationState === "MENU_STAGE" || tsp_conversationState === "CUSTOM_QA_STAGE") {
                 const normalizedInput = rawText.toLowerCase();
-                const userQuestions = normalizedInput.split(/[?.!,]| and /);
                 let foundMatch = false;
+
+const alreadyAnswered = new Set();
 
 tsp_AI_Solar_Knowledge_Base.forEach(knowledgeBlock => {
 
@@ -1821,16 +1794,21 @@ tsp_AI_Solar_Knowledge_Base.forEach(knowledgeBlock => {
             normalizedInput.includes(keyword)
         );
 
-    if (matchedKeyword) {
+    if (
+        matchedKeyword &&
+        !alreadyAnswered.has(knowledgeBlock.answer)
+    ) {
 
         foundMatch = true;
+
+        alreadyAnswered.add(
+            knowledgeBlock.answer
+        );
 
         tsp_pushBotMessage(
             knowledgeBlock.answer
         );
-
     }
-
 });
 
 if (!foundMatch) {
@@ -1841,17 +1819,11 @@ if (!foundMatch) {
 
 }
 
-                const waitTime =
-    Math.max(
-        3000,
-        responseBuffer.length * 2500
-    );
 
 setTimeout(() => {
-    tsp_conversationState = "MENU_STAGE";
     tsp_pushBotMessage("What would you like help with next?");
     tsp_renderThreeChoicesMenu();
-}, 8000); 
+}, 500); 
                 return;
             }
 
