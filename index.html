@@ -1364,9 +1364,9 @@
         </div>
 
         <div class="tsp-chat-launcher-btn" onclick="tsp_toggleChatInterfaceWindow()">
-    <span id="tsp-launcherIconNode">💬</span>
-            <div class="tsp-notification-counter-badge" id="tsp-unreadCounterNode">0</div>
-        </div>
+    <i class="fa-solid fa-sun" id="tsp-launcherIconNode"></i>
+    <div class="tsp-notification-counter-badge" id="tsp-unreadCounterNode">0</div>
+</div>
     </div>
 </div>
 
@@ -1583,7 +1583,7 @@ answer:"Premium Tier-1 manufacturers such as REC, Qcells, Panasonic, and others 
         tsp_systemChatFrame.classList.add('tsp-window-visible');
         tsp_floatingCalloutBubble.style.display = 'none';
 
-        tsp_launcherIconNode.innerHTML = "✕";
+        tsp_launcherIconNode.className = "fa-solid fa-xmark";
         tsp_unreadMessagesCount = 0;
         tsp_updateNotificationBadgeDisplay();
 
@@ -1919,11 +1919,11 @@ tsp_conversationState = "CAPTURE_ROOF";
             body: JSON.stringify(compiledPayload)
         })
         .then(() => {
-            tsp_pushBotMessage("Perfect — your information has been sent to our solar team.  A specialist will review your property and reach out shortly to discuss your options and potential savings.  In the meantime, feel free to ask me any solar-related questions.");
+            tsp_pushBotMessage("Thank you. Your information has been securely received by the Texas Sun Power team. A specialist will review your property and reach out shortly to discuss your options and potential savings. In the meantime, feel free to ask me any solar-related questions.");
             tsp_renderConversationResetOption();
         })
         .catch(() => {
-            tsp_pushBotMessage("Perfect — your information has been sent to our solar team.  A specialist will review your property and reach out shortly to discuss your options and potential savings.  In the meantime, feel free to ask me any solar-related questions.");
+            tsp_pushBotMessage("Thank you. Your information has been securely received by the Texas Sun Power team. A specialist will review your property and reach out shortly to discuss your options and potential savings. In the meantime, feel free to ask me any solar-related questions.");
             tsp_renderConversationResetOption();
         });
     }
